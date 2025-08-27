@@ -15,9 +15,9 @@ const Skills: React.FC = () => {
 		open();
 	};
 
-	const technicalSkills: ReactNode = technicalSkillsList.map(skill => {
+	const technicalSkills: ReactNode = technicalSkillsList.map((skill, idx) => {
 		return (
-			<Card>
+			<Card key={idx}>
 				<Card.Section>
 					<Image
 						src={skill.picture}
@@ -42,8 +42,8 @@ const Skills: React.FC = () => {
 	return (
 		<div>
 			<Modal opened={opened} size="auto" onClose={close} title="Informations sur la compétence selectionnée" centered>
-        {modalContent}
-      </Modal>
+				{modalContent}
+			</Modal>
 			<Accordion defaultValue="technical">
 				<Accordion.Item key="technical" value="technical">
 					<Accordion.Control>Compétences techniques</Accordion.Control>

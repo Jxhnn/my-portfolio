@@ -15,9 +15,9 @@ const Projects: React.FC = () => {
 		open();
 	};
 
-	const projectsCards: ReactNode = projectsList.map(project => {
+	const projectsCards: ReactNode = projectsList.map((project, idx) => {
 		return (
-			<Card key={project.title?.toString()}>
+			<Card key={idx}>
 				<Card.Section>
 					<Image
 						src={project.picture}
@@ -29,7 +29,7 @@ const Projects: React.FC = () => {
 					/>
 				</Card.Section>
 				<Group justify="space-between" mt="md" mb="xs">
-					<Text fw={500}>{project.title}</Text>
+					<div className={classes.tooltipText}>{project.title}</div>
 					<Badge color="pink">Année: {project.year}</Badge>
 				</Group>
 				<Button color="blue" fullWidth mt="md" radius="md" onClick={() => openModal(project.description)}>
