@@ -1,5 +1,5 @@
 
-import { Badge, Button, Card, Group, Image, Modal, Text } from "@mantine/core"
+import { Badge, Button, Card, Group, Image, Modal } from "@mantine/core"
 import { useState, type ReactNode } from "react";
 import { useDisclosure } from "@mantine/hooks";
 import classes from './Projects.module.css';
