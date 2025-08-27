@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router';
 import Home from './Home';
 import { useState } from 'react';
 import Contact from './Contact/Contact';
+import Skills from './Skills/Skills';
+import Projects from './Projects/Projects';
 
 const App: React.FC = () => {
 
@@ -74,7 +76,7 @@ const App: React.FC = () => {
 		<Router>
 			<MantineProvider defaultColorScheme='dark'>
 				<AppShell
-					header={{ height: 60 }}
+					header={{ height: 60 }} 
 					navbar={{ width: 300, breakpoint: 'sm', collapsed: { desktop: true, mobile: !opened } }}
 					padding="md"
 				>
@@ -97,7 +99,7 @@ const App: React.FC = () => {
 						</Group>
 					</AppShell.Header>
 
-					<AppShell.Navbar py="md" px={4} ref={setNavbarRootRef} className={classes.menuRoot}>
+					<AppShell.Navbar py="md" px={4} ref={setNavbarRootRef}>
 						{generateMenuItems(setNavbarControlRef, "navbar")}
 						{navbarControlsRefs[active] && navbarRootRef && (
 							<FloatingIndicator
@@ -110,6 +112,8 @@ const App: React.FC = () => {
 					<AppShell.Main>
 						<Routes>
 							<Route index element={<Home />} />
+							<Route path="/competences" element={<Skills />} />
+							<Route path="/realisations" element={<Projects />} />
 							<Route path='/contact' element={<Contact />} />
 						</Routes>
 					</AppShell.Main>
