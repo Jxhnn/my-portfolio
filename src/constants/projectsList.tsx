@@ -14,13 +14,13 @@ export const projectsList: Project[] = [
 			</div>
 		),
 		skills: [],
-		picture: 'src/assets/siteReservation.png',
+		picture: 'assets/siteReservation.png',
 		year: 2021,
 		description: (
 			<Stack gap="xl">
 				<Paper withBorder shadow="md" p="xl" radius="md">
 					<Image
-						src="src/assets/siteReservation.png"
+						src="assets/siteReservation.png"
 						height={220}
 						radius="md"
 						alt="Aperçu du site de réservation"
@@ -132,13 +132,13 @@ export const projectsList: Project[] = [
 			<div>ARMEL TMS</div>
 		),
 		skills: [],
-		picture: 'src/assets/armel-tms.png',
+		picture: 'assets/armel-tms.png',
 		year: 2023,
 		description: (
 			<Stack gap="xl">
 				<Paper withBorder shadow="md" p="xl" radius="md">
 					<Image
-						src="src/assets/armel-interface.png"
+						src="assets/armel-interface.png"
 						height={220}
 						radius="md"
 						alt="Aperçu de l'application ARMEL TMS"
@@ -256,13 +256,13 @@ export const projectsList: Project[] = [
 			<div>Phidias 3</div>
 		),
 		skills: [],
-		picture: 'src/assets/logo-phidias.png',
+		picture: 'assets/logo-phidias.png',
 		year: 2023,
 		description: (
 			<Stack gap="xl">
 				<Paper withBorder shadow="md" p="xl" radius="md">
 					<Image
-						src="src/assets/phidias-sequence.png"
+						src="assets/phidias-sequence.png"
 						height={220}
 						radius="md"
 						alt="Aperçu du projet Phidias3"
@@ -378,7 +378,7 @@ export const projectsList: Project[] = [
 			</div>
 		),
 		skills: [],
-		picture: 'src/assets/sharepoint-icon.png',
+		picture: 'assets/sharepoint-icon.png',
 		year: 2023,
 		description: (
 			<Stack gap="xl">

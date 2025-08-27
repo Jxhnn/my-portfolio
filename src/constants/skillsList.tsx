@@ -7,7 +7,7 @@ export const technicalSkillsList: TechnicalSkill[] = [
 	{
 		title: 'React',
 		projects: [],
-		picture: 'src/assets/react.svg',
+		picture: 'assets/react.svg',
 		level: 'Intermédiaire',
 		description: (
 			<Stack gap="xl">
@@ -127,7 +127,7 @@ export const technicalSkillsList: TechnicalSkill[] = [
 	{
 		title: 'JavaScript',
 		projects: [],
-		picture: 'src/assets/js.svg',
+		picture: 'assets/js.svg',
 		level: 'Avancé',
 		description: (
 			<Stack gap="xl">
@@ -246,7 +246,7 @@ export const technicalSkillsList: TechnicalSkill[] = [
 	{
 		title: 'PHP',
 		projects: [],
-		picture: 'src/assets/php.svg',
+		picture: 'assets/php.svg',
 		level: 'Intermédiaire',
 		description: (
 			<Stack gap="xl">
@@ -352,7 +352,7 @@ export const technicalSkillsList: TechnicalSkill[] = [
 	{
 		title: 'HTML',
 		projects: [],
-		picture: 'src/assets/html.svg',
+		picture: 'assets/html.svg',
 		level: 'Avancé',
 		description: (
 			<Stack gap="xl">
@@ -455,7 +455,7 @@ export const technicalSkillsList: TechnicalSkill[] = [
 	{
 		title: 'CSS',
 		projects: [],
-		picture: 'src/assets/css.svg',
+		picture: 'assets/css.svg',
 		level: 'Avancé',
 		description: (
 			<Stack gap="xl">
@@ -558,7 +558,7 @@ export const technicalSkillsList: TechnicalSkill[] = [
 	{
 		title: 'NodeJS',
 		projects: [],
-		picture: 'src/assets/nodejs.svg',
+		picture: 'assets/nodejs.svg',
 		level: 'Intermédiaire',
 		description: (
 			<Stack gap="xl">
@@ -664,7 +664,7 @@ export const technicalSkillsList: TechnicalSkill[] = [
 	{
 		title: 'Laravel',
 		level: 'Avancé',
-		picture: 'src/assets/laravel.svg',
+		picture: 'assets/laravel.svg',
 		projects: [],
 		description: (
 			<Stack gap="xl">
@@ -771,7 +771,7 @@ export const technicalSkillsList: TechnicalSkill[] = [
 		title: 'MySQL',
 		projects: [],
 		level: 'Avancé',
-		picture: 'src/assets/mysql.svg',
+		picture: 'assets/mysql.svg',
 		description: (
 			<Stack gap="xl">
 				<Paper shadow="md" p="xl" radius="md" withBorder>
@@ -880,7 +880,7 @@ export const technicalSkillsList: TechnicalSkill[] = [
 		title: 'MongoDB',
 		projects: [],
 		level: 'Débutant',
-		picture: 'src/assets/mongodb.svg',
+		picture: 'assets/mongodb.svg',
 		description: (
 			<Stack gap="xl">
 				<Paper shadow="md" p="xl" radius="md" withBorder>

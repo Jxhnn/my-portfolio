@@ -23,7 +23,7 @@ const Profil: React.FC = () => {
 				</Text>
 			</div>
 			<div className={classes.extra}>
-				<Image src='src/assets/portrait.png' radius='md' h={400} w={'auto'} />
+				<Image src='assets/portrait.png' radius='md' h={400} w={'auto'} />
 			</div>
 		</div>
 	);

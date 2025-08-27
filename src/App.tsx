@@ -2,7 +2,7 @@ import '@mantine/core/styles.css';
 import { AppShell, Burger, FloatingIndicator, Group, MantineProvider, UnstyledButton } from '@mantine/core'
 import classes from './App.module.css';
 import { useDisclosure } from '@mantine/hooks';
-import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router';
+import { HashRouter as Router, Route, Routes, NavLink } from 'react-router';
 import Home from './Home';
 import { useState } from 'react';
 import Contact from './Contact/Contact';
