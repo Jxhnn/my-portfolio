@@ -1,6 +1,7 @@
 
-import { Anchor, Image, Space, Text, Title } from '@mantine/core';
+import { ActionIcon, Anchor, Group, Image, Space, Text, Title } from '@mantine/core';
 import classes from './Profil.module.css';
+import { IconBrandGithub, IconBrandInstagram, IconBrandLinkedin } from '@tabler/icons-react';
 
 const Profil: React.FC = () => {
 
@@ -21,6 +22,45 @@ const Profil: React.FC = () => {
 					option RISC (Réseau Informatiques et Systèmes Communicants).
 					En suite, j’ai continué sur un BTS SIO (Service Informatique aux Organisations) option S.L.A.M (Solutions Logicielles et Applications Métiers).
 				</Text>
+				<Space h="xl" />
+				<Group>
+					<ActionIcon
+						component="a"
+						href="https://www.linkedin.com/in/john-thomas-919782202/"
+						target="_blank"
+						size="xl"
+						variant="filled"
+						color="blue"
+						radius="xl"
+						aria-label="Mon profil LinkedIn"
+					>
+						<IconBrandLinkedin stroke={1.5} />
+					</ActionIcon>
+					<ActionIcon
+						component="a"
+						href="https://github.com/Jxhnn"
+						target="_blank"
+						size="xl"
+						variant="filled"
+						color="dark"
+						radius="xl"
+						aria-label="Mon profil GitHub"
+					>
+						<IconBrandGithub stroke={1.5} />
+					</ActionIcon>
+					<ActionIcon
+						component="a"
+						href="https://www.instagram.com/jxhnn03/"
+						target="_blank"
+						size="xl"
+						variant="gradient"
+						gradient={{ from: 'yellow', to: 'purple', deg: 45 }}
+						radius="xl"
+						aria-label="Mon profil Instagram"
+					>
+						<IconBrandInstagram stroke={1.5} />
+					</ActionIcon>
+				</Group>
 			</div>
 			<div className={classes.extra}>
 				<Image src='assets/portrait.png' radius='md' h={400} w={'auto'} />

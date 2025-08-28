@@ -5,6 +5,7 @@ import { IconApi, IconAppWindow, IconAutomation, IconBellRinging, IconBook, Icon
 
 export const projectsList: Project[] = [
 	{
+		id: 'site-reservation-acm',
 		title: (
 			<div>
 				Site de réservation pour&nbsp;
@@ -128,6 +129,7 @@ export const projectsList: Project[] = [
 		)
 	},
 	{
+		id: 'armel-tms',
 		title: (
 			<div>ARMEL TMS</div>
 		),
@@ -252,6 +254,7 @@ export const projectsList: Project[] = [
 		)
 	},
 	{
+		id: 'phidias',
 		title: (
 			<div>Phidias 3</div>
 		),
@@ -372,6 +375,7 @@ export const projectsList: Project[] = [
 		)
 	},
 	{
+		id: 'sharepoint-custom',
 		title: (
 			<div>
 				Développement sur SharePoint & Power Platform
