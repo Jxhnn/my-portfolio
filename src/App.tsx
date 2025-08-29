@@ -185,7 +185,7 @@ const App: React.FC = () => {
 						<Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
 						<Group justify="space-between" style={{ flex: 1 }}>
 							<Group gap="sm">
-								<Avatar src="/assets/portrait.png" radius="xl" />
+								<Avatar src="assets/portrait.png" radius="xl" />
 								<Stack gap={0}>
 									<Text size="sm" fw={700}>John THOMAS</Text>
 									<Text size="xs" c="dimmed">Développeur Web</Text>

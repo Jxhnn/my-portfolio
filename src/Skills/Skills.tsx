@@ -1,10 +1,7 @@
 
 import { Accordion, Button, Card, Group, Text, Image, Badge, Title, Paper, SimpleGrid } from "@mantine/core"
-import { useState } from "react";
 import { humanSkillsChartData, humanSkillsList, technicalSkillsChartData, technicalSkillsList } from "../constants/skillsList";
-import { useDisclosure } from "@mantine/hooks";
 import classes from './Skills.module.css';
-import type ModalContent from "./interfaces/ModalContent";
 import type TechnicalSkill from "./interfaces/TechnicalSkill";
 import { RadarChart } from '@mantine/charts';
 import { useNavigate } from "react-router";

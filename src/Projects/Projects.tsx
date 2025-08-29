@@ -1,19 +1,13 @@
 
-import { Badge, Button, Card, Group, Image, Modal } from "@mantine/core"
-import { useState, type ReactNode } from "react";
-import { useDisclosure } from "@mantine/hooks";
+import { Badge, Button, Card, Group, Image } from "@mantine/core"
+import { type ReactNode } from "react";
 import classes from './Projects.module.css';
 import { projectsList } from "../constants/projectsList";
+import { useNavigate } from "react-router";
 
 const Projects: React.FC = () => {
 
-	const [opened, { open, close }] = useDisclosure(false);
-	const [modalContent, setModalContent] = useState<ReactNode>();
-
-	const openModal = (node: ReactNode) => {
-		setModalContent(node);
-		open();
-	};
+	const navigate = useNavigate();
 
 	const projectsCards: ReactNode = projectsList.map((project, idx) => {
 		return (
@@ -32,7 +26,7 @@ const Projects: React.FC = () => {
 					<div className={classes.tooltipText}>{project.title}</div>
 					<Badge color="pink">Année: {project.year}</Badge>
 				</Group>
-				<Button color="blue" fullWidth mt="md" radius="md" onClick={() => openModal(project.description)}>
+				<Button color="blue" fullWidth mt="md" radius="md" onClick={() => navigate(`/realisations/${project.id}`)}>
 					Plus d'informations
 				</Button>
 			</Card>
@@ -40,13 +34,8 @@ const Projects: React.FC = () => {
 	});
 
 	return (
-		<div>
-			<Modal opened={opened} size="auto" onClose={close} title="Informations sur la compétence selectionnée" centered>
-				{modalContent}
-			</Modal>
-			<div className={classes.list}>
-				{projectsCards}
-			</div>
+		<div className={classes.list}>
+			{projectsCards}
 		</div>
 	);
 };
