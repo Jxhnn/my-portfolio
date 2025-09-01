@@ -27,6 +27,10 @@ const menuLinks = [
 		link: '/about'
 	},
 	{
+		label: 'Mon parcours',
+		link: '/mon-parcours'
+	},
+	{
 		label: 'Compétences',
 		link: '/competences',
 		sublinks: {

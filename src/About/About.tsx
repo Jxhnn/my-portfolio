@@ -1,6 +1,7 @@
 
 import { Title, Text, Stack, Paper, ThemeIcon, List, Group, Timeline, Anchor } from '@mantine/core';
 import { IconHeartHandshake, IconRocket, IconPuzzle, IconTrekking, IconRoad, IconSchool, IconBriefcase } from '@tabler/icons-react';
+import Parcours from '../components/Parcours/Parcours';
 
 function About() {
 	return (
@@ -9,102 +10,6 @@ function About() {
 			<Text size="lg" c="dimmed">
 				Au-delà du rôle de développeur, je suis passionné par la création de solutions en tout genre.
 			</Text>
-			<Paper withBorder shadow="md" p="xl" radius="md">
-				<Stack>
-					<Group>
-						<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'indigo', to: 'purple' }}>
-							<IconRoad size={32} />
-						</ThemeIcon>
-						<Title order={3}>Mon parcours académique</Title>
-					</Group>
-					<Text>
-						Mon parcours est le reflet d'une spécialisation progressive dans le développement logiciel, débutée en 2018.
-					</Text>
-					<Timeline active={0} bulletSize={24} lineWidth={2} mt="md">
-						<Timeline.Item bullet={<IconSchool size={12} />} title="Mastère Expert en Ingénierie Logicielle">
-							<Text c="dimmed" size="xs">2023 - Présent</Text>
-							<Text size="sm">
-								Formation actuelle qui approfondit mes compétences en architecture logicielle, gestion de projet et technologies avancées.
-							</Text>
-						</Timeline.Item>
-						<Timeline.Item bullet={<IconSchool size={12} />} title="Licence Professionnelle DAWIN">
-							<Text c="dimmed" size="xs">2022 - 2023</Text>
-							<Text size="sm">
-								Spécialisation en Développement d'Applications Web et Innovation Numérique, où j'ai consolidé ma maîtrise des frameworks modernes comme React et Laravel.
-							</Text>
-						</Timeline.Item>
-						<Timeline.Item bullet={<IconSchool size={12} />} title="BTS SIO - Option SLAM">
-							<Text c="dimmed" size="xs">2020 - 2022</Text>
-							<Text size="sm">
-								Le socle de mes compétences en développement avec le BTS Services Informatiques aux Organisations, option Solutions Logicielles et Applications Métiers.
-							</Text>
-						</Timeline.Item>
-						<Timeline.Item bullet={<IconSchool size={12} />} title="Baccalauréat Professionnel S.N.">
-							<Text c="dimmed" size="xs">2018 - 2020</Text>
-							<Text size="sm">
-								Première immersion dans le monde de l'informatique avec l'option RISC (Réseaux Informatiques et Systèmes Communicants), qui m'a donné des bases solides en systèmes et réseaux.
-							</Text>
-						</Timeline.Item>
-					</Timeline>
-				</Stack>
-			</Paper>
-			<Paper withBorder shadow="md" p="xl" radius="md">
-				<Stack>
-					<Group>
-						<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'blue', to: 'cyan' }}>
-							<IconBriefcase size={32} />
-						</ThemeIcon>
-						<Title order={3}>Mon parcours professionnel</Title>
-					</Group>
-					<Text>
-						Chaque expérience a été une opportunité de mettre en pratique mes connaissances et de développer de nouvelles compétences en conditions réelles.
-					</Text>
-					<Timeline active={0} bulletSize={24} lineWidth={2} mt="md">
-						<Timeline.Item bullet={<IconBriefcase size={12} />} title="Année d'alternance en développement web">
-							<Text c="dimmed" size="xs">Sept. 2022 - Sept. 2023 | Exelys - Digital partner, Pau</Text>
-							<Text size="sm">
-								Mise en pratique des compétences de ma Licence DAWIN sur des projets clients variés, en travaillant sur des problématiques frontend et backend.
-							</Text>
-						</Timeline.Item>
-						<Timeline.Item bullet={<IconBriefcase size={12} />} title="Stage de développement (Projet Phidias3)">
-							<Text c="dimmed" size="xs">Janv. - Fév. 2022 (6 semaines) | Exelys, Pau</Text>
-							<Text size="sm">
-								Refonte complète d'un site de formation pour le BTP. Ce fut ma première expérience majeure avec le framework <b>Laravel</b> et la migration de données complexes.
-							</Text>
-							<Anchor href="/realisations/phidias3" size="sm" mt={4}>
-								Voir le projet Phidias3
-							</Anchor>
-						</Timeline.Item>
-						<Timeline.Item bullet={<IconBriefcase size={12} />} title="Stage de développement (Site de réservation)">
-							<Text c="dimmed" size="xs">Mai - Juin 2021 | Centre de loisirs d'Artigueloutan</Text>
-							<Text size="sm">
-								Création d'une application web de A à Z, de la base de données au déploiement, pour gérer les réservations d'un centre de loisirs.
-							</Text>
-							<Anchor href="/realisations/site-reservation" size="sm" mt={4}>
-								Voir le projet de réservation
-							</Anchor>
-						</Timeline.Item>
-						<Timeline.Item bullet={<IconBriefcase size={12} />} title="Stage de maintenance d'infrastructure">
-							<Text c="dimmed" size="xs">2020 (30 jours) | GFI Informatique, Pau</Text>
-							<Text size="sm">
-								Première expérience en entreprise mêlant maintenance d'infrastructure et développement de petits logiciels internes.
-							</Text>
-						</Timeline.Item>
-						<Timeline.Item bullet={<IconBriefcase size={12} />} title="Stage de développement sur hardware dédié">
-							<Text c="dimmed" size="xs">2019 (30 jours) | SDIS64, Pau</Text>
-							<Text size="sm">
-								Découverte du développement informatique plus proche du matériel, une expérience très formatrice.
-							</Text>
-						</Timeline.Item>
-						<Timeline.Item bullet={<IconBriefcase size={12} />} title="Stage de réparation d'ordinateurs">
-							<Text c="dimmed" size="xs">2019 (30 jours) | IDV64, Assat</Text>
-							<Text size="sm">
-								Mon tout premier contact avec le monde professionnel de l'informatique, axé sur la maintenance hardware et les objets connectés.
-							</Text>
-						</Timeline.Item>
-					</Timeline>
-				</Stack>
-			</Paper>
 			<Paper withBorder shadow="md" p="xl" radius="md">
 				<Stack>
 					<Group>

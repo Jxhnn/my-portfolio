@@ -2,7 +2,7 @@
 import { Accordion, Button, Card, Group, Text, Image, Badge, Title, Paper, SimpleGrid } from "@mantine/core"
 import { humanSkillsChartData, humanSkillsList, technicalSkillsChartData, technicalSkillsList } from "../constants/skillsList";
 import classes from './Skills.module.css';
-import type TechnicalSkill from "./interfaces/TechnicalSkill";
+import type TechnicalSkill from "../interfaces/TechnicalSkill";
 import { RadarChart } from '@mantine/charts';
 import { useNavigate } from "react-router";
 

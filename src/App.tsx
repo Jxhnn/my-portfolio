@@ -13,9 +13,10 @@ import About from './About/About';
 import menuLinks from './constants/menuLinks';
 import SkillDetailPage from './SkillDetailPage/SkillDetailPage';
 import { IconChevronDown } from '@tabler/icons-react';
-import type MenuLink from './Skills/interfaces/MenuLink';
-import type MenuLinkSkill from './Skills/interfaces/MenuLinkSkill';
+import type MenuLink from './interfaces/MenuLink';
+import type MenuLinkSkill from './interfaces/MenuLinkSkill';
 import ProjectDetailsPage from './ProjectsDetails/ProjectDetails';
+import Parcours from './components/Parcours/Parcours';
 
 const App: React.FC = () => {
 
@@ -219,6 +220,7 @@ const App: React.FC = () => {
 					<Routes>
 						<Route index element={<Home />} />
 						<Route path='/about' element={<About />} />
+						<Route path='/mon-parcours' element={<Parcours />} />
 						<Route path="/competences" element={<Skills />} />
 						<Route path="/competences/:skillId" element={<SkillDetailPage />} />
 						<Route path="/realisations/:projectId" element={<ProjectDetailsPage />} />

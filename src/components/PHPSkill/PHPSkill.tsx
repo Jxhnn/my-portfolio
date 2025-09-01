@@ -39,7 +39,6 @@ const PHPSkill: React.FC = () => {
 						<Title order={4}>Mes éléments de preuve</Title>
 					</Accordion.Control>
 					<Accordion.Panel>
-						<Text fz="sm" c="dimmed" mb="xs">Exemple concret de mise en œuvre :</Text>
 						<Blockquote cite="– Projet site de réservation (centre de loisirs)">
 							Le défi était de créer un système de réservation complet sans l'aide d'un framework, en utilisant uniquement PHP "vanilla". Il fallait gérer les inscriptions, vérifier la disponibilité des places en temps réel et interagir avec une base de données MySQL.
 							<br /><br />
