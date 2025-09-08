@@ -17,13 +17,14 @@ export const parcoursList: ParcoursItem[] = [
 				"Développement de composants React sur mesure pour des intranets SharePoint (SPFx).",
 				"Modernisation et maintenance d'applications web existantes (TMA sur Phidias3).",
 				"Création d'API RESTful avec Laravel pour des applications mobiles (ARMEL TMS).",
-				"Collaboration en équipe via des outils de gestion de projet et Git."
+				"Collaboration en équipe via et GitHub et suite Microsoft 365."
 			],
 			vision: "Mon rôle chez Exelys m'a permis de passer de la théorie à la pratique sur des projets clients concrets, en me confrontant à des problématiques de maintenabilité et de travail d'équipe.",
 			relatedProjects: [
-				{ id: 'sharepoint-custom', label: 'Rélisations sur SharePoint Online' },
+				{ id: 'sharepoint-custom', label: 'Réalisations sur SharePoint Online' },
 				{ id: 'phidias', label: 'Projet Phidias' },
 				{ id: 'armel-tms', label: 'Projet ARMEL TMS' },
+				{ id: 'pact-hse', label: 'Projet PACT HSE' },
 			],
 			relatedSkills: [
 				{ id: 'html', label: 'HTML' },
@@ -34,7 +35,6 @@ export const parcoursList: ParcoursItem[] = [
 				{ id: 'rigueur', label: 'Rigueur & organisation' },
 				{ id: 'relation-client', label: 'Relation client' },
 				{ id: 'curiosite', label: 'Curiosité & apprentissage' },
-				{ id: 'rigueur', label: 'Rigueur & organisation' },
 			]
 		}
 	},
@@ -53,7 +53,7 @@ export const parcoursList: ParcoursItem[] = [
 				"Analyse du besoin et conception de la base de données MySQL.",
 				"Développement de l'application de A à Z en PHP, HTML, CSS et JavaScript.",
 			],
-			vision: "Ce fut ma première expérience de A à Z, un véritable apprentissage accéléré qui a confirmé ma passion pour la création de solutions web.",
+			vision: "Ce fut ma première expérience de A à Z, un véritable apprentissage qui a confirmé ma passion pour la création de solutions web.",
 			relatedProjects: [
 				{ id: 'site-reservation-acm', label: 'Plateforme de gestion pour centre de loisirs' }
 			],
@@ -169,7 +169,7 @@ export const parcoursList: ParcoursItem[] = [
 			missions: [
 				"Algorithmique et programmation (Java).",
 				"Conception de bases de données (SQL).",
-				"Développement web (PHP, JavaScript, SQL).",
+				"Développement web basique (PHP, JavaScript, SQL).",
 			],
 			relatedProjects: [],
 			relatedSkills: []
@@ -183,7 +183,7 @@ export const parcoursList: ParcoursItem[] = [
 		details: {
 			status: 'lycéen',
 			missions: ["Administration des systèmes et des réseaux.", "Bases de la programmation et de l'électronique."],
-			vision: "Cette formation a été la porte d'entrée de ma passion pour l'informatique, en me donnant des bases solides sur le fonctionnement des réseaux et des systèmes.",
+			vision: "Cette formation a été la porte d'entrée de ma passion pour l'informatique, en me donnant des bases solides sur le fonctionnement des réseaux et des systèmes communicants.",
 			relatedProjects: [],
 			relatedSkills: []
 		}

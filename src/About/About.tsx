@@ -1,7 +1,6 @@
 
-import { Title, Text, Stack, Paper, ThemeIcon, List, Group, Timeline, Anchor } from '@mantine/core';
-import { IconHeartHandshake, IconRocket, IconPuzzle, IconTrekking, IconRoad, IconSchool, IconBriefcase } from '@tabler/icons-react';
-import Parcours from '../components/Parcours/Parcours';
+import { Title, Text, Stack, Paper, ThemeIcon, List, Group } from '@mantine/core';
+import { IconHeartHandshake, IconRocket, IconPuzzle, IconTrekking } from '@tabler/icons-react';
 
 function About() {
 	return (

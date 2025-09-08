@@ -1,6 +1,6 @@
 
 import { useParams } from 'react-router';
-import { technicalSkillsList, humanSkillsList } from '../constants/skillsList';
+import { technicalSkillsList, humanSkillsList } from '../../constants/skillsList';
 import { Container, Title, Text } from '@mantine/core';
 
 const SkillDetailPage = () => {
@@ -11,7 +11,7 @@ const SkillDetailPage = () => {
 
   if (!skill) {
     return (
-      <Container>
+      <Container size={"xl"}>
         <Title order={2}>Compétence non trouvée</Title>
         <Text>Désolé, la compétence que vous cherchez n'existe pas.</Text>
       </Container>
@@ -19,7 +19,7 @@ const SkillDetailPage = () => {
   }
 
   return (
-    <Container size="md">
+    <Container size="xl">
       {skill.description}
     </Container>
   );

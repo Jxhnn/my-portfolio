@@ -1,5 +1,5 @@
 
-import type TechnicalSkill from "../interfaces/TechnicalSkill";
+import type Skill from "../interfaces/Skill";
 import type SkillChartData from "../interfaces/SkillChartData";
 import ReactSkill from "../components/ReactSkill/ReactSkill";
 import JavascriptSkill from "../components/JavascriptSkill/JavascriptSkill";
@@ -13,11 +13,10 @@ import RelationClientSkill from "../components/RelationClientSkill/RelationClien
 import CuriositySkill from "../components/CuriositySkill/CuriositySkill";
 import OrganisationSkill from "../components/OrganisationSkill/OrganisationSkill";
 
-export const technicalSkillsList: TechnicalSkill[] = [
+export const technicalSkillsList: Skill[] = [
 	{
 		id: 'react',
 		title: 'React',
-		projects: [],
 		picture: 'assets/react.svg',
 		level: 'Intermédiaire',
 		description: (<ReactSkill />)
@@ -25,7 +24,6 @@ export const technicalSkillsList: TechnicalSkill[] = [
 	{
 		id: 'javascript',
 		title: 'JavaScript',
-		projects: [],
 		picture: 'assets/js.svg',
 		level: 'Avancé',
 		description: (<JavascriptSkill />)
@@ -33,7 +31,6 @@ export const technicalSkillsList: TechnicalSkill[] = [
 	{
 		id: 'php',
 		title: 'PHP',
-		projects: [],
 		picture: 'assets/php.svg',
 		level: 'Intermédiaire',
 		description: (<PHPSkill />)
@@ -41,7 +38,6 @@ export const technicalSkillsList: TechnicalSkill[] = [
 	{
 		id: 'html',
 		title: 'HTML',
-		projects: [],
 		picture: 'assets/html.svg',
 		level: 'Avancé',
 		description: (<HTMLSkill />)
@@ -49,7 +45,6 @@ export const technicalSkillsList: TechnicalSkill[] = [
 	{
 		id: 'css',
 		title: 'CSS',
-		projects: [],
 		picture: 'assets/css.svg',
 		level: 'Avancé',
 		description: (<CSSSkill />)
@@ -59,13 +54,11 @@ export const technicalSkillsList: TechnicalSkill[] = [
 		title: 'Laravel',
 		level: 'Avancé',
 		picture: 'assets/laravel.svg',
-		projects: [],
 		description: (<LaravelSkill />)
 	},
 	{
 		id: 'mysql',
 		title: 'MySQL',
-		projects: [],
 		level: 'Avancé',
 		picture: 'assets/mysql.svg',
 		description: (<SQLSkill />)
@@ -82,13 +75,12 @@ export const technicalSkillsChartData: SkillChartData[] = [
 	{ skill: "MySQL", level: 85 },
 ];
 
-export const humanSkillsList: TechnicalSkill[] = [
+export const humanSkillsList: Skill[] = [
 	{
 		id: 'autonomie',
 		title: "Autonomie & proactivité",
 		level: "Intermédiaire",
 		picture: "/assets/autonomy.png",
-		projects: [],
 		description: (<AutonomySkill />),
 	},
 	{
@@ -96,7 +88,6 @@ export const humanSkillsList: TechnicalSkill[] = [
 		title: "Relation client",
 		level: "Débutant",
 		picture: "/assets/public-relation.png",
-		projects: [],
 		description: (<RelationClientSkill />),
 	},
 	{
@@ -104,7 +95,6 @@ export const humanSkillsList: TechnicalSkill[] = [
 		title: "Curiosité & apprentissage",
 		level: "Avancé",
 		picture: "/assets/curiosity.png",
-		projects: [],
 		description: (<CuriositySkill />),
 	},
 	{
@@ -112,7 +102,6 @@ export const humanSkillsList: TechnicalSkill[] = [
 		title: "Rigueur & organisation",
 		level: "Intermédiaire",
 		picture: "/assets/discipline.png",
-		projects: [],
 		description: (<OrganisationSkill />),
 	},
 ];

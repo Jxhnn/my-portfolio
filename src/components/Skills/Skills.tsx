@@ -1,8 +1,8 @@
 
 import { Accordion, Button, Card, Group, Text, Image, Badge, Title, Paper, SimpleGrid } from "@mantine/core"
-import { humanSkillsChartData, humanSkillsList, technicalSkillsChartData, technicalSkillsList } from "../constants/skillsList";
+import { humanSkillsChartData, humanSkillsList, technicalSkillsChartData, technicalSkillsList } from "../../constants/skillsList";
 import classes from './Skills.module.css';
-import type TechnicalSkill from "../interfaces/TechnicalSkill";
+import type Skill from "../../interfaces/Skill";
 import { RadarChart } from '@mantine/charts';
 import { useNavigate } from "react-router";
 
@@ -10,7 +10,7 @@ const Skills: React.FC = () => {
 
 	const navigate = useNavigate();
 
-	const generateSkillCards = (skills: TechnicalSkill[]) => skills.map((skill, idx) => (
+	const generateSkillCards = (skills: Skill[]) => skills.map((skill, idx) => (
 		<Card key={idx} shadow="sm" padding="lg" radius="md" withBorder>
 			<Card.Section>
 				<Image

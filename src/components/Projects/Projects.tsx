@@ -2,7 +2,7 @@
 import { Badge, Button, Card, Group, Image } from "@mantine/core"
 import { type ReactNode } from "react";
 import classes from './Projects.module.css';
-import { projectsList } from "../constants/projectsList";
+import { projectsList } from "../../constants/projectsList";
 import { useNavigate } from "react-router";
 
 const Projects: React.FC = () => {

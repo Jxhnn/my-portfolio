@@ -1,21 +1,22 @@
 import '@mantine/core/styles.css';
 import '@mantine/charts/styles.css';
+import '@mantine/carousel/styles.css';
 import { AppShell, Avatar, Burger, FloatingIndicator, Group, MantineProvider, Stack, UnstyledButton, Text, Menu, Divider } from '@mantine/core'
 import classes from './App.module.css';
 import { useDisclosure } from '@mantine/hooks';
 import { Route, Routes, NavLink, useLocation, useNavigate } from 'react-router';
 import Home from './Home';
 import { useEffect, useState } from 'react';
-import Contact from './Contact/Contact';
-import Skills from './Skills/Skills';
-import Projects from './Projects/Projects';
+import Contact from './components/Contact/Contact';
+import Skills from './components/Skills/Skills';
+import Projects from './components/Projects/Projects';
 import About from './About/About';
 import menuLinks from './constants/menuLinks';
-import SkillDetailPage from './SkillDetailPage/SkillDetailPage';
+import SkillDetailPage from './components/SkillDetailPage/SkillDetailPage';
 import { IconChevronDown } from '@tabler/icons-react';
 import type MenuLink from './interfaces/MenuLink';
 import type MenuLinkSkill from './interfaces/MenuLinkSkill';
-import ProjectDetailsPage from './ProjectsDetails/ProjectDetails';
+import ProjectDetailsPage from './components/ProjectsDetails/ProjectDetails';
 import Parcours from './components/Parcours/Parcours';
 
 const App: React.FC = () => {

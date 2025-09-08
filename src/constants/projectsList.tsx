@@ -1,11 +1,11 @@
 
-import { Badge, List, Tooltip, Text, Title, Image, Stack, Group, Paper, Accordion, Blockquote, ThemeIcon, Anchor } from "@mantine/core";
+import { Tooltip } from "@mantine/core";
 import type Project from "../interfaces/Project";
-import { IconApi, IconAppWindow, IconAutomation, IconBellRinging, IconBook, IconBrandCss3, IconBrandJavascript, IconBrandLaravel, IconBrandReact, IconBuildingCommunity, IconBulb, IconCode, IconDatabase, IconDatabaseImport, IconDeviceMobile, IconGrowth, IconKey, IconLayoutDashboard, IconListCheck, IconLock, IconPalette, IconRefresh, IconRun, IconSettings, IconShieldLock, IconTargetArrow, IconThumbUp, IconUsersGroup } from "@tabler/icons-react";
-import SiteReservationProject from "../SiteReservationProject/SiteReservationProject";
+import SiteReservationProject from "../components/SiteReservationProject/SiteReservationProject";
 import ArmelTmsProject from "../components/ArmelTmsProject/ArmelTmsProject";
 import PhidiasProject from "../components/PhidiasProject/PhidiasProject";
 import SharepointProject from "../components/SharepointProject/SharepointProject";
+import PactHseProject from "../components/PactHseProject/PactHseProject";
 
 export const projectsList: Project[] = [
 	{
@@ -18,7 +18,6 @@ export const projectsList: Project[] = [
 				</Tooltip>
 			</div>
 		),
-		skills: [],
 		picture: 'assets/siteReservation.png',
 		year: 2021,
 		description: (<SiteReservationProject />)
@@ -28,7 +27,6 @@ export const projectsList: Project[] = [
 		title: (
 			<div>ARMEL TMS</div>
 		),
-		skills: [],
 		picture: 'assets/armel-tms.png',
 		year: 2023,
 		description: (<ArmelTmsProject />)
@@ -38,7 +36,6 @@ export const projectsList: Project[] = [
 		title: (
 			<div>Phidias 3</div>
 		),
-		skills: [],
 		picture: 'assets/logo-phidias.png',
 		year: 2023,
 		description: (<PhidiasProject />)
@@ -50,9 +47,19 @@ export const projectsList: Project[] = [
 				Développement sur SharePoint & Power Platform
 			</div>
 		),
-		skills: [],
 		picture: 'assets/sharepoint-icon.png',
 		year: 2023,
 		description: (<SharepointProject />)
+	},
+	{
+		id: 'pact-hse',
+		title: (
+			<div>
+				PACT HSE - Solution de gestion des risques
+			</div>
+		),
+		picture: 'assets/logos/pact-hse.png',
+		year: 2023,
+		description: (<PactHseProject />)
 	}
 ];

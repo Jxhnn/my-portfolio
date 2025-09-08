@@ -1,30 +1,59 @@
 
 
+import { Carousel } from "@mantine/carousel";
 import {
 	Stack, Paper, Group,
 	ThemeIcon, Title, Badge,
 	Accordion, List, Anchor,
-	Image, Text
+	Image, Text,
+	type ListStylesNames,
+	type CSSProperties
 } from "@mantine/core";
-import { 
-	IconRun, 
-	IconBulb, 
-	IconListCheck, 
-	IconUsers, 
-	IconGrowth, 
-	IconClock, 
-	IconEye 
+import {
+	IconRun,
+	IconBulb,
+	IconListCheck,
+	IconUsers,
+	IconGrowth,
+	IconClock,
+	IconEye
 } from "@tabler/icons-react";
 import { useNavigate } from "react-router";
 
 const ArmelTmsProject: React.FC = () => {
 
 	const navigate = useNavigate();
+	const listStyles: Partial<Record<ListStylesNames, CSSProperties>> = {
+		item: {
+			maxWidth: 'calc(100% - 24px)'
+		}
+	};
+
+	const pictures = [
+		'/assets/projects/armel-tms/1.png',
+		'/assets/projects/armel-tms/2.png',
+		'/assets/projects/armel-tms/3.png',
+		'/assets/projects/armel-tms/4.png',
+		'/assets/projects/armel-tms/5.png',
+	];
+
+	const slides = pictures.map((url) => (
+		<Carousel.Slide key={url}>
+			<Image 
+				src={url} 
+				fit="cover" 
+				alt="Aperçu de l'application ARMEL TMS"
+				h={'100%'}
+			/>
+		</Carousel.Slide>
+	));
 
 	return (
 		<Stack gap="xl">
 			<Paper withBorder shadow="md" p="xl" radius="md">
-				<Image src="/assets/armel-interface.png" height={220} radius="md" alt="Aperçu de l'application ARMEL TMS" mb="xl" />
+				<Carousel withIndicators mb="xl" styles={{ viewport: { borderRadius: 20 } }} emblaOptions={{ loop: true }}>
+					{slides}
+				</Carousel>
 				<Group justify="space-between" align="flex-start">
 					<Group align="center" gap="lg">
 						<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'green', to: 'teal' }}><IconRun size={32} /></ThemeIcon>
@@ -52,7 +81,7 @@ const ArmelTmsProject: React.FC = () => {
 						<Title order={4}>Mes étapes de réalisation</Title>
 					</Accordion.Control>
 					<Accordion.Panel>
-						<List spacing="sm" type="ordered">
+						<List spacing="sm" type="ordered" styles={listStyles}>
 							<List.Item><b>Développement du backend :</b> j'ai conçu et développé une API RESTful avec Laravel pour gérer les utilisateurs, les entreprises et les exercices.</List.Item>
 							<List.Item><b>Développement du frontend :</b> j'ai créé l'interface de l'application avec Framework7, en me concentrant sur une expérience utilisateur de type "native".</List.Item>
 							<List.Item><b>Sécurisation :</b> j'ai mis en place un système d'authentification basé sur les tokens JWT pour sécuriser les échanges entre l'application et l'API.</List.Item>
@@ -67,7 +96,7 @@ const ArmelTmsProject: React.FC = () => {
 					</Accordion.Control>
 					<Accordion.Panel>
 						<Text>Bien qu'étant un projet principalement individuel dans son développement, la phase de validation a été très collaborative. J'ai interagi avec :</Text>
-						<List spacing="xs" mt="sm">
+						<List spacing="xs" mt="sm" styles={listStyles}>
 							<List.Item>
 								<b>Mon chef de projet :</b> pour la définition des objectifs, les validations des choix techniques majeurs et le suivi global de l'avancement.
 							</List.Item>
@@ -100,7 +129,7 @@ const ArmelTmsProject: React.FC = () => {
 					</Accordion.Control>
 					<Accordion.Panel>
 						<Text>Avec le recul, le point principal d'amélioration de ce projet réside dans la stratégie de test :</Text>
-						<List spacing="xs" mt="sm">
+						<List spacing="xs" mt="sm" styles={listStyles}>
 							<List.Item>
 								<b>Absence de tests automatisés :</b> l'intégralité des tests a été réalisée manuellement, que ce soit par moi-même ou lors de la phase de test interne. Bien que cela ait permis de valider les fonctionnalités, ce n'est pas une approche robuste sur le long terme.
 							</List.Item>

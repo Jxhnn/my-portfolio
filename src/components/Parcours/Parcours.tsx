@@ -32,16 +32,29 @@ const Parcours = () => {
 					key={index}
 					bullet={item.type === 'experience' ? <IconBriefcase size={14} /> : <IconSchool size={14} />}
 					title={<Text fw={500}>{item.title}</Text>} // Titre en gras pour la lisibilité
-					onClick={() => openModal(item)}
+					onClick={(e) => {
+						if ((e.target as HTMLElement).closest('a')) {
+							return;
+						}
+						openModal(item);
+					}}
 					style={{ cursor: 'pointer' }}
 				>
 					<Text c="dimmed" size="xs">{item.period}</Text>
-					<Group gap="xs" mt={4}>
-						<Avatar src={item.company.logo} size={24} radius="xl" />
-						<Anchor component={item.company.link ? 'a' : 'span'} href={item.company.link} target="_blank" size="sm" underline={item.company.link ? 'hover' : 'never'}>
-							{item.company.name}
-						</Anchor>
-					</Group>
+					<Anchor
+						component={item.company.link ? 'a' : 'span'}
+						href={item.company.link}
+						target="_blank"
+						size="sm"
+					>
+						<Group gap="xs" mt={4}>
+							<Avatar src={item.company.logo} size={24} radius="xl" />
+							{/* On utilise un Text car on ne peut pas mettre une ancre dans une ancre */}
+							<Text component="span" inherit>
+								{item.company.name}
+							</Text>
+						</Group>
+					</Anchor>
 				</Timeline.Item>
 			))}
 		</Timeline>
@@ -50,15 +63,15 @@ const Parcours = () => {
 	return (
 		<Stack>
 			<Title order={1}>Mon parcours</Title>
-			<Text c="dimmed">Cliquez sur un élément pour afficher les détails.</Text>
+			<Text c="dimmed">Cliquez sur un élément pour afficher plus d'informations.</Text>
 
 			<Paper withBorder shadow="md" p="xl" radius="md" mt="md">
-				<Title order={2}>Expérience professionnelle</Title>
+				<Title order={2}>Expériences professionnelles</Title>
 				{renderTimeline(experiences)}
 			</Paper>
 
 			<Paper withBorder shadow="md" p="xl" radius="md" mt="md">
-				<Title order={2}>Formation</Title>
+				<Title order={2}>Formations</Title>
 				{renderTimeline(formations)}
 			</Paper>
 

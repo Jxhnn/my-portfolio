@@ -89,6 +89,7 @@ const LaravelSkill: React.FC = () => {
 				<Stack>
 					<Anchor onClick={() => navigate('/realisations/phidias')}>Projet Phidias3 (plateforme web)</Anchor>
 					<Anchor onClick={() => navigate('/realisations/armel-tms')}>Application mobile ARMEL TMS (API)</Anchor>
+					<Anchor onClick={() => navigate('/realisations/pact-hse')}>Projet PACT'HSE</Anchor>
 				</Stack>
 			</Paper>
 		</Stack>

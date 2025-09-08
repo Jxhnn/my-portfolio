@@ -3,7 +3,9 @@ import {
 	Stack, Paper, Group,
 	ThemeIcon, Title, Badge,
 	Accordion, List, Anchor,
-	Text, Image
+	Text, Image,
+	type ListStylesNames,
+	type CSSProperties
 } from "@mantine/core";
 import {
 	IconTargetArrow,
@@ -19,11 +21,16 @@ import { useNavigate } from "react-router";
 const SiteReservationProject: React.FC = () => {
 
 	const navigate = useNavigate();
+	const listStyles: Partial<Record<ListStylesNames, CSSProperties>> = {
+		item: {
+			maxWidth: 'calc(100% - 24px)'
+		}
+	};
 
 	return (
 		<Stack gap="xl">
 			<Paper withBorder shadow="md" p="xl" radius="md">
-				<Image src="/assets/siteReservation.png" height={220} radius="md" alt="Aperçu du site de réservation" mb="xl" />
+				<Image src="/assets/siteReservation.png" radius="md" alt="Aperçu du site de réservation" mb="xl" />
 				<Group justify="space-between" align="flex-start">
 					<Group align="center" gap="lg">
 						<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'blue', to: 'cyan' }}><IconTargetArrow size={32} /></ThemeIcon>
@@ -51,7 +58,7 @@ const SiteReservationProject: React.FC = () => {
 						<Title order={4}>Mes étapes de réalisation</Title>
 					</Accordion.Control>
 					<Accordion.Panel>
-						<List spacing="sm" type="ordered">
+						<List spacing="sm" type="ordered" styles={listStyles}>
 							<List.Item><b>Analyse du besoin :</b> j'ai commencé par des entretiens avec la direction pour définir les fonctionnalités clés.</List.Item>
 							<List.Item><b>Conception de la base de données :</b> j'ai modélisé et créé le schéma MySQL pour gérer les utilisateurs, les enfants, les plannings et les réservations.</List.Item>
 							<List.Item><b>Développement backend :</b> j'ai écrit toute la logique en PHP "vanilla" pour traiter les inscriptions, vérifier les places disponibles et interagir avec la base de données.</List.Item>
@@ -66,7 +73,7 @@ const SiteReservationProject: React.FC = () => {
 					</Accordion.Control>
 					<Accordion.Panel>
 						<Text>Ce projet n'était pas solitaire. J'ai interagi principalement avec :</Text>
-						<List spacing="xs" mt="sm">
+						<List spacing="xs" mt="sm" styles={listStyles}>
 							<List.Item><b>La directrice du centre :</b> mon interlocutrice principale pour définir le cahier des charges et valider les fonctionnalités lors de points hebdomadaires.</List.Item>
 							<List.Item><b>Quelques parents "testeurs" :</b> pour recueillir les premiers retours sur la simplicité d'utilisation de l'interface d'inscription.</List.Item>
 						</List>
@@ -95,7 +102,7 @@ const SiteReservationProject: React.FC = () => {
 					</Accordion.Control>
 					<Accordion.Panel>
 						<Text>Avec le recul et l'expérience que j'ai aujourd'hui, je ferais plusieurs choses différemment :</Text>
-						<List spacing="xs" mt="sm">
+						<List spacing="xs" mt="sm" styles={listStyles}>
 							<List.Item><b>Utiliser un framework :</b> j'utiliserais Laravel pour structurer le code backend. Le PHP "vanilla" était formateur mais n'est pas idéal pour la maintenabilité à long terme.</List.Item>
 							<List.Item><b>Conception de la BDD :</b> je concevrais un schéma de base de données plus flexible pour anticiper plus facilement des évolutions futures (ex: gestion de plusieurs centres).</List.Item>
 						</List>

@@ -1,9 +1,12 @@
 
+import { Carousel } from "@mantine/carousel";
 import {
 	Stack, Paper, Group,
 	ThemeIcon, Title, Badge,
 	Accordion, List, Anchor,
-	Image, Text
+	Image, Text,
+	type ListStylesNames,
+	type CSSProperties
 } from "@mantine/core";
 import {
 	IconBook,
@@ -19,11 +22,40 @@ import { useNavigate } from "react-router";
 const PhidiasProject: React.FC = () => {
 
 	const navigate = useNavigate();
+	const listStyles: Partial<Record<ListStylesNames, CSSProperties>> = {
+		item: {
+			maxWidth: 'calc(100% - 24px)'
+		}
+	};
+
+	const pictures = [
+		'/assets/projects/phidias/1.png',
+		'/assets/projects/phidias/2.png',
+		'/assets/projects/phidias/3.png',
+		'/assets/projects/phidias/4.png',
+		'/assets/projects/phidias/5.png',
+		'/assets/projects/phidias/6.png',
+		'/assets/projects/phidias/7.png',
+	];
+
+	const slides = pictures.map((url) => (
+		<Carousel.Slide key={url}>
+			<Image 
+				src={url} 
+				fit="contain" 
+				radius="md" 
+				alt="Aperçu de l'application ARMEL TMS"
+				h={"100%"}
+			/>
+		</Carousel.Slide>
+	));
 
 	return (
 		<Stack gap="xl">
 			<Paper withBorder shadow="md" p="xl" radius="md">
-				<Image src="/assets/phidias-sequence.png" height={220} radius="md" alt="Aperçu du projet Phidias3" mb="xl" />
+				<Carousel withIndicators mb="xl" styles={{ viewport: { borderRadius: 20 } }} emblaOptions={{ loop: true }}>
+					{slides}
+				</Carousel>
 				<Group justify="space-between" align="flex-start">
 					<Group align="center" gap="lg">
 						<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'orange', to: 'yellow' }}><IconBook size={32} /></ThemeIcon>
@@ -51,7 +83,7 @@ const PhidiasProject: React.FC = () => {
 						<Title order={4}>Mes étapes de réalisation</Title>
 					</Accordion.Control>
 					<Accordion.Panel>
-						<List spacing="sm" type="ordered">
+						<List spacing="sm" type="ordered" styles={listStyles}>
 							<List.Item><b>Migration des données :</b> j'ai analysé la structure des fichiers XML et écrit des scripts PHP pour extraire, nettoyer et insérer les données dans une nouvelle base de données MySQL. Ce fut un travail d'une semaine complète.</List.Item>
 							<List.Item><b>Développement backend :</b> j'ai construit la nouvelle application en utilisant le framework Laravel, en créant les modèles, les contrôleurs et les routes nécessaires pour gérer le contenu pédagogique.</List.Item>
 							<List.Item><b>Développement frontend :</b> j'ai intégré les premières maquettes avec le moteur de template Blade de Laravel et dynamisé certaines parties de l'interface, comme le lexique, avec des appels AJAX.</List.Item>
@@ -65,7 +97,7 @@ const PhidiasProject: React.FC = () => {
 					</Accordion.Control>
 					<Accordion.Panel>
 						<Text>Ce projet a nécessité une bonne coordination. J'ai interagi avec :</Text>
-						<List spacing="xs" mt="sm">
+						<List spacing="xs" mt="sm" styles={listStyles}>
 							<List.Item><b>Mon chef de projet :</b> pour le suivi régulier, la validation des choix techniques et la définition des priorités.</List.Item>
 							<List.Item><b>Le pôle multimédia d'Exelys :</b> j'ai collaboré avec eux pour recevoir la nouvelle charte graphique et m'assurer que mon intégration CSS était fidèle à leur design.</List.Item>
 						</List>
@@ -88,7 +120,7 @@ const PhidiasProject: React.FC = () => {
 						<Text>
 							Contrairement à un projet ponctuel, Phidias3 est une application vivante que j'ai eu l'occasion de suivre sur le long terme.
 						</Text>
-						<List spacing="xs" mt="sm">
+						<List spacing="xs" mt="sm" styles={listStyles}>
 							<List.Item>
 								<b>Utilisation continue :</b> la plateforme est aujourd'hui utilisée par les formateurs comme l'un des outils clés de leur catalogue pédagogique.
 							</List.Item>
@@ -107,7 +139,7 @@ const PhidiasProject: React.FC = () => {
 					</Accordion.Control>
 					<Accordion.Panel>
 						<Text>Étant mon premier grand projet, il y a bien sûr des points que j'améliorerais aujourd'hui :</Text>
-						<List spacing="xs" mt="sm">
+						<List spacing="xs" mt="sm" styles={listStyles}>
 							<List.Item><b>Découpage des tâches :</b> j'ai parfois sous-estimé la complexité de certaines fonctionnalités. J'ai appris depuis à mieux découper mon travail pour avoir une vision plus claire de l'avancement.</List.Item>
 							<List.Item><b>Tests automatisés :</b> comme pour ARMEL TMS, je n'avais pas mis en place de tests automatisés. J'aurais dû en ajouter pour sécuriser la logique métier et la migration des données.</List.Item>
 						</List>

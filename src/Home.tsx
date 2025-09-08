@@ -1,5 +1,5 @@
 
-import Profil from "./Profil/Profil";
+import Profil from "./components/Profil/Profil";
 
 const Home: React.FC = () => {
 

@@ -94,6 +94,7 @@ const SQLSkill: React.FC = () => {
 					<Anchor onClick={() => navigate('/realisations/phidias')}>Projet Phidias3</Anchor>
 					<Anchor onClick={() => navigate('/realisations/armel-tms')}>Application Mobile ARMEL TMS</Anchor>
 					<Anchor onClick={() => navigate('/realisations/site-reservation-acm')}>Site de réservation pour un centre de loisirs</Anchor>
+					<Anchor onClick={() => navigate('/realisations/pact-hse')}>Projet PACT'HSE</Anchor>
 				</Stack>
 			</Paper>
 		</Stack>

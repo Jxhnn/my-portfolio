@@ -3,7 +3,9 @@ import {
 	Stack, Paper, Group,
 	ThemeIcon, Title, Badge,
 	Accordion, List, Anchor,
-	Image, Text
+	Text,
+	type ListStylesNames,
+	type CSSProperties
 } from "@mantine/core";
 import {
 	IconBuildingCommunity,
@@ -18,11 +20,15 @@ import { useNavigate } from "react-router";
 
 const SharepointProject: React.FC = () => {
 	const navigate = useNavigate();
+	const listStyles: Partial<Record<ListStylesNames, CSSProperties>> = {
+		item: {
+			maxWidth: 'calc(100% - 24px)'
+		}
+	};
 
 	return (
 		<Stack gap="xl">
 			<Paper withBorder shadow="md" p="xl" radius="md">
-				<Image src="/assets/sharepoint-project.png" height={220} radius="md" alt="Illustration de l'écosystème Microsoft 365" mb="xl" />
 				<Group justify="space-between" align="flex-start">
 					<Group align="center" gap="lg">
 						<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'blue', to: 'teal' }}><IconBuildingCommunity size={32} /></ThemeIcon>
@@ -50,7 +56,7 @@ const SharepointProject: React.FC = () => {
 						<Title order={4}>Mes étapes de réalisation (missions types)</Title>
 					</Accordion.Control>
 					<Accordion.Panel>
-						<List spacing="sm" type="ordered">
+						<List spacing="sm" type="ordered" styles={listStyles}>
 							<List.Item><b>Développement de Web Parts React (SPFx) :</b> j'ai créé des composants sur mesure connectés aux listes SharePoint via les API REST et Microsoft Graph pour afficher des données dynamiques.</List.Item>
 							<List.Item><b>Personnalisation des formulaires :</b> j'ai utilisé Power Apps pour améliorer les formulaires de saisie des listes SharePoint, en ajoutant de la logique conditionnelle pour une expérience plus intuitive.</List.Item>
 							<List.Item><b>Automatisation des processus :</b> j'ai mis en place des flux de travail avec Power Automate pour automatiser des tâches comme les notifications par email ou la manipulation de listes SharePoint automatisée pour la sécurité.</List.Item>
@@ -64,7 +70,7 @@ const SharepointProject: React.FC = () => {
 					</Accordion.Control>
 					<Accordion.Panel>
 						<Text>Mon travail s'est inscrit dans un cadre collaboratif avec :</Text>
-						<List spacing="xs" mt="sm">
+						<List spacing="xs" mt="sm" styles={listStyles}>
 							<List.Item><b>Les chefs de projet et consultants fonctionnels :</b> pour traduire les besoins métiers en spécifications techniques.</List.Item>
 							<List.Item><b>Les équipes clientes (RH, communication...) :</b> lors des ateliers de recueil du besoin et des démonstrations pour m'assurer que la solution correspondait à leurs attentes.</List.Item>
 							<List.Item><b>Les autres développeurs de l'équipe :</b> pour la coordination sur les développements communs.</List.Item>
@@ -94,7 +100,7 @@ const SharepointProject: React.FC = () => {
 					</Accordion.Control>
 					<Accordion.Panel>
 						<Text>Travailler dans l'écosystème Microsoft 365 est très formateur mais présente des défis :</Text>
-						<List spacing="xs" mt="sm">
+						<List spacing="xs" mt="sm" styles={listStyles}>
 							<List.Item><b>La courbe d'apprentissage :</b> l'environnement SPFx est assez lourd à mettre en place et le déploiement peut être complexe par rapport à un projet web classique.</List.Item>
 							<List.Item><b>Les limites de la plateforme :</b> on doit parfois composer avec les contraintes imposées par SharePoint. Cela m'a appris à être créatif pour trouver des solutions tout en respectant le cadre technique.</List.Item>
 						</List>

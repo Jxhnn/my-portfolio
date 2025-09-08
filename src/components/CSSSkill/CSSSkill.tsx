@@ -93,6 +93,7 @@ const CSSSkill: React.FC = () => {
 					<Anchor onClick={() => navigate('/realisations/sharepoint-custom')}>Expérience SharePoint & Power Platform (SPFx)</Anchor>
 					<Anchor onClick={() => navigate('/realisations/phidias')}>Projet Phidias3</Anchor>
 					<Anchor onClick={() => navigate('/realisations/armel-tms')}>Application Mobile ARMEL TMS</Anchor>
+					<Anchor onClick={() => navigate('/realisations/pact-hse')}>Projet PACT'HSE</Anchor>
 				</Stack>
 			</Paper>
 		</Stack>

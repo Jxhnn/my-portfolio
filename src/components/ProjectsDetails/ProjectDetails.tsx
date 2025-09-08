@@ -1,7 +1,7 @@
 
 import { useParams } from 'react-router';
 import { Container, Title, Text } from '@mantine/core';
-import { projectsList } from '../constants/projectsList';
+import { projectsList } from '../../constants/projectsList';
 
 const ProjectDetailsPage = () => {
   
@@ -10,7 +10,7 @@ const ProjectDetailsPage = () => {
 
   if (!project) {
     return (
-      <Container>
+      <Container size={"xl"}>
         <Title order={2}>Compétence non trouvée</Title>
         <Text>Désolé, la compétence que vous cherchez n'existe pas.</Text>
       </Container>
@@ -18,7 +18,7 @@ const ProjectDetailsPage = () => {
   }
 
   return (
-    <Container size="md">
+    <Container size="xl">
       {project.description}
     </Container>
   );
