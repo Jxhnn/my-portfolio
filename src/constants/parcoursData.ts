@@ -8,7 +8,7 @@ export const parcoursList: ParcoursItem[] = [
 		title: 'Développeur web en alternance',
 		company: {
 			name: 'Exelys - Digital partner',
-			logo: '/assets/logos/exelys.jpg',
+			logo: 'assets/logos/exelys.jpg',
 			link: 'https://www.exelys.net/'
 		},
 		details: {
@@ -44,7 +44,7 @@ export const parcoursList: ParcoursItem[] = [
 		title: 'Stage en développement informatique',
 		company: {
 			name: 'Centre de loisirs d\'Artigueloutan',
-			logo: '/assets/logos/lespep64.jpg',
+			logo: 'assets/logos/lespep64.jpg',
 			link: 'https://www.pep64.org/'
 		},
 		details: {
@@ -72,7 +72,7 @@ export const parcoursList: ParcoursItem[] = [
 		title: 'Stage de maintenance d\'infrastructure',
 		company: { 
 			name: 'GFI Informatique, Pau', 
-			logo: '/assets/logos/gfi.jpeg',
+			logo: 'assets/logos/gfi.jpeg',
 			link: 'https://www.inetum.com/fr'
 		},
 		details: {
@@ -88,7 +88,7 @@ export const parcoursList: ParcoursItem[] = [
 		title: 'Stage de développement informatique',
 		company: { 
 			name: 'SDIS64, Pau', 
-			logo: '/assets/logos/sdis64.png',
+			logo: 'assets/logos/sdis64.png',
 			link: 'https://www.sdis64.fr/'
 		},
 		details: {
@@ -104,7 +104,7 @@ export const parcoursList: ParcoursItem[] = [
 		title: 'Stage de réparation d\'ordinateurs',
 		company: { 
 			name: 'IDV64, Assat', 
-			logo: '/assets/logos/idv64.png',
+			logo: 'assets/logos/idv64.png',
 			link: 'https://www.idv64.fr/'
 		},
 		details: {
@@ -120,7 +120,7 @@ export const parcoursList: ParcoursItem[] = [
 		title: 'Mastère expert en ingénierie logicielle',
 		company: {
 			name: 'ISCOD',
-			logo: '/assets/logos/iscod.jpg',
+			logo: 'assets/logos/iscod.jpg',
 			link: 'https://www.iscod.fr/',
 		},
 		details: {
@@ -141,7 +141,7 @@ export const parcoursList: ParcoursItem[] = [
 		title: 'Licence professionnelle DAWIN',
 		company: {
 			name: 'IUT de Bordeaux, Gradignan',
-			logo: '/assets/logos/iut-bordeaux.jpg',
+			logo: 'assets/logos/iut-bordeaux.jpg',
 			link: 'https://www.iut.u-bordeaux.fr/info/',
 		},
 		details: {
@@ -161,7 +161,7 @@ export const parcoursList: ParcoursItem[] = [
 		title: 'BTS SIO - Option SLAM',
 		company: {
 			name: 'Lycée Saint John Perse, Pau',
-			logo: '/assets/logos/sjp.jpeg',
+			logo: 'assets/logos/sjp.jpeg',
 			link: 'https://www.lycee-saint-john-perse.fr/',
 		},
 		details: {
@@ -179,7 +179,7 @@ export const parcoursList: ParcoursItem[] = [
 		type: 'formation',
 		period: '2017 - 2020',
 		title: 'Baccalauréat pro. Systèmes Numériques (option RISC) (mention bien)',
-		company: { name: 'Lycée Saint Cricq, Pau', logo: '/assets/logos/saint-cricq.png', link: 'https://www.lycee-saint-cricq.org/' },
+		company: { name: 'Lycée Saint Cricq, Pau', logo: 'assets/logos/saint-cricq.png', link: 'https://www.lycee-saint-cricq.org/' },
 		details: {
 			status: 'lycéen',
 			missions: ["Administration des systèmes et des réseaux.", "Bases de la programmation et de l'électronique."],

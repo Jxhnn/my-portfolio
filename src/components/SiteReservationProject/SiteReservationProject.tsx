@@ -30,7 +30,7 @@ const SiteReservationProject: React.FC = () => {
 	return (
 		<Stack gap="xl">
 			<Paper withBorder shadow="md" p="xl" radius="md">
-				<Image src="/assets/siteReservation.png" radius="md" alt="Aperçu du site de réservation" mb="xl" />
+				<Image src="assets/siteReservation.png" radius="md" alt="Aperçu du site de réservation" mb="xl" />
 				<Group justify="space-between" align="flex-start">
 					<Group align="center" gap="lg">
 						<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'blue', to: 'cyan' }}><IconTargetArrow size={32} /></ThemeIcon>

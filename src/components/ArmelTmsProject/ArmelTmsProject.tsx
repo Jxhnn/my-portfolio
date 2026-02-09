@@ -30,11 +30,11 @@ const ArmelTmsProject: React.FC = () => {
 	};
 
 	const pictures = [
-		'/assets/projects/armel-tms/1.png',
-		'/assets/projects/armel-tms/2.png',
-		'/assets/projects/armel-tms/3.png',
-		'/assets/projects/armel-tms/4.png',
-		'/assets/projects/armel-tms/5.png',
+		'assets/projects/armel-tms/1.png',
+		'assets/projects/armel-tms/2.png',
+		'assets/projects/armel-tms/3.png',
+		'assets/projects/armel-tms/4.png',
+		'assets/projects/armel-tms/5.png',
 	];
 
 	const slides = pictures.map((url) => (

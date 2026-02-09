@@ -29,11 +29,11 @@ const PactHseProject: React.FC = () => {
 	};
 
 	const pictures = [
-		'/assets/projects/pact-hse/1.png',
-		'/assets/projects/pact-hse/2.png',
-		'/assets/projects/pact-hse/3.png',
-		'/assets/projects/pact-hse/4.png',
-		'/assets/projects/pact-hse/5.png',
+		'assets/projects/pact-hse/1.png',
+		'assets/projects/pact-hse/2.png',
+		'assets/projects/pact-hse/3.png',
+		'assets/projects/pact-hse/4.png',
+		'assets/projects/pact-hse/5.png',
 	];
 
 	const slides = pictures.map((url) => (

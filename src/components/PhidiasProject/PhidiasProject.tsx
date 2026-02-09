@@ -29,13 +29,13 @@ const PhidiasProject: React.FC = () => {
 	};
 
 	const pictures = [
-		'/assets/projects/phidias/1.png',
-		'/assets/projects/phidias/2.png',
-		'/assets/projects/phidias/3.png',
-		'/assets/projects/phidias/4.png',
-		'/assets/projects/phidias/5.png',
-		'/assets/projects/phidias/6.png',
-		'/assets/projects/phidias/7.png',
+		'assets/projects/phidias/1.png',
+		'assets/projects/phidias/2.png',
+		'assets/projects/phidias/3.png',
+		'assets/projects/phidias/4.png',
+		'assets/projects/phidias/5.png',
+		'assets/projects/phidias/6.png',
+		'assets/projects/phidias/7.png',
 	];
 
 	const slides = pictures.map((url) => (
