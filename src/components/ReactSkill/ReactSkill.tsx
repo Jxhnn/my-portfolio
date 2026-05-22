@@ -1,91 +1,109 @@
 import {
 	Group, Paper, Stack,
 	ThemeIcon, Title, Text,
-	Accordion, Blockquote, Anchor,
+	Anchor, Blockquote
 } from "@mantine/core";
 import {
 	IconBrandReact,
-	IconBuildingCommunity,
 	IconBulb,
-	IconTarget,
-	IconTrendingUp
+	IconTrendingUp,
+	IconLink
 } from "@tabler/icons-react";
 import { useNavigate } from "react-router";
 
 const ReactSkill: React.FC = () => {
-
-
 	const navigate = useNavigate();
 
 	return (
-		<Stack gap="xl">
+		<Stack gap="xl" maw={900} mx="auto">
 			<Paper shadow="md" p="xl" radius="md" withBorder>
 				<Group align="center" mb="lg">
 					<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'cyan', to: 'blue' }}><IconBrandReact size={32} /></ThemeIcon>
 					<Title order={2}>Compétence : React</Title>
 				</Group>
-				<Text size="lg" ta="justify">
-					React est aujourd'hui la bibliothèque JavaScript de référence pour construire des interfaces utilisateur. Dans un <b>contexte professionnel</b> où l'expérience utilisateur est devenue un facteur clé de succès, sa popularité s'explique par son approche déclarative et son écosystème riche. <b>Son actualité</b> est marquée par une maintenance constante par Meta et une communauté mondiale qui garantissent son évolution et sa pérennité.
+				<Text size="lg" ta="justify" c="dimmed">
+					Fiche d'évaluation détaillée de la compétence de développement d'interfaces web réactives et modulaires.
 				</Text>
 			</Paper>
 
-			<Accordion variant="separated" defaultValue="proof">
-				<Accordion.Item value="proof">
-					<Accordion.Control icon={<IconTarget size={20} />}>
-						<Title order={4}>Mes éléments de preuve</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Blockquote cite="– Développement de Web Parts SharePoint (SPFx)">
-							Lors de mes interventions sur des intranets SharePoint, le besoin était de créer des composants interactifs qui dépassaient les limites des outils standards.
-							<br /><br />
-							<b>La compétence a été mise en œuvre</b> en développant des "Web Parts" entièrement avec React et TypeScript dans le cadre du SharePoint Framework (SPFx). J'ai utilisé les hooks pour gérer l'état des composants et interagir avec les API de SharePoint afin de récupérer et d'afficher des données de listes de manière dynamique.
-							<br /><br />
-							<b>Ma valeur ajoutée a été de proposer des interfaces modernes et réactives directement intégrées dans l'écosystème Microsoft 365,</b> résolvant ainsi le problème des intranets vieillissants et peu engageants.
-						</Blockquote>
-						<Anchor onClick={() => navigate("/realisations/sharepoint-custom")} mt="sm" fz="sm">
-							Voir l'expérience SharePoint & Power Platform
-						</Anchor>
-					</Accordion.Panel>
-				</Accordion.Item>
-				<Accordion.Item value="autocritique">
-					<Accordion.Control icon={<IconBulb size={20} />}>
-						<Title order={4}>Mon autocritique</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Text>
-							<b>Niveau de maîtrise : intermédiaire.</b> Je suis très à l'aise avec les concepts fondamentaux de React et leur application dans un cadre d'entreprise exigeant comme SharePoint. C'est la <b>compétence prioritaire</b> de mon profil de développeur, celle sur laquelle je construis mon expertise frontend.
-						</Text>
-						<Text mt="sm">
-							Ma <b>vitesse d'acquisition</b> a été rapide, car j'ai directement appris React en l'appliquant sur des projets concrets pour des clients, ce qui est très formateur.
-						</Text>
-						<Text mt="sm">
-							<b>Mon conseil (et mon recul) :</b> Le plus grand piège avec React est de se perdre dans son immense écosystème. Mon approche est de d'abord maîtriser parfaitement les bases de React lui-même avant d'intégrer des bibliothèques de state management complexes ou des frameworks comme Next.js.
-						</Text>
-					</Accordion.Panel>
-				</Accordion.Item>
-				<Accordion.Item value="evolution">
-					<Accordion.Control icon={<IconTrendingUp size={20} />}>
-						<Title order={4}>Mon évolution</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Text>
-							Dans mon <b>projet professionnel</b>, devenir expert en React est non-négociable. L'objectif à moyen terme est de passer d'un niveau "Intermédiaire" à "Avancé", en étant capable de concevoir des architectures complexes et d'optimiser les performances d'applications à grande échelle.
-						</Text>
-						<Text mt="sm">
-							<b>Formations à venir :</b> Je suis actuellement en auto-formation sur <b>Next.js</b> pour maîtriser le rendu côté serveur (SSR) et la génération de sites statiques (SSG). Ma prochaine étape sera de me former en profondeur sur les stratégies de test d'applications React avec <b>Jest</b> et <b>React Testing Library</b>.
-						</Text>
-					</Accordion.Panel>
-				</Accordion.Item>
-			</Accordion>
-			<Paper shadow="xs" p="lg" radius="md">
-				<Title order={4} mb="sm">Réalisation associée à cette compétence</Title>
-				<Stack>
-					<Anchor onClick={() => navigate("/realisations/sharepoint-custom")}>
-						<Group>
-							<IconBuildingCommunity size={18} />
-							<Text>Expérience SharePoint & Power Platform (SPFx)</Text>
-						</Group>
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Title order={3} size="h4" mb="md">1. Ma définition de la compétence</Title>
+				<Text ta="justify" mb="sm">
+					Dans le génie logiciel moderne, <strong>React</strong> est bien plus qu'une simple bibliothèque d'affichage : c'est un paradigme de programmation 
+					déclaratif basé sur des composants réutilisables, autonomes et fortement typés. 
+					Maîtriser React dans un contexte professionnel consiste à savoir découper des maquettes d'interfaces complexes en structures logiques simples, 
+					à orchestrer la synchronisation d'états asynchrones et à optimiser le cycle de rendu pour garantir des performances d'affichage optimales.
+				</Text>
+				<Text ta="justify">
+					<strong>Rapport à l'actualité :</strong> l'écosystème React est actuellement marqué par l'adoption généralisée des 
+					&nbsp;<em>React Server Components (RSC)</em> et l'unification des environnements de rendu (SSR, SSG) 
+					au travers de frameworks comme Next.js, rendant la maîtrise des hooks de base 
+					(<code>useState</code>, <code>useEffect</code>, <code>useContext</code>) incontournable pour s'adapter à ces architectures modernes.
+				</Text>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Title order={3} size="h4" mb="md">2. Mes éléments de preuve sur le terrain</Title>
+				<Blockquote cite="– Conception de Web Parts SPFx sur mesure" py="xs" px="md" mb="md">
+					<Text ta="justify" mb="sm">
+						Lors de mes développements d'intranets chez Exelys, j'ai conçu des modules applicatifs interactifs complexes s'intégrant nativement dans 
+						l'environnement Microsoft 365 de nos clients. J'ai notamment développé une <strong>carte du monde interactive (World Map)</strong> 
+						&nbsp;affichant dynamiquement des fiches de projets d'énergies, ainsi que des <strong>organigrammes hiérarchiques récursifs</strong> 
+						&nbsp;connectés à Microsoft Graph.
+					</Text>
+					<Text ta="justify" mb="sm">
+						<strong>Mise en œuvre et valeur ajoutée :</strong> j'ai structuré ces composants en exploitant des <em>custom hooks React</em> personnalisés. 
+						Ces hooks abstraient l'ensemble de la logique de requêtage d'API (via <code>@pnp/sp</code> et <code>@pnp/graph</code>) et gèrent les états 
+						d'asynchronisme de manière étanche. Les composants de rendu restent ainsi purement présentiels, ce qui améliore drastiquement la lisibilité du code, 
+						facilite la maintenance et garantit une expérience utilisateur extrêmement fluide et réactive.
+					</Text>
+					<Anchor onClick={() => navigate("/realisations/sharepoint-custom")} size="sm" fw={600} display="inline-flex" style={{ alignItems: 'center', gap: 4 }}>
+						<IconLink size={16} /> Consulter la réalisation associée (SharePoint Framework)
 					</Anchor>
+				</Blockquote>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="cyan" variant="light"><IconBulb size={20} /></ThemeIcon>
+					<Title order={3} size="h4">3. Mon autocritique et recul</Title>
+				</Group>
+				<Text ta="justify" mb="sm">
+					<strong>Degré de maîtrise : intermédiaire.</strong> Je possède une solide maîtrise des concepts fondamentaux de React (flux de données unidirectionnels, 
+					hooks standards, cycles de rendu) appliqués à des projets d'entreprise réels. Cette compétence est aujourd'hui une <strong>priorité absolue</strong> dans 
+					mon profil d'expert, car elle représente le socle de mon savoir-faire en ingénierie frontend.
+				</Text>
+				<Text ta="justify" mb="sm">
+					Ma <strong>vitesse d'acquisition</strong> a été particulièrement soutenue car j'ai immédiatement été confronté à des exigences de production 
+					réelles pour des clients d'Exelys, m'obligeant à assimiler très vite les notions de typage strict avec TypeScript.
+				</Text>
+				<Text ta="justify">
+					<strong>Mon recul :</strong> le plus grand piège avec React est la sur-ingénierie et la dépendance abusive à des bibliothèques tierces. 
+					Mon conseil est de toujours exploiter au maximum l'état local et le contexte de base de React avant d'intégrer des gestionnaires d'état 
+					globaux complexes, garantissant ainsi un code plus léger et plus rapide à charger.
+				</Text>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="cyan" variant="light"><IconTrendingUp size={20} /></ThemeIcon>
+					<Title order={3} size="h4">4. Mon évolution et projet professionnel</Title>
+				</Group>
+				<Text ta="justify" mb="sm">
+					Dans le cadre de mon projet professionnel à moyen terme, mon objectif est d'évoluer d'un niveau intermédiaire à un niveau d'expert en 
+					ingénierie logicielle frontend, capable de concevoir et d'auditer des architectures complexes de SPA à grande échelle.
+				</Text>
+				<Text ta="justify">
+					<strong>Formations et perspectives :</strong> je mène actuellement une autoformation approfondie sur le framework <strong>Next.js</strong> 
+					&nbsp;afin de maîtriser les concepts avancés d'hydratation et d'optimisation de rendu côté serveur (SSR). Ma prochaine étape de formation 
+					se concentrera sur l'écriture de tests robustes d'intégration en utilisant la bibliothèque <strong>React Testing Library</strong> et <strong>Jest</strong>.
+				</Text>
+			</Paper>
+
+			<Paper shadow="xs" p="lg" radius="md" withBorder>
+				<Title order={4} mb="sm">5. Principales réalisations rattachées à cette compétence</Title>
+				<Stack gap="xs">
+					<Anchor onClick={() => navigate("/realisations/sharepoint-custom")} size="sm">• Développement sur SharePoint & Power Platform (SPFx)</Anchor>
 				</Stack>
 			</Paper>
 		</Stack>

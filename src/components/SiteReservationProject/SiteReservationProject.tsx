@@ -1,123 +1,154 @@
-
 import {
 	Stack, Paper, Group,
 	ThemeIcon, Title, Badge,
-	Accordion, List, Anchor,
-	Text, Image,
-	type ListStylesNames,
-	type CSSProperties
+	Anchor, Text, Image,
+	Blockquote
 } from "@mantine/core";
 import {
 	IconTargetArrow,
-	IconBulb,
-	IconListCheck,
+	IconInfoCircle,
+	IconDatabase,
+	IconLock,
 	IconUsers,
-	IconThumbUp,
-	IconClock,
-	IconEye
+	IconAlertTriangle
 } from "@tabler/icons-react";
 import { useNavigate } from "react-router";
 
 const SiteReservationProject: React.FC = () => {
-
 	const navigate = useNavigate();
-	const listStyles: Partial<Record<ListStylesNames, CSSProperties>> = {
-		item: {
-			maxWidth: 'calc(100% - 24px)'
-		}
-	};
 
 	return (
-		<Stack gap="xl">
+		<Stack gap="xl" mx="auto">
 			<Paper withBorder shadow="md" p="xl" radius="md">
 				<Image src="assets/siteReservation.png" radius="md" alt="Aperçu du site de réservation" mb="xl" />
 				<Group justify="space-between" align="flex-start">
 					<Group align="center" gap="lg">
 						<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'blue', to: 'cyan' }}><IconTargetArrow size={32} /></ThemeIcon>
 						<Stack gap={0}>
-							<Title order={2} c="blue.8">Plateforme de gestion pour centre de loisirs</Title>
-							<Text size="sm" c="dimmed">Développement d'une application web de réservation sur mesure.</Text>
+							<Title order={1} size="h2" c="blue.8">Plateforme de gestion pour centre de loisirs</Title>
+							<Text size="sm" c="dimmed">Étude de cas technique : numérisation d'un processus métier en PHP natif et MySQL.</Text>
 						</Stack>
 					</Group>
 					<Badge color="blue" size="lg" variant="light">Projet de Stage</Badge>
 				</Group>
 			</Paper>
-			<Accordion variant="separated" defaultValue="contexte">
-				<Accordion.Item value="contexte">
-					<Accordion.Control icon={<IconBulb size={20} />}>
-						<Title order={4}>Objectifs et contexte</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Text><b>Contexte :</b> le centre de loisirs d'Artigueloutan gérait toutes ses inscriptions via des échanges d'e-mails et des tableaux sur des feuilles, un processus long et source d'erreurs.</Text>
-						<Text mt="sm"><b>Objectif :</b> digitaliser et centraliser l'ensemble du processus de réservation via une application web intuitive pour les parents et un back-office performant pour les administrateurs.</Text>
-						<Text mt="sm"><b>Enjeu & risques :</b> l'enjeu principal était l'adoption de l'outil par les parents, peu habitués au numérique. Le risque était de créer une solution trop complexe qui aurait été rejetée.</Text>
-					</Accordion.Panel>
-				</Accordion.Item>
-				<Accordion.Item value="etapes">
-					<Accordion.Control icon={<IconListCheck size={20} />}>
-						<Title order={4}>Mes étapes de réalisation</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<List spacing="sm" type="ordered" styles={listStyles}>
-							<List.Item><b>Analyse du besoin :</b> j'ai commencé par des entretiens avec la direction pour définir les fonctionnalités clés.</List.Item>
-							<List.Item><b>Conception de la base de données :</b> j'ai modélisé et créé le schéma MySQL pour gérer les utilisateurs, les enfants, les plannings et les réservations.</List.Item>
-							<List.Item><b>Développement backend :</b> j'ai écrit toute la logique en PHP "vanilla" pour traiter les inscriptions, vérifier les places disponibles et interagir avec la base de données.</List.Item>
-							<List.Item><b>Développement frontend :</b> j'ai intégré l'interface en HTML/CSS/JavaScript avec Bootstrap pour la rendre responsive.</List.Item>
-							<List.Item><b>Déploiement et tests :</b> Une version bêta a été mis en place avec plusieurs parents de familles volontaires pour tester la plateforme.</List.Item>
-						</List>
-					</Accordion.Panel>
-				</Accordion.Item>
-				<Accordion.Item value="acteurs">
-					<Accordion.Control icon={<IconUsers size={20} />}>
-						<Title order={4}>Les acteurs et interactions</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Text>Ce projet n'était pas solitaire. J'ai interagi principalement avec :</Text>
-						<List spacing="xs" mt="sm" styles={listStyles}>
-							<List.Item><b>La directrice du centre :</b> mon interlocutrice principale pour définir le cahier des charges et valider les fonctionnalités lors de points hebdomadaires.</List.Item>
-							<List.Item><b>Quelques parents "testeurs" :</b> pour recueillir les premiers retours sur la simplicité d'utilisation de l'interface d'inscription.</List.Item>
-						</List>
-					</Accordion.Panel>
-				</Accordion.Item>
-				<Accordion.Item value="resultats">
-					<Accordion.Control icon={<IconThumbUp size={20} />}>
-						<Title order={4}>Résultats obtenus</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Text><b>Pour l'entreprise :</b> l'application a permis un gain de temps administratif considérable, une réduction de 100% des erreurs de surbooking et une image modernisée du service. <b>Plus de 100 familles l'ont utilisée.</b></Text>
-						<Text mt="sm"><b>Pour moi :</b> ce fut mon premier projet complet de A à Z. J'ai énormément appris sur la gestion de projet, la conception d'une base de données et l'importance de l'UX. C'est ce projet qui a confirmé ma passion pour le développement web.</Text>
-					</Accordion.Panel>
-				</Accordion.Item>
-				<Accordion.Item value="lendemains">
-					<Accordion.Control icon={<IconClock size={20} />}>
-						<Title order={4}>Les lendemains du projet</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Text>À la fin de mon stage, l'application était entièrement fonctionnelle. Elle a été <b>utilisée avec succès pendant plus d'un an</b> par le centre de loisirs. Aujourd'hui, bien que le site ayant été remplacé, ce projet reste une référence de réussite qui a prouvé l'intérêt de la digitalisation pour leur structure.</Text>
-					</Accordion.Panel>
-				</Accordion.Item>
-				<Accordion.Item value="critique">
-					<Accordion.Control icon={<IconEye size={20} />}>
-						<Title order={4}>Mon regard critique</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Text>Avec le recul et l'expérience que j'ai aujourd'hui, je ferais plusieurs choses différemment :</Text>
-						<List spacing="xs" mt="sm" styles={listStyles}>
-							<List.Item><b>Utiliser un framework :</b> j'utiliserais Laravel pour structurer le code backend. Le PHP "vanilla" était formateur mais n'est pas idéal pour la maintenabilité à long terme.</List.Item>
-							<List.Item><b>Conception de la BDD :</b> je concevrais un schéma de base de données plus flexible pour anticiper plus facilement des évolutions futures (ex: gestion de plusieurs centres).</List.Item>
-						</List>
-					</Accordion.Panel>
-				</Accordion.Item>
-			</Accordion>
-			<Paper shadow="xs" p="lg" radius="md">
-				<Title order={4} mb="sm">Compétences mises en œuvre</Title>
-				<Stack>
-					<Anchor onClick={() => navigate('/competences/php')}>PHP</Anchor>
-					<Anchor onClick={() => navigate("/competences/mysql")}>MySQL</Anchor>
-					<Anchor onClick={() => navigate("/competences/javascript")}>JavaScript</Anchor>
-					<Anchor onClick={() => navigate("/competences/html")}>HTML</Anchor>
-					<Anchor onClick={() => navigate("/competences/css")}>CSS</Anchor>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="blue" variant="light"><IconInfoCircle size={20} /></ThemeIcon>
+					<Title order={3}>1. Contexte, objectifs et problématique métier</Title>
+				</Group>
+				<Text ta="justify" mb="sm">
+					Lors de mon premier stage de BTS SIO au sein du centre de loisirs d'Artigueloutan, j'ai été confronté à une problématique administrative majeure. 
+					L'ensemble des inscriptions et des plannings de réservation des enfants était géré manuellement via des échanges d'e-mails, 
+					des fiches papier et des tableaux de suivi. Ce processus artisanal était extrêmement chronophage, générait des erreurs de saisie 
+					récurrentes et faisait peser un risque permanent de surbooking.
+				</Text>
+				<Text ta="justify">
+					L'objectif de ce stage était de concevoir, développer et déployer une application web sur mesure capable de centraliser les inscriptions des familles, 
+					de permettre aux parents de réserver des créneaux en ligne, et d'offrir aux administrateurs un back-office de pilotage en temps réel.
+				</Text>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="blue" variant="light"><IconDatabase size={20} /></ThemeIcon>
+					<Title order={3}>2. Modélisation de la base de données relationnelle</Title>
+				</Group>
+				<Text ta="justify" mb="sm">
+					Le point de départ technique de l'application a consisté à concevoir un modèle conceptuel de données (MCD) rigoureux sous MySQL. 
+					J'ai structuré les entités de manière à refléter fidèlement les règles de gestion de l'établissement :
+				</Text>
+				<Stack gap="sm" pl="md">
+					<Text ta="justify">
+						• <strong>Gestion des relations :</strong> modélisation des cardinalités entre les comptes parents (utilisateurs), les enfants à charge, 
+						et les fiches d'inscriptions aux périodes.
+					</Text>
+					<Text ta="justify">
+						• <strong>Contraintes d'intégrité :</strong> mise en place de clés primaires et de clés étrangères pour interdire la suppression accidentelle 
+						de données d'enfants liées à des réservations actives.
+					</Text>
+					<Text ta="justify">
+						• <strong>Contrôle des flux :</strong> structuration des tables de plannings hebdomadaires pour permettre au code applicatif de vérifier 
+						le nombre de places restantes par jour d'activité avant de valider une nouvelle transaction.
+					</Text>
 				</Stack>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="blue" variant="light"><IconLock size={20} /></ThemeIcon>
+					<Title order={3}>3. Rigueur de sécurité et développement backend (PHP)</Title>
+				</Group>
+				<Text ta="justify" mb="md">
+					Développer une plateforme d'inscription sans le support d'un framework moderne (comme Laravel) impose d'écrire et de maîtriser chaque brique de sécurité. 
+					J'ai apporté une rigueur absolue pour protéger les données personnelles des familles :
+				</Text>
+				<Stack gap="sm" pl="md" mb="md">
+					<Text ta="justify">
+						• <strong>Protection contre les injections SQL (PDO) :</strong> j'ai banni l'utilisation de requêtes brutes de mon code. 
+						J'ai utilisé exclusivement des requêtes SQL préparées à l'aide de l'extension de base de données <code>PDO</code> pour l'ensemble 
+						des opérations CRUD (écriture, lecture, modification).
+					</Text>
+					<Text ta="justify">
+						• <strong>Hachage cryptographique fort :</strong> pour la sécurité des mots de passe des parents, j'ai utilisé la fonction native 
+						de hachage <code>password_hash()</code> configurée avec l'algorithme robuste <em>bcrypt</em>. Lors de l'identification, la vérification s'opérait via
+						&nbsp;<code>password_verify()</code>.
+					</Text>
+					<Text ta="justify">
+						• <strong>Sécurisation des sessions face à la fixation :</strong> pour stocker l'état de connexion de l'utilisateur 
+						(via <code>$_SESSION</code>), j'ai configuré la gestion des sessions PHP standard.
+					</Text>
+				</Stack>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="blue" variant="light"><IconUsers size={20} /></ThemeIcon>
+					<Title order={3}>4. Collaboration, ergonomie utilisateur et résultats</Title>
+				</Group>
+				<Text ta="justify" mb="sm">
+					Mon interlocutrice privilégiée tout au long du stage était la directrice du centre de loisirs. Des points réguliers m'ont permis 
+					d'ajuster le fonctionnement de l'application à ses contraintes réelles sur le terrain. L'ergonomie frontend a été soignée avec l'utilisation de 
+					&nbsp;<strong>Bootstrap</strong> pour garantir un affichage fluide et responsive, facilitant l'accès au site depuis les smartphones des parents.
+				</Text>
+				<Text ta="justify">
+					Une phase de test a été menée auprès de plusieurs parents volontaires afin de valider la simplicité de l'interface de réservation. 
+					Le déploiement s'est avéré être un franc succès : <b>plus de 100 familles</b> ont utilisé la plateforme activement, 
+					ce qui a permis d'éliminer définitivement les erreurs de surbooking et de libérer du temps de secrétariat précieux pour la direction du centre.
+				</Text>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="orange" variant="light"><IconAlertTriangle size={20} /></ThemeIcon>
+					<Title order={3} c="orange.5">5. Analyse critique et apprentissages</Title>
+				</Group>
+				<Text ta="justify" mb="md">
+					Ce premier projet applicatif complet m'a fait réaliser l'importance des outils structurants et a orienté la suite de mon parcours de développeur :
+				</Text>
+				<Blockquote color="orange" radius="md" py="xs" px="md">
+					<strong>La transition nécessaire vers l'orienté objet et les frameworks :</strong> bien que le code procédural PHP natif ait été extrêmement 
+					formateur pour assimiler la mécanique fondamentale de la sécurité web (PDO, sessions, hachage), il montre rapidement ses limites en termes 
+					de maintenabilité et de scalabilité. Sur un projet plus complexe, la duplication de code et l'absence d'architecture structurée (comme le modèle MVC) 
+					rendent la maintenance laborieuse.
+				</Blockquote>
+				<Text ta="justify" mt="md">
+					Cette prise de conscience a été le moteur de mon apprentissage ultérieur de frameworks robustes tels que Laravel, conçus pour standardiser ces 
+					problématiques de sécurité et d'organisation du code.
+				</Text>
+			</Paper>
+
+			<Paper shadow="xs" p="lg" radius="md" withBorder>
+				<Title order={4} mb="sm">Compétences techniques & humaines mises en œuvre</Title>
+				<Group gap="xs">
+					<Anchor onClick={() => navigate('/competences/php')} size="sm" fw={500}>PHP</Anchor> •
+					<Anchor onClick={() => navigate("/competences/mysql")} size="sm" fw={500}>MySQL</Anchor> •
+					<Anchor onClick={() => navigate("/competences/javascript")} size="sm" fw={500}>JavaScript</Anchor> •
+					<Anchor onClick={() => navigate("/competences/html")} size="sm" fw={500}>HTML</Anchor> •
+					<Anchor onClick={() => navigate("/competences/css")} size="sm" fw={500}>CSS</Anchor> •
+					<Anchor onClick={() => navigate("/competences/autonomie")} size="sm" fw={500}>Autonomie & proactivité</Anchor>
+				</Group>
 			</Paper>
 		</Stack>
 	);

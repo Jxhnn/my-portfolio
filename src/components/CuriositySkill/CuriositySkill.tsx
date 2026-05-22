@@ -23,7 +23,7 @@ const CuriositySkill: React.FC = () => {
 					<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'teal', to: 'lime' }}>
 						<IconGrowth size={32} />
 					</ThemeIcon>
-					<Title order={2}>Compétence : Curiosité & Apprentissage</Title>
+					<Title order={2}>Compétence : curiosité & apprentissage</Title>
 				</Group>
 				<Text size="lg" ta="justify">
 					Dans le <b>contexte professionnel</b> de l'informatique, où les technologies évoluent à une vitesse fulgurante, la curiosité n'est pas une simple qualité, c'est une compétence de survie. Elle se traduit par une veille technologique active et une volonté constante d'apprendre pour ne pas devenir obsolète. <b>Son actualité</b> est plus pertinente que jamais avec l'émergence rapide de nouveaux frameworks et de l'IA.

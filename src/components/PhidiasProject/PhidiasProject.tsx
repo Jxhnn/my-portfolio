@@ -1,32 +1,23 @@
-
 import { Carousel } from "@mantine/carousel";
 import {
 	Stack, Paper, Group,
 	ThemeIcon, Title, Badge,
-	Accordion, List, Anchor,
-	Image, Text,
-	type ListStylesNames,
-	type CSSProperties
+	Anchor, Image, Text,
+	Blockquote
 } from "@mantine/core";
 import {
 	IconBook,
-	IconBulb,
-	IconListCheck,
+	IconInfoCircle,
+	IconDatabase,
 	IconUsers,
-	IconGrowth,
-	IconClock,
-	IconEye
+	IconRotate,
+	IconAlertTriangle,
+	IconClock
 } from "@tabler/icons-react";
 import { useNavigate } from "react-router";
 
 const PhidiasProject: React.FC = () => {
-
 	const navigate = useNavigate();
-	const listStyles: Partial<Record<ListStylesNames, CSSProperties>> = {
-		item: {
-			maxWidth: 'calc(100% - 24px)'
-		}
-	};
 
 	const pictures = [
 		'assets/projects/phidias/1.png',
@@ -40,18 +31,18 @@ const PhidiasProject: React.FC = () => {
 
 	const slides = pictures.map((url) => (
 		<Carousel.Slide key={url}>
-			<Image 
-				src={url} 
-				fit="contain" 
-				radius="md" 
-				alt="Aperçu de l'application ARMEL TMS"
+			<Image
+				src={url}
+				fit="contain"
+				radius="md"
+				alt="Aperçu de la plateforme Phidias 3"
 				h={"100%"}
 			/>
 		</Carousel.Slide>
 	));
 
 	return (
-		<Stack gap="xl">
+		<Stack gap="xl" mx="auto">
 			<Paper withBorder shadow="md" p="xl" radius="md">
 				<Carousel withIndicators mb="xl" styles={{ viewport: { borderRadius: 20 } }} emblaOptions={{ loop: true }}>
 					{slides}
@@ -60,102 +51,180 @@ const PhidiasProject: React.FC = () => {
 					<Group align="center" gap="lg">
 						<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'orange', to: 'yellow' }}><IconBook size={32} /></ThemeIcon>
 						<Stack gap={0}>
-							<Title order={2} c="orange.8">Plateforme pédagogique pour le BTP</Title>
-							<Text size="sm" c="dimmed">Refonte complète d'une application de formation.</Text>
+							<Title order={1} size="h2" c="orange.8">Phidias 3 : plateforme pédagogique pour le BTP</Title>
+							<Text size="sm" c="dimmed">Étude de cas technique : migration de données héritées et refonte applicative complète.</Text>
 						</Stack>
 					</Group>
 					<Badge color="orange" size="lg" variant="light">Refonte technique</Badge>
 				</Group>
 			</Paper>
-			<Accordion variant="separated" defaultValue="contexte">
-				<Accordion.Item value="contexte">
-					<Accordion.Control icon={<IconBulb size={20} />}>
-						<Title order={4}>Objectifs et contexte</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Text><b>Contexte :</b> Phidias3 était une plateforme de formation pour le BTP vieille de plus de 10 ans. Elle était devenue non maintenable et obsolète, ne fonctionnant que sur Internet Explorer.</Text>
-						<Text mt="sm"><b>Objectif :</b> réaliser une refonte technique et visuelle complète de l'application pour la rendre performante, sécurisée, compatible avec les navigateurs modernes et facile à mettre à jour.</Text>
-						<Text mt="sm"><b>Enjeu & risques :</b> l'enjeu majeur était de ne perdre aucune des données pédagogiques existantes. Le risque principal résidait dans la complexité de la migration des données depuis un format XML non structuré vers une base de données relationnelle propre.</Text>
-					</Accordion.Panel>
-				</Accordion.Item>
-				<Accordion.Item value="etapes">
-					<Accordion.Control icon={<IconListCheck size={20} />}>
-						<Title order={4}>Mes étapes de réalisation</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<List spacing="sm" type="ordered" styles={listStyles}>
-							<List.Item><b>Migration des données :</b> j'ai analysé la structure des fichiers XML et écrit des scripts PHP pour extraire, nettoyer et insérer les données dans une nouvelle base de données MySQL. Ce fut un travail d'une semaine complète.</List.Item>
-							<List.Item><b>Développement backend :</b> j'ai construit la nouvelle application en utilisant le framework Laravel, en créant les modèles, les contrôleurs et les routes nécessaires pour gérer le contenu pédagogique.</List.Item>
-							<List.Item><b>Développement frontend :</b> j'ai intégré les premières maquettes avec le moteur de template Blade de Laravel et dynamisé certaines parties de l'interface, comme le lexique, avec des appels AJAX.</List.Item>
-							<List.Item><b>Intégration de la charte graphique :</b> j'ai adapté l'ensemble du CSS de l'application pour correspondre à la nouvelle identité visuelle fournie par l'équipe multimédia.</List.Item>
-						</List>
-					</Accordion.Panel>
-				</Accordion.Item>
-				<Accordion.Item value="acteurs">
-					<Accordion.Control icon={<IconUsers size={20} />}>
-						<Title order={4}>Les acteurs et interactions</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Text>Ce projet a nécessité une bonne coordination. J'ai interagi avec :</Text>
-						<List spacing="xs" mt="sm" styles={listStyles}>
-							<List.Item><b>Mon chef de projet :</b> pour le suivi régulier, la validation des choix techniques et la définition des priorités.</List.Item>
-							<List.Item><b>Le pôle multimédia d'Exelys :</b> j'ai collaboré avec eux pour recevoir la nouvelle charte graphique et m'assurer que mon intégration CSS était fidèle à leur design.</List.Item>
-						</List>
-					</Accordion.Panel>
-				</Accordion.Item>
-				<Accordion.Item value="resultats">
-					<Accordion.Control icon={<IconGrowth size={20} />}>
-						<Title order={4}>Résultats obtenus</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Text><b>Pour l'entreprise :</b> la nouvelle plateforme est désormais stable, sécurisée et compatible avec tous les navigateurs modernes. La gestion du contenu est grandement simplifiée, permettant des mises à jour rapides.</Text>
-						<Text mt="sm"><b>Pour moi :</b> ce fut mon "projet-école" sur Laravel. J'ai découvert et maîtrisé un framework backend complet, géré un défi technique majeur avec la migration de données et appris à collaborer avec une équipe de designers. Ce projet a solidifié ma passion pour le développement backend.</Text>
-					</Accordion.Panel>
-				</Accordion.Item>
-				<Accordion.Item value="lendemains">
-					<Accordion.Control icon={<IconClock size={20} />}>
-						<Title order={4}>Les lendemains du projet</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Text>
-							Contrairement à un projet ponctuel, Phidias3 est une application vivante que j'ai eu l'occasion de suivre sur le long terme.
-						</Text>
-						<List spacing="xs" mt="sm" styles={listStyles}>
-							<List.Item>
-								<b>Utilisation continue :</b> la plateforme est aujourd'hui utilisée par les formateurs comme l'un des outils clés de leur catalogue pédagogique.
-							</List.Item>
-							<List.Item>
-								<b>Maintenance et évolution (TMA) :</b> j'assure toujours la Tierce Maintenance Applicative (TMA) sur le projet, ce qui implique de corriger les bugs, d'optimiser les performances et de développer de petites évolutions.
-							</List.Item>
-							<List.Item>
-								<b>Projet d'IA innovant :</b> actuellement, l'application est au cœur d'un projet de R&D passionnant où nous utilisons une IA pour analyser et améliorer l'ensemble du contenu pédagogique existant, ce qui prouve la pertinence et la pérennité de la refonte.
-							</List.Item>
-						</List>
-					</Accordion.Panel>
-				</Accordion.Item>
-				<Accordion.Item value="critique">
-					<Accordion.Control icon={<IconEye size={20} />}>
-						<Title order={4}>Mon regard critique</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Text>Étant mon premier grand projet, il y a bien sûr des points que j'améliorerais aujourd'hui :</Text>
-						<List spacing="xs" mt="sm" styles={listStyles}>
-							<List.Item><b>Découpage des tâches :</b> j'ai parfois sous-estimé la complexité de certaines fonctionnalités. J'ai appris depuis à mieux découper mon travail pour avoir une vision plus claire de l'avancement.</List.Item>
-							<List.Item><b>Tests automatisés :</b> comme pour ARMEL TMS, je n'avais pas mis en place de tests automatisés. J'aurais dû en ajouter pour sécuriser la logique métier et la migration des données.</List.Item>
-						</List>
-					</Accordion.Panel>
-				</Accordion.Item>
-			</Accordion>
-			<Paper shadow="xs" p="lg" radius="md">
-				<Title order={4} mb="sm">Compétences mises en œuvre</Title>
-				<Stack>
-					<Anchor onClick={() => navigate("/competences/laravel")}>Laravel</Anchor>
-					<Anchor onClick={() => navigate("/competences/mysql")}>MySQL</Anchor>
-					<Anchor onClick={() => navigate("/competences/javascript")}>JavaScript (AJAX)</Anchor>
-					<Anchor onClick={() => navigate("/competences/html")}>HTML</Anchor>
-					<Anchor onClick={() => navigate("/competences/css")}>CSS</Anchor>
-					<Anchor onClick={() => navigate("/competences/autonomie")}>Autonomie & proactivité</Anchor>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="orange" variant="light"><IconInfoCircle size={20} /></ThemeIcon>
+					<Title order={3}>1. Contexte, objectifs et contraintes de l'existant</Title>
+				</Group>
+				<Text ta="justify" mb="sm">
+					Le projet <strong>Phidias 3</strong> consistait en la refonte technique et ergonomique 
+					complète d'une plateforme de formation spécialisée dans les métiers du BTP. 
+					L'ancienne plateforme, vieille de plus d'une décennie, reposait sur des architectures 
+					obsolètes et restrictives qui contraignaient son utilisation à l'ancien navigateur 
+					Internet Explorer, bloquant de ce fait l'évolution du catalogue de cours des formateurs.
+				</Text>
+				<Text ta="justify">
+					L'enjeu technique majeur de ce projet résidait dans l'intégrité des données pédagogiques 
+					accumulées au fil des années. Il était impensable pour notre client de perdre ce patrimoine 
+					intellectuel. Le risque principal reposait sur la nature des fichiers d'origine : un ensemble 
+					complexe de documents XML non normalisés et confus, qu'il fallait extraire, restructurer et 
+					insérer proprement dans une base de données relationnelle moderne.
+				</Text>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="orange" variant="light"><IconDatabase size={20} /></ThemeIcon>
+					<Title order={3}>2. Gestion de la migration et refonte du schéma de données</Title>
+				</Group>
+				<Text ta="justify" mb="md">
+					Pour mener à bien cette migration délicate sans ressaisie manuelle, j'ai découpé mon 
+					intervention en plusieurs phases :
+				</Text>
+				<Stack gap="md" pl="md">
+					<Text ta="justify">
+						• <strong>Conception préalable et modélisation du schéma MySQL :</strong>
+						&nbsp;avant d'initier la moindre migration de données, j'ai procédé à la
+						modélisation complète du nouveau schéma relationnel sous MySQL. J'ai conçu
+						la structure de l'ensemble des tables (cours, chapitres, lexique, utilisateurs),
+						défini rigoureusement les clés primaires, configuré les clés étrangères pour
+						garantir l'intégrité référentielle de la plateforme, et planifié les index
+						nécessaires pour optimiser les performances des futures requêtes applicatives.
+					</Text>
+					<Text ta="justify">
+						• <strong>Scripts d'extraction et de génération SQL (Python) :</strong>
+						&nbsp;ce n'est qu'une fois la base de données cible figée et fonctionnelle
+						que j'ai écrit mes scripts d'automatisation en Python. Ces outils parseurs
+						ont analysé les fichiers XML d'origine pour en extraire le contenu et le formater.
+						Ils généraient ensuite des fichiers texte regroupant l'ensemble des requêtes SQL
+						d'insertion brute (<code>INSERT INTO</code>) nécessaires, construites par
+						concaténation et formatage de chaînes de caractères pour correspondre exactement
+						aux clés de notre nouvelle base MySQL.
+					</Text>
+					<Text ta="justify">
+						• <strong>Nettoyage et résolution des incohérences relationnelles :</strong>
+						&nbsp;cette méthode de travail m'a permis de confronter de manière sécurisée les
+						faiblesses de l'ancien format XML aux exigences strictes de notre nouveau schéma
+						relationnel. J'ai dû traiter de nombreuses données manquantes, des balises de cours
+						orphelines, ainsi que des liaisons cassées vers des images qui n'existaient qu'à
+						moitié dans l'ancien système de fichiers. Le script Python a permis de nettoyer et
+						d'adapter ces données avant leur insertion finale.
+					</Text>
 				</Stack>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="orange" variant="light"><IconRotate size={20} /></ThemeIcon>
+					<Title order={3}>3. Architecture MVC et dynamisation de l'interface utilisateur</Title>
+				</Group>
+				<Text ta="justify" mb="sm">
+					Le nouveau backend applicatif a été développé en utilisant l'architecture
+					&nbsp;<strong>Model-View-Controller (MVC)</strong> de Laravel. Ce choix m'a offert un
+					environnement de travail solide et unifié pour gérer à la fois la logique métier
+					des cours, la sécurité des accès et le routage des pages.
+				</Text>
+				<Text ta="justify" mb="md">
+					Pour l'interface utilisateur, j'ai intégré la charte graphique transmise par le
+					pôle multimédia en utilisant le moteur de template Blade de Laravel et du CSS structuré.
+					J'ai dynamisé l'expérience utilisateur en développant des appels asynchrones (AJAX)
+					basés sur l'API native <code>Fetch</code> en JavaScript natif. Cela permet notamment
+					de modifier instantanément des informations (comme le titre d'un lexique)
+					sans jamais subir de rechargement complet de la page.
+				</Text>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="orange" variant="light"><IconUsers size={20} /></ThemeIcon>
+					<Title order={3}>4. Travail collaboratif et boucle de validation</Title>
+				</Group>
+				<Text ta="justify" mb="sm">
+					La réussite de cette refonte reposait sur une collaboration étroite entre plusieurs pôles 
+					d'Exelys. J'ai travaillé de manière continue avec les graphistes et intégrateurs du pôle 
+					multimédia afin de m'assurer que mes intégrations de vues et de style respectaient 
+					rigoureusement les maquettes graphiques et l'identité visuelle moderne définies pour 
+					le client.
+				</Text>
+				<Text ta="justify">
+					Les points d'avancement hebdomadaires menés avec mon chef de projet ont permis de valider 
+					étape par étape les livraisons des modules (création des séquences, format du contenu, ...) 
+					et d'ajuster l'ordre de priorité des développements en fonction des contraintes de planning.
+				</Text>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="orange" variant="light"><IconClock size={20} /></ThemeIcon>
+					<Title order={3}>5. Les lendemains du projet : maintenance et R&D IA</Title>
+				</Group>
+				<Text ta="justify" mb="sm">
+					La livraison de Phidias 3 n'a pas signé la fin de mon implication sur ce projet. 
+					J'assure aujourd'hui le suivi technique régulier de la plateforme dans le 
+					cadre de sa Tierce Maintenance Applicative (TMA), en corrigeant les 
+					éventuelles anomalies en production et en développant des fonctionnalités 
+					d'optimisation mineures.
+				</Text>
+				<Text ta="justify">
+					De plus, la plateforme sert aujourd'hui de terrain d'expérimentation pour un 
+					projet de R&D innovant au sein d'Exelys. Nous travaillons sur l'intégration 
+					d'une intelligence artificielle basée sur une API (comme OpenAI ChatGPT, ou Google Gemini). 
+					Grâce à une architecture de recherche augmentée <strong>RAG 
+					(Retrieval Augmented Generation)</strong>, l'objectif est d'offrir aux formateurs
+					 un assistant virtuel d'aide à la conception de parcours d'apprentissage, 
+					 capable d'interagir intelligemment avec le catalogue de données pédagogiques 
+					 hébergées en base de données.
+				</Text>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="orange" variant="light"><IconAlertTriangle size={20} /></ThemeIcon>
+					<Title order={3} c="orange.5">6. Regard critique et apprentissages</Title>
+				</Group>
+				<Text ta="justify" mb="md">
+					Ce projet, qui a été ma première grande immersion professionnelle dans 
+					l'écosystème Laravel, m'a permis d'identifier deux axes d'amélioration 
+					personnelle majeurs :
+				</Text>
+				<Blockquote color="orange" radius="md" py="xs" px="md">
+					<strong>La gestion de l'estimation du développement full-stack avec Laravel :</strong>
+					&nbsp;s'agissant de ma première expérience d'envergure sur un framework 
+					complet, j'ai sous-estimé au départ la charge de travail globale induite 
+					par un développement full-stack (modélisation des structures relationnelles 
+					complexes avec Eloquent, gestion étanche des contrôleurs et du routage, 
+					et intégration minutieuse des vues via le moteur Blade). 
+					Cette sous-estimation globale a légèrement impacté la planification de 
+					livraison. J'ai appris depuis qu'un développement de cette ampleur 
+					nécessite un découpage de tâches extrêmement fin pour assurer des 
+					estimations réalistes.
+				</Blockquote>
+				<Text ta="justify" mt="md">
+					L'absence de tests automatisés lors de la migration des données pédagogiques 
+					a également représenté un facteur de stress technique, car chaque 
+					modification du code exigeait une validation manuelle. L'écriture de 
+					tests de validation d'intégrité de schéma SQL aurait été un atout précieux.
+				</Text>
+			</Paper>
+
+			<Paper shadow="xs" p="lg" radius="md" withBorder>
+				<Title order={4} mb="sm">Compétences techniques & humaines mises en œuvre</Title>
+				<Group gap="xs">
+					<Anchor onClick={() => navigate("/competences/laravel")} size="sm" fw={500}>Laravel</Anchor> •
+					<Anchor onClick={() => navigate("/competences/mysql")} size="sm" fw={500}>MySQL</Anchor> •
+					<Anchor onClick={() => navigate("/competences/javascript")} size="sm" fw={500}>JavaScript (AJAX)</Anchor> •
+					<Anchor onClick={() => navigate("/competences/html")} size="sm" fw={500}>HTML</Anchor> •
+					<Anchor onClick={() => navigate("/competences/css")} size="sm" fw={500}>CSS</Anchor> •
+					<Anchor onClick={() => navigate("/competences/autonomie")} size="sm" fw={500}>Autonomie & proactivité</Anchor>
+				</Group>
 			</Paper>
 		</Stack>
 	);

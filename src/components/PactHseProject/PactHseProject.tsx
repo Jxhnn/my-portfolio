@@ -1,32 +1,22 @@
-
 import { Carousel } from "@mantine/carousel";
 import {
 	Stack, Paper, Group,
 	ThemeIcon, Title, Badge,
-	Accordion, List, Anchor,
-	Text, Image,
-	type ListStylesNames,
-	type CSSProperties
+	Anchor, Text, Image,
+	SimpleGrid, Blockquote
 } from "@mantine/core";
 import {
 	IconShieldCheck,
-	IconBulb,
-	IconListCheck,
+	IconInfoCircle,
+	IconSettings,
+	IconDatabase,
 	IconUsers,
-	IconGrowth,
-	IconClock,
-	IconEye
+	IconAlertTriangle
 } from "@tabler/icons-react";
 import { useNavigate } from "react-router";
 
 const PactHseProject: React.FC = () => {
-
 	const navigate = useNavigate();
-	const listStyles: Partial<Record<ListStylesNames, CSSProperties>> = {
-		item: {
-			maxWidth: 'calc(100% - 24px)'
-		}
-	};
 
 	const pictures = [
 		'assets/projects/pact-hse/1.png',
@@ -36,20 +26,20 @@ const PactHseProject: React.FC = () => {
 		'assets/projects/pact-hse/5.png',
 	];
 
-	const slides = pictures.map((url) => (
+	const slides = pictures.map(url => (
 		<Carousel.Slide key={url}>
 			<Image
 				src={url}
 				fit="contain"
 				radius="md"
-				alt="Aperçu de l'application ARMEL TMS"
+				alt="Aperçu de l'application PACT HSE"
 				h={"100%"}
 			/>
 		</Carousel.Slide>
 	));
 
 	return (
-		<Stack gap="xl">
+		<Stack gap="xl" mx="auto">
 			<Paper withBorder shadow="md" p="xl" radius="md">
 				<Carousel withIndicators mb="xl" styles={{ viewport: { borderRadius: 20 } }} emblaOptions={{ loop: true }}>
 					{slides}
@@ -58,91 +48,139 @@ const PactHseProject: React.FC = () => {
 					<Group align="center" gap="lg">
 						<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'teal', to: 'cyan' }}><IconShieldCheck size={32} /></ThemeIcon>
 						<Stack gap={0}>
-							<Title order={2} c="teal.8">PACT HSE - Solution de gestion des risques</Title>
-							<Text size="sm" c="dimmed">Application web pour la gestion de la prévention et de la conformité HSE.</Text>
+							<Title order={1} size="h2" c="teal.8">PACT'HSE : gestion globale de la prévention des risques</Title>
+							<Text size="sm" c="dimmed">Étude de cas technique : plateforme web métier pour la conformité et la sécurité au travail.</Text>
 						</Stack>
 					</Group>
 					<Badge color="teal" size="lg" variant="light">Application métier</Badge>
 				</Group>
 			</Paper>
-			<Accordion variant="separated" defaultValue="contexte">
-				<Accordion.Item value="contexte">
-					<Accordion.Control icon={<IconBulb size={20} />}>
-						<Title order={4}>Objectifs et contexte</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Text><b>Contexte :</b> de nombreuses entreprises gèrent leurs obligations d'Hygiène, Sécurité et Environnement (HSE) avec des outils décentralisés (Excel, emails), ce qui est source d'inefficacité et de risques de non-conformité.</Text>
-						<Text mt="sm"><b>Objectif :</b> développer PACT HSE, une application web centralisée servant d' "assistant quotidien" pour piloter toutes les actions de prévention : évaluation des risques, remontée d'anomalies, et planification des contrôles.</Text>
-						<Text mt="sm"><b>Enjeu & risques :</b> l'enjeu était de créer un produit commercialisable, à la fois complet fonctionnellement et simple d'utilisation pour des non-informaticiens. Le risque était de créer une interface trop complexe qui découragerait l'adoption par les équipes sur le terrain.</Text>
-					</Accordion.Panel>
-				</Accordion.Item>
-				<Accordion.Item value="etapes">
-					<Accordion.Control icon={<IconListCheck size={20} />}>
-						<Title order={4}>Mes étapes de réalisation</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<List spacing="sm" type="ordered" styles={listStyles}>
-							<List.Item><b>Développement Full-Stack avec Laravel :</b> j'ai utilisé Laravel pour construire à la fois l'API RESTful et la logique du frontend, en gérant le routage et le rendu des vues HTML.</List.Item>
-							<List.Item><b>Intégration de l'interface :</b> j'ai intégré le design en HTML, CSS et JavaScript en m'appuyant sur un kit UI acheté sur Envato pour accélérer la production d'une interface professionnelle et cohérente.</List.Item>
-							<List.Item><b>Développement des modules clés :</b> j'ai développé les fonctionnalités principales vues dans la plaquette : le tableau de bord en temps réel, le module de suivi réglementaire, la gestion des fiches d'anomalies et le plan d'action unique.</List.Item>
-							<List.Item><b>Mise en place de la logique métier :</b> j'ai codé la logique complexe de planification automatique des inspections et de génération des indicateurs de conformité.</List.Item>
-						</List>
-					</Accordion.Panel>
-				</Accordion.Item>
-				<Accordion.Item value="acteurs">
-					<Accordion.Control icon={<IconUsers size={20} />}>
-						<Title order={4}>Les acteurs et interactions</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Text>Ce projet s'est déroulé en collaboration étroite avec :</Text>
-						<List spacing="xs" mt="sm" styles={listStyles}>
-							<List.Item><b>Le chef de projet :</b> pour définir les spécifications fonctionnelles de chaque module et prioriser les développements.</List.Item>
-							<List.Item>
-								<b>Les testeurs internes (employés de l'entreprise) :</b> j'ai participé activement à la phase de test. Mon rôle était de présenter les nouvelles fonctionnalités aux testeurs, de les guider dans leur utilisation et de centraliser leurs retours (bugs, suggestions) depuis le document partagé pour les transformer en tâches de développement.
-							</List.Item>
-						</List>
-					</Accordion.Panel>
-				</Accordion.Item>
-				<Accordion.Item value="resultats">
-					<Accordion.Control icon={<IconGrowth size={20} />}>
-						<Title order={4}>Résultats obtenus</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Text><b>Pour l'entreprise :</b> PACT HSE est devenu un nouveau produit stratégique au catalogue d'Exelys, positionnant l'entreprise comme un acteur de la digitalisation des processus HSE.</Text>
-						<Text mt="sm"><b>Pour moi :</b> ce projet a été une expérience full-stack très complète. J'ai pu construire une application métier complexe de A à Z, ce qui a solidifié ma maîtrise de Laravel et ma capacité à gérer un projet d'envergure de manière organisée.</Text>
-					</Accordion.Panel>
-				</Accordion.Item>
-				<Accordion.Item value="lendemains">
-					<Accordion.Control icon={<IconClock size={20} />}>
-						<Title order={4}>Les lendemains du projet</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Text>L'application est aujourd'hui une solution stable et commercialisée par Exelys. Elle est présentée aux clients potentiels comme une solution clé en main pour la gestion de leurs risques. Le projet continue de vivre à travers la maintenance et les futures évolutions basées sur les retours des premiers clients.</Text>
-					</Accordion.Panel>
-				</Accordion.Item>
-				<Accordion.Item value="critique">
-					<Accordion.Control icon={<IconEye size={20} />}>
-						<Title order={4}>Mon regard critique</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Text>L'utilisation d'un kit UI d'Envato a été un accélérateur, mais a présenté des défis :</Text>
-						<List spacing="xs" mt="sm" styles={listStyles}>
-							<List.Item><b>Manque de flexibilité :</b> il était parfois complexe de customiser un composant au-delà de ce que le kit prévoyait, ce qui pouvait ralentir le développement sur des besoins spécifiques.</List.Item>
-							<List.Item><b>Couplage fort :</b> le fait que le frontend (HTML/JS) et le backend (Laravel) soient dans le même projet monolithique rend l'application moins évolutive. Une approche avec une API Laravel et un frontend séparé (en React par exemple) serait plus moderne et plus facile à maintenir par des équipes distinctes.</List.Item>
-						</List>
-					</Accordion.Panel>
-				</Accordion.Item>
-			</Accordion>
-			<Paper shadow="xs" p="lg" radius="md">
-				<Title order={4} mb="sm">Compétences mises en œuvre</Title>
-				<Stack>
-					<Anchor onClick={() => navigate('/competences/laravel')}>Laravel</Anchor>
-					<Anchor onClick={() => navigate('/competences/mysql')}>MySQL</Anchor>
-					<Anchor onClick={() => navigate('/competences/javascript')}>JavaScript</Anchor>
-					<Anchor onClick={() => navigate('/competences/html')}>HTML</Anchor>
-					<Anchor onClick={() => navigate('/competences/css')}>CSS</Anchor>
-					<Anchor onClick={() => navigate('/competences/rigueur')}>Rigueur & organisation</Anchor>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="teal" variant="light"><IconInfoCircle size={20} /></ThemeIcon>
+					<Title order={3}>1. Contexte, objectifs et problématique industrielle</Title>
+				</Group>
+				<Text ta="justify" mb="sm">
+					La gestion de la sécurité, de l'hygiène et de l'environnement (HSE) au sein des moyennes et grandes entreprises repose trop souvent sur des 
+					outils hétérogènes et décentralisés (tableaux Excel partagés, carnets de notes, échanges d'e-mails). 
+					Ce manque de centralisation expose les structures à des failles de suivi réglementaire, à des lenteurs dans le traitement 
+					des anomalies et à des risques réels d'accidents du travail par défaut de prévention.
+				</Text>
+				<Text ta="justify">
+					Le projet <strong>PACT'HSE</strong> a été conçu comme une solution SaaS centralisée, agissant comme un "assistant quotidien" pour 
+					piloter les processus HSE : évaluation des risques professionnels, remontée d'anomalies sur le terrain et planification automatique 
+					des inspections périodiques.
+				</Text>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="teal" variant="light"><IconSettings size={20} /></ThemeIcon>
+					<Title order={3}>2. Architecture technique et intégration de l'interface</Title>
+				</Group>
+				<Text ta="justify" mb="sm">
+					Pour répondre aux objectifs de rapidité de développement d'un produit commercialisable, nous avons opté pour une architecture 
+					monolithique robuste sous <strong>Laravel</strong> :
+				</Text>
+				<Stack gap="sm" pl="md">
+					<Text ta="justify">
+						• <strong>Structure monolithe Laravel :</strong> l'ensemble de l'application (modélisation de données, contrôleurs de logique métier, 
+						routage et rendu des interfaces via Blade) est hébergé au sein du même projet, garantissant une cohérence globale forte et simplifiant 
+						les déploiements initiaux.
+					</Text>
+					<Text ta="justify">
+						• <strong>Kit UI Premium (Envato) :</strong> pour accélérer la production d'une interface d'envergure professionnelle et cohérente, 
+						j'ai intégré et adapté un kit UI acheté sur Envato. J'ai pris en charge son découpage en templates Blade réutilisables et sa dynamisation 
+						en JavaScript natif (manipulation du DOM, graphiques dynamiques).
+					</Text>
 				</Stack>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="teal" variant="light"><IconDatabase size={20} /></ThemeIcon>
+					<Title order={3}>3. Conception de la base de données et logique métier complexe</Title>
+				</Group>
+				<Text ta="justify" mb="md">
+					Mon travail full-stack a consisté à concevoir l'architecture de la base de données MySQL et à programmer l'ensemble de la logique applicative 
+					sous Laravel pour les modules fondamentaux de la plateforme :
+				</Text>
+				<SimpleGrid cols={{ base: 1, sm: 2 }} spacing="lg">
+					<Paper withBorder p="md" radius="md" bg="dark.8">
+						<Text fw={600} mb="xs">Tableau de bord de conformité</Text>
+						<Text size="sm" c="dimmed" ta="justify">
+							Création d'un dashboard en temps réel agrégeant les données des anomalies et des inspections pour calculer automatiquement les indicateurs 
+							de performance et de conformité réglementaire de l'entreprise.
+						</Text>
+					</Paper>
+					<Paper withBorder p="md" radius="md" bg="dark.8">
+						<Text fw={600} mb="xs">Plan d'action unique (PAU)</Text>
+						<Text size="sm" c="dimmed" ta="justify">
+							Développement d'un module centralisé de gestion des tâches correctives. Chaque anomalie validée génère une action assignée à un collaborateur, 
+							dotée d'une date d'échéance et d'un système de relance automatique.
+						</Text>
+					</Paper>
+					<Paper withBorder p="md" radius="md" bg="dark.8">
+						<Text fw={600} mb="xs">Fiches d'anomalies</Text>
+						<Text size="sm" c="dimmed" ta="justify">
+							Conception du workflow complet des fiches d'anomalies : déclaration simplifiée par l'opérateur de terrain, notification par e-mail au 
+							responsable HSE de zone, et suivi de la résolution avec téléversement de preuves visuelles.
+						</Text>
+					</Paper>
+					<Paper withBorder p="md" radius="md" bg="dark.8">
+						<Text fw={600} mb="xs">Planification des inspections</Text>
+						<Text size="sm" c="dimmed" ta="justify">
+							Algorithme complexe de planification récurrente des contrôles et audits sécurité, calculant automatiquement les prochaines dates 
+							d'inspection réglementaire de chaque équipement ou bâtiment.
+						</Text>
+					</Paper>
+				</SimpleGrid>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="teal" variant="light"><IconUsers size={20} /></ThemeIcon>
+					<Title order={3}>4. Méthodologie agile, collaboration et phase de tests</Title>
+				</Group>
+				<Text ta="justify" mb="sm">
+					Le développement s'est opéré sous la supervision de mon chef de projet, avec qui j'ai collaboré étroitement pour affiner les spécifications 
+					fonctionnelles de chaque écran de saisie. En fin de sprint, j'ai joué un rôle moteur dans l'organisation de la phase de bêta-test en interne. 
+				</Text>
+				<Text ta="justify">
+					J'ai présenté les fonctionnalités développées aux testeurs internes, recueilli leurs retours concernant d'éventuels cas d'usage non couverts 
+					ou bugs ergonomiques, et géré l'analyse et la transformation de leurs signalements en tâches de développement concrètes dans notre tableau 
+					de suivi de projet. Cette méthodologie a permis d'optimiser l'expérience utilisateur avant l'intégration du produit final au catalogue d'Exelys.
+				</Text>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="orange" variant="light"><IconAlertTriangle size={20} /></ThemeIcon>
+					<Title order={3} c="orange.5">5. Regard critique et opportunités d'amélioration</Title>
+				</Group>
+				<Text ta="justify" mb="md">
+					Avec le recul technique, la conception de PACT'HSE présente deux axes majeurs de réflexion :
+				</Text>
+				<Blockquote color="orange" radius="md" py="xs" px="md">
+					<strong>Le couplage fort du monolithe et les limites du kit UI :</strong> le choix d'intégrer un kit UI d'Envato a été un excellent accélérateur 
+					initial, mais a complexifié la personnalisation fine de composants spécifiques sortant du cadre pré-établi. De plus, la structure monolithique 
+					(Blade couplé à Laravel) limite l'évolutivité du produit. Pour un projet d'une telle envergure, concevoir une API RESTful Laravel asynchrone 
+					découplée d'un frontend moderne autonome (en React par exemple) aurait offert une meilleure modularité et facilité le travail collaboratif 
+					à l'échelle de l'équipe de développement.
+				</Blockquote>
+			</Paper>
+
+			<Paper shadow="xs" p="lg" radius="md" withBorder>
+				<Title order={4} mb="sm">Compétences techniques & humaines mises en œuvre</Title>
+				<Group gap="xs">
+					<Anchor onClick={() => navigate('/competences/laravel')} size="sm" fw={500}>Laravel</Anchor> •
+					<Anchor onClick={() => navigate('/competences/mysql')} size="sm" fw={500}>MySQL</Anchor> •
+					<Anchor onClick={() => navigate('/competences/javascript')} size="sm" fw={500}>JavaScript</Anchor> •
+					<Anchor onClick={() => navigate('/competences/html')} size="sm" fw={500}>HTML</Anchor> •
+					<Anchor onClick={() => navigate('/competences/css')} size="sm" fw={500}>CSS</Anchor> •
+					<Anchor onClick={() => navigate('/competences/rigueur')} size="sm" fw={500}>Rigueur & organisation</Anchor>
+				</Group>
 			</Paper>
 		</Stack>
 	);

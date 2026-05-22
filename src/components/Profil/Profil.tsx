@@ -1,27 +1,52 @@
-
-import { ActionIcon, Anchor, Group, Image, Space, Text, Title } from '@mantine/core';
+import { ActionIcon, Anchor, Group, Image, Space, Stack, Text, Title } from '@mantine/core';
 import classes from './Profil.module.css';
 import { IconBrandGithub, IconBrandInstagram, IconBrandLinkedin } from '@tabler/icons-react';
 
 const Profil: React.FC = () => {
-
-
 	return (
 		<div className={classes.container}>
 			<div className={classes.content}>
-				<Title >Mon profil</Title>
+				<Title>Mon profil</Title>
 				<Space h="xl" />
-				<Text ta={"justify"}>
-					Je m’appelle John THOMAS, et je fais des études actuellement en &nbsp;
-					<Anchor href="https://www.onisep.fr/ressources/univers-formation/formations/post-bac/expert-en-ingenierie-logicielle" target="_blank">mastère expert en ingenierie logicielle</Anchor>, 
-					précédemment en &nbsp;
-					<Anchor target="_blank" href="https://www.iut.u-bordeaux.fr/info/assets/ressources/20141030LPROIUTBXINFODAWINw.pdf">licence professionnelle DAWIN </Anchor>
-					(Développement en application web et innovation numérique)
-					Depuis 2018, je me suis spécifié dans un &nbsp;
-					<Anchor target="_blank" href="https://www.onisep.fr/ressources/univers-formation/formations/lycees/bac-pro-cybersecurite-informatique-et-reseaux-electronique">Baccalauréat Professionnel S.N (Systèmes Numériques)</Anchor>&nbsp;
-					option RISC (Réseau Informatiques et Systèmes Communicants).
-					En suite, j’ai continué sur un BTS SIO (Service Informatique aux Organisations) option S.L.A.M (Solutions Logicielles et Applications Métiers).
-				</Text>
+				<Stack gap="md" ta="justify">
+					<Text size="lg" fw={500} c="blue.4">
+						Futur ingénieur logiciel & développeur web en alternance
+					</Text>
+					
+					<Text>
+						Je m’appelle <strong>John THOMAS</strong>. Passionné par l'informatique depuis
+						mon entrée dans le domaine en 2018, j'ai d'abord forgé mes compétences 
+						système et réseau lors d'un 
+						<Anchor target="_blank" href="https://www.onisep.fr/ressources/univers-formation/formations/lycees/bac-pro-cybersecurite-informatique-et-reseaux-electronique">
+						 	Baccalauréat Professionnel S.N
+						</Anchor> 
+						&nbsp;(Systèmes Numériques, option RISC). Cette base technique m'a permis de comprendre le 
+						fonctionnement des infrastructures, mais c'est le désir de concevoir et de créer des outils 
+						sur mesure qui m'a naturellement orienté vers le développement applicatif.
+					</Text>
+
+					<Text>
+						J'ai alors poursuivi mon cursus avec un BTS SIO option S.L.A.M 
+						(Solutions Logicielles et Applications Métiers), suivi d'une 
+						<Anchor target="_blank" href="https://www.iut.u-bordeaux.fr/info/assets/ressources/20141030LPROIUTBXINFODAWINw.pdf">
+							Licence Professionnelle DAWIN
+						</Anchor>
+						&nbsp;à l'IUT de Bordeaux. Aujourd'hui, afin de consolider ma posture de concepteur logiciel, 
+						je prépare un 
+						<Anchor href="https://www.onisep.fr/ressources/univers-formation/formations/post-bac/expert-en-ingenierie-logicielle" target="_blank">
+							Mastère Expert en Ingénierie Logicielle
+						</Anchor>
+						&nbsp;au sein de l'ISCOD.
+					</Text>
+
+					<Text>
+						Cette trajectoire académique s'accompagne d'un ancrage professionnel solide : 
+						depuis septembre 2022, j'évolue en tant que développeur web en alternance chez
+						&nbsp;<strong>Exelys</strong>. Ce quotidien me permet de concevoir des architectures 
+						robustes, de manipuler des technologies modernes (React, TypeScript, Laravel, SQL)
+						et d'appréhender des contraintes de production concrètes auprès de clients variés.
+					</Text>
+				</Stack>
 				<Space h="xl" />
 				<Group>
 					<ActionIcon
