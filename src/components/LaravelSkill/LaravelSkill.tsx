@@ -1,95 +1,116 @@
-
 import {
-	Stack, Paper, Group,
-	ThemeIcon, Title, Accordion,
-	Blockquote, Anchor, Text
+	Group, Paper, Stack,
+	ThemeIcon, Title, Text,
+	Anchor, Blockquote
 } from "@mantine/core";
-
 import {
 	IconBrandLaravel,
-	IconTarget,
 	IconBulb,
-	IconTrendingUp
+	IconTrendingUp,
+	IconLink
 } from "@tabler/icons-react";
-
 import { useNavigate } from "react-router";
 
 const LaravelSkill: React.FC = () => {
-
 	const navigate = useNavigate();
 
 	return (
-		<Stack gap="xl">
+		<Stack gap="xl" mx="auto">
 			<Paper shadow="md" p="xl" radius="md" withBorder>
 				<Group align="center" mb="lg">
-					<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'red', to: 'orange' }}>
-						<IconBrandLaravel size={32} />
-					</ThemeIcon>
+					<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'red', to: 'orange' }}><IconBrandLaravel size={32} /></ThemeIcon>
 					<Title order={2}>Compétence : Laravel</Title>
 				</Group>
-				<Text size="lg" ta="justify">
-					Laravel est le framework PHP le plus populaire au monde, réputé pour sa syntaxe élégante et sa productivité. Dans un <b>contexte professionnel</b>, il permet de construire rapidement des applications web robustes, sécurisées et maintenables. <b>Son actualité</b> est marquée par un écosystème très riche (Livewire, Inertia, Octane...) qui le positionne comme un choix de premier plan pour des projets allant de l'application monolithique à l'API performante.
+				<Text size="lg" ta="justify" c="dimmed">
+					Fiche d'évaluation détaillée de la compétence de conception d'architectures applicatives web et d'API RESTful.
 				</Text>
 			</Paper>
-			<Accordion variant="separated" defaultValue="proof">
-				<Accordion.Item value="proof">
-					<Accordion.Control icon={<IconTarget size={20} />}>
-						<Title order={4}>Mes éléments de preuve</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Stack>
-							<Blockquote cite="– Projet Phidias3 (plateforme web)">
-								Le défi était de refondre entièrement un site de formation en une application web structurée et facile à maintenir.
-								<br /><br />
-								<b>La compétence a été mise en œuvre</b> en utilisant l'architecture <b>MVC</b> de Laravel. J'ai utilisé l'ORM <b>Eloquent</b> pour interagir avec la base de données, les <b>Contrôleurs</b> pour la logique métier, et le moteur de template <b>Blade</b> pour générer les vues. J'ai également utilisé la CLI <b>Artisan</b> pour créer les modèles, les mails et les commandes. <b>Ma valeur ajoutée a été d'appliquer la structure de Laravel pour transformer un projet vieillissant en une application moderne et organisée,</b> résolvant le problème de la maintenabilité.
-							</Blockquote>
-							<Anchor onClick={() => navigate('/realisations/phidias')} fz="sm" ml="md">
-								Voir la réalisation Phidias3
-							</Anchor>
-							<Blockquote cite="– Projet ARMEL TMS (API backend)">
-								Pour l'application mobile, le besoin était de fournir un backend sécurisé et performant pour gérer les utilisateurs et les données.
-								<br /><br />
-								<b>La compétence a été mise en œuvre</b> en utilisant Laravel en mode "API-only". J'ai développé des routes d'API pour l'authentification (avec JWT), la récupération et la sauvegarde des données. J'ai également mis en place les <b>Validateurs</b> de Laravel pour sécuriser les entrées de l'API. <b>Ma valeur ajoutée a été de construire un backend robuste et découplé du frontend,</b> prouvant ma capacité à utiliser Laravel de manière flexible pour des architectures modernes.
-							</Blockquote>
-							<Anchor onClick={() => navigate('/realisations/armel-tms')} fz="sm" ml="md">
-								Voir la réalisation ARMEL TMS
-							</Anchor>
-						</Stack>
-					</Accordion.Panel>
-				</Accordion.Item>
-				<Accordion.Item value="autocritique">
-					<Accordion.Control icon={<IconBulb size={20} />}>
-						<Title order={4}>Mon autocritique</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Text>
-							<b>Niveau de maîtrise : avancé.</b> Ayant utilisé Laravel à la fois pour des applications full-stack et comme API, je suis très à l'aise avec ses concepts fondamentaux. Laravel est ma <b>compétence principale en backend</b>, celle que je privilégie pour sa rapidité de développement et son nombre de fonctionnalités intégrées par défaut.
-						</Text>
-						<Text mt="sm">
-							<b>Mon recul sur la compétence :</b> Laravel est un outil incroyablement puissant, mais son "apparente" simplicité peut cacher une grande complexité. Mon conseil est de toujours chercher à comprendre "comment ça marche".
-						</Text>
-					</Accordion.Panel>
-				</Accordion.Item>
-				<Accordion.Item value="evolution">
-					<Accordion.Control icon={<IconTrendingUp size={20} />}>
-						<Title order={4}>Mon évolution</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Text>
-							Dans mon <b>projet professionnel</b>, mon objectif est de consolider mon expertise sur Laravel pour devenir un développeur capable de construire des applications à grande échelle.
-						</Text>
-						<Text mt="sm">
-							<b>Prochaines étapes :</b> je souhaite approfondir ma connaissance des fonctionnalités avancées de Laravel. Je prévois de me former sur le <b>gestionnaire de files d'attente (Queues)</b> et le <b>planificateur de tâches (Task Scheduling)</b> pour automatiser des processus en arrière-plan. Parallèlement, je vais me concentrer sur les <b>bonnes pratiques avancées</b> et les stratégies de test efficaces pour garantir la qualité et l'évolutivité de mes projets.
-						</Text>
-					</Accordion.Panel>
-				</Accordion.Item>
-			</Accordion>
-			<Paper shadow="xs" p="lg" radius="md">
-				<Title order={4} mb="sm">Réalisations associées à cette compétence</Title>
-				<Stack>
-					<Anchor onClick={() => navigate('/realisations/phidias')}>Projet Phidias3 (plateforme web)</Anchor>
-					<Anchor onClick={() => navigate('/realisations/armel-tms')}>Application mobile ARMEL TMS (API)</Anchor>
-					<Anchor onClick={() => navigate('/realisations/pact-hse')}>Projet PACT'HSE</Anchor>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Title order={3} size="h4" mb="md">1. Ma définition de la compétence</Title>
+				<Text ta="justify" mb="sm">
+					Dans le domaine du développement backend, <strong>Laravel</strong> est le framework PHP de référence, conçu pour optimiser la 
+					productivité et la robustesse des applications métiers. Maîtriser Laravel signifie savoir articuler l'ensemble des modules d'une 
+					architecture MVC (Modèle-Vue-Contrôleur) : structurer des migrations de bases de données, manipuler l'ORM 
+					&nbsp;<em>Eloquent</em> pour exécuter des requêtes fluides et sécurisées, configurer des files d'attente (queues) pour déporter les 
+					traitements lourds, et développer des APIs découplées et hautement sécurisées.
+				</Text>
+				<Text ta="justify">
+					<strong>Rapport à l'actualité (Laravel 13) :</strong> l'actualité de l'écosystème est marquée par la sortie récente de 
+					&nbsp;<strong>Laravel 13</strong>, qui exige désormais <strong>PHP 8.3</strong> au minimum. Cette version simplifie considérablement 
+					la configuration grâce à l'introduction de 36 nouveaux attributs PHP natifs 
+					(tels que <code>#[Middleware]</code> ou <code>#[Authorize]</code>), évitant d'éparpiller les configurations de classes. 
+					De plus, Laravel 13 intègre un premier <strong>AI SDK officiel</strong> unifiant les interactions asynchrones avec les LLMs 
+					ainsi que le support natif pour la recherche sémantique et vectorielle (vector search).
+				</Text>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Title order={3} size="h4" mb="md">2. Mes éléments de preuve sur le terrain</Title>
+				<Blockquote cite="– Conception de l'API RESTful d'ARMEL TMS" py="xs" px="md" mb="md">
+					<Text ta="justify" mb="sm">
+						Pour l'application de prévention des TMS, j'ai développé l'intégralité du backend sous forme de serveur d'API stateless. J'ai 
+						utilisé l'ORM Eloquent pour requêter les structures relationnelles (programmes d'exercices, structures d'entreprises et 
+						comptes utilisateurs) de notre base de données MySQL.
+					</Text>
+					<Text ta="justify" mb="sm">
+						<strong>Mise en œuvre et valeur ajoutée :</strong> afin de sécuriser la transmission asynchrone des données, j'ai configuré 
+						l'authentification par jeton JWT via <code>tymon/jwt-auth</code>. J'ai de plus programmé des classes de validation d'entrées 
+						(<em>Form Requests</em>) personnalisées pour filtrer et nettoyer systématiquement chaque payload JSON reçu par le serveur. 
+						Cette rigueur m'a permis de fournir un backend robuste, protégé contre les failles d'injection ou de mauvaise structuration 
+						de requêtes.
+					</Text>
+					<Anchor onClick={() => navigate("/realisations/armel-tms")} size="sm" fw={600} display="inline-flex" style={{ alignItems: 'center', gap: 4 }}>
+						<IconLink size={16} /> Consulter la réalisation associée (ARMEL TMS)
+					</Anchor>
+				</Blockquote>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="red" variant="light"><IconBulb size={20} /></ThemeIcon>
+					<Title order={3} size="h4">3. Mon autocritique et recul</Title>
+				</Group>
+				<Text ta="justify" mb="sm">
+					<strong>Degré de maîtrise : avancé.</strong> Ayant manipulé Laravel à la fois pour concevoir des applications monolithiques de 
+					gestion (PACT'HSE, Phidias 3) et des API découplées (ARMEL TMS), je maîtrise parfaitement le cycle de vie d'une requête Laravel. 
+					C'est l'un des piliers majeurs de mon profil d'expert logiciel.
+				</Text>
+				<Text ta="justify" mb="sm">
+					Ma <strong>vitesse d'acquisition</strong> s'est consolidée de manière remarquable lors de la refonte technique complexe de Phidias 3, 
+					où la migration de bases de données héritées et instables vers une structure Eloquent a agi comme un accélérateur d'apprentissage.
+				</Text>
+				<Text ta="justify">
+					<strong>Mon recul :</strong> bien que Laravel offre une "magie" syntaxique extrêmement séduisante via ses Façades et ses méthodes magiques, 
+					il est crucial d'en comprendre le fonctionnement sous-jacent. Mon conseil est de toujours s'intéresser aux mécanismes internes de l'injection 
+					de dépendances et du conteneur de services (service container) pour conserver la maîtrise de ses structures de code lors de projets à 
+					grande échelle.
+				</Text>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="red" variant="light"><IconTrendingUp size={20} /></ThemeIcon>
+					<Title order={3} size="h4">4. Mon évolution et projet professionnel</Title>
+				</Group>
+				<Text ta="justify" mb="sm">
+					Dans mon projet professionnel, je souhaite consolider mon expertise sur Laravel pour concevoir des architectures backend robustes de niveau 
+					industriel, prêtes pour la production à fort trafic.
+				</Text>
+				<Text ta="justify">
+					<strong>Formations et perspectives :</strong> je prévois de me former en profondeur sur les modules avancés d'orchestration de tâches 
+					asynchrones, notamment la gestion des files d'attente (<em>queues</em>) sous Redis pour le traitement de tâches d'arrière-plan lourdes. 
+					Parallèlement, j'affinerai mes stratégies de couverture de code en me formant aux tests unitaires automatisés avec le framework 
+					&nbsp;<strong>Pest</strong>.
+				</Text>
+			</Paper>
+
+			<Paper shadow="xs" p="lg" radius="md" withBorder>
+				<Title order={4} mb="sm">5. Principales réalisations rattachées à cette compétence</Title>
+				<Stack gap="xs">
+					<Anchor onClick={() => navigate("/realisations/phidias")} size="sm">• Projet Phidias 3 : plateforme pédagogique BTP</Anchor>
+					<Anchor onClick={() => navigate("/realisations/armel-tms")} size="sm">• Application mobile ARMEL TMS</Anchor>
+					<Anchor onClick={() => navigate("/realisations/pact-hse")} size="sm">• PACT HSE - solution de gestion des risques</Anchor>
 				</Stack>
 			</Paper>
 		</Stack>

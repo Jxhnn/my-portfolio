@@ -1,88 +1,110 @@
-
 import {
-	Stack, Paper, Group,
-	ThemeIcon, Title, Accordion,
-	Blockquote, Anchor, Text
+	Group, Paper, Stack,
+	ThemeIcon, Title, Text,
+	Anchor, Blockquote
 } from "@mantine/core";
 import {
-	IconPhoneCall,
-	IconTarget,
+	IconUsers,
 	IconBulb,
-	IconTrendingUp
+	IconTrendingUp,
+	IconLink
 } from "@tabler/icons-react";
 import { useNavigate } from "react-router";
 
 const RelationClientSkill: React.FC = () => {
-
 	const navigate = useNavigate();
 
 	return (
-		<Stack gap="xl">
+		<Stack gap="xl" mx="auto">
 			<Paper shadow="md" p="xl" radius="md" withBorder>
 				<Group align="center" mb="lg">
-					<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'cyan', to: 'blue' }}>
-						<IconPhoneCall size={32} />
-					</ThemeIcon>
-					<Title order={2}>Compétence : relation client</Title>
+					<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'cyan', to: 'blue' }}><IconUsers size={32} /></ThemeIcon>
+					<Title order={2}>Compétence humaine : relation client</Title>
 				</Group>
-				<Text size="lg" ta="justify">
-					Pour un développeur, la relation client ne se limite pas au support technique. Dans un <b>contexte professionnel</b> agile, elle est au cœur du projet : c'est la capacité à écouter pour bien comprendre un besoin, à communiquer clairement son avancement, et à savoir vulgariser des concepts techniques.
+				<Text size="lg" ta="justify" c="dimmed">
+					Fiche d'évaluation de la posture professionnelle, de la capacité d'écoute active, d'empathie utilisateur et de vulgarisation technique.
 				</Text>
 			</Paper>
-			<Accordion variant="separated" defaultValue="proof">
-				<Accordion.Item value="proof">
-					<Accordion.Control icon={<IconTarget size={20} />}>
-						<Title order={4}>Mes éléments de preuve</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Blockquote cite="– Suivi de projet sur les intranets SharePoint">
-							Le défi sur ces projets est de s'assurer que les développements sur mesure (Web Parts React) correspondent parfaitement aux attentes du client, qui ne sont pas toujours techniques.
-							<br /><br />
-							<b>La compétence a été mise en œuvre</b> lors des points de suivi hebdomadaires. Je devais présenter les nouvelles fonctionnalités, expliquer de manière simple les choix techniques et leurs impacts, et surtout écouter activement les retours des utilisateurs pour planifier les ajustements. <b>Ma valeur ajoutée a été de créer une boucle de feedback efficace,</b> rassurant le client sur l'avancement et garantissant que le produit final soit adopté par les équipes.
-							<br /><br />
-							Cela a permis de résoudre le problème des projets livrés "en tunnel" qui ne correspondent pas au besoin final.
-						</Blockquote>
-						<Anchor onClick={() => navigate('/realisations/sharepoint-custom')} mt="sm" fz="sm">
-							Voir l'expérience SharePoint & Power Platform
-						</Anchor>
-					</Accordion.Panel>
-				</Accordion.Item>
-				<Accordion.Item value="autocritique">
-					<Accordion.Control icon={<IconBulb size={20} />}>
-						<Title order={4}>Mon autocritique</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Text>
-							<b>Niveau de maîtrise : débutant.</b> Je suis assez à l'aise pour présenter mon travail technique et interagir avec un client dans un cadre défini, comme les points de suivi. C'est une compétence que je considère comme <b>très importante</b> dans mon profil, car un bon développeur doit aussi être un bon communicant.
-						</Text>
-						<Text mt="sm">
-							Ma <b>vitesse d'acquisition</b> est progressive. J'apprends à chaque interaction à mieux anticiper les questions et à vulgariser mon discours.
-						</Text>
-						<Text mt="sm">
-							<b>Mon conseil (et mon recul) :</b> la clé est la préparation. Avant une démonstration client, il ne faut pas seulement préparer ce qu'on va montrer, mais aussi anticiper les questions et préparer des réponses simples. Ne jamais penser que le client a les mêmes connaissances techniques que nous.
-						</Text>
-					</Accordion.Panel>
-				</Accordion.Item>
-				<Accordion.Item value="evolution">
-					<Accordion.Control icon={<IconTrendingUp size={20} />}>
-						<Title order={4}>Mon évolution</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Text>
-							Mon projet professionnel est de devenir un interlocuteur technique de confiance pour les clients. Je ne veux pas seulement développer des fonctionnalités, mais aussi être capable de conseiller et d'orienter le client vers les meilleures solutions.
-						</Text>
-						<Text mt="sm">
-							<b>Prochaines étapes :</b> je souhaite me former sur les bases de la <b>gestion de projet Agile (Scrum)</b> pour mieux comprendre le rôle du Product Owner et la manière de prioriser les besoins. Je veux aussi m'exercer à l'animation de petits ateliers de recueil du besoin pour être plus proactif dans la phase de conception.
-						</Text>
-					</Accordion.Panel>
-				</Accordion.Item>
-			</Accordion>
-			<Paper shadow="xs" p="lg" radius="md">
-				<Title order={4} mb="sm">Réalisation associée à cette compétence</Title>
-				<Stack>
-					<Anchor onClick={() => navigate('/realisations/sharepoint-custom')}>
-						Expérience SharePoint & Power Platform
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Title order={3} size="h4" mb="md">1. Ma définition de la compétence</Title>
+				<Text ta="justify" mb="sm">
+					Pour un ingénieur logiciel, la <strong>relation client</strong> ne s'arrête pas au support après-vente. Elle réside au cœur 
+					même du cycle de vie du projet : c'est l'aptitude à écouter activement les utilisateurs finaux pour traduire leurs besoins 
+					métiers en spécifications techniques claires, à communiquer de manière transparente sur l'avancement des développements, et 
+					à savoir vulgariser des notions d'architecture complexes pour rassurer des décisionnaires non-informaticiens.
+				</Text>
+				<Text ta="justify">
+					<strong>Rapport à l'actualité :</strong> dans les méthodologies de développement modernes (comme Agile et Scrum), la relation 
+					client est continue. Elle s'organise autour d'itérations courtes et de démonstrateurs réguliers, transformant le client d'un simple 
+					"donneur d'ordres" en un véritable co-concepteur de la solution applicative.
+				</Text>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Title order={3} size="h4" mb="md">2. Mes éléments de preuve sur le terrain</Title>
+				<Blockquote cite="– Présentations régulières et boucles d'ajustements SPFx" py="xs" px="md" mb="md">
+					<Text ta="justify" mb="sm">
+						Lors de mes développements de composants SPFx sur mesure pour les portails intranets d'entreprises clientes, j'ai participé 
+						activement aux démonstrations et aux points d'avancement hebdomadaires.
+					</Text>
+					<Text ta="justify" mb="sm">
+						<strong>Mise en œuvre et valeur ajoutée :</strong> lors de ces réunions, je devais présenter les nouvelles fonctionnalités 
+						développées (cartes interactives, moteurs de recherche) et expliquer simplement nos choix d'intégration technique et leurs 
+						impacts visuels. En pratiquant une écoute active des équipes clientes (RH, communication), j'ai recueilli leurs suggestions 
+						concrètes d'usage pour adapter l'ergonomie des formulaires. Cette communication claire a permis de créer une boucle de 
+						feedback efficace d'un sprint à l'autre, rassurant pleinement le client sur le respect de ses besoins réels et garantissant 
+						une adoption immédiate de l'outil par les collaborateurs lors du déploiement en production.
+					</Text>
+					<Anchor onClick={() => navigate("/realisations/sharepoint-custom")} size="sm" fw={600} display="inline-flex" style={{ alignItems: 'center', gap: 4 }}>
+						<IconLink size={16} /> Consulter la réalisation associée (SharePoint Framework)
 					</Anchor>
+				</Blockquote>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="cyan" variant="light"><IconBulb size={20} /></ThemeIcon>
+					<Title order={3} size="h4">3. Mon autocritique et recul</Title>
+				</Group>
+				<Text ta="justify" mb="sm">
+					<strong>Degré de maîtrise : débutant / intermédiaire.</strong> Je suis tout à fait à l'aise pour présenter mes travaux de 
+					développement, animer des démonstrations et interagir avec les équipes clients dans un cadre collaboratif défini. 
+					C'est une compétence <strong>très importante</strong> dans mon profil d'expert logiciel, car un bon développeur doit également 
+					être un excellent communicant.
+				</Text>
+				<Text ta="justify" mb="sm">
+					Ma <strong>vitesse d'acquisition</strong> a été progressive et empirique, s'affinant à chaque nouvelle réunion client chez 
+					Exelys en observant la posture des consultants fonctionnels et chefs de projet de l'agence.
+				</Text>
+				<Text ta="justify">
+					<strong>Mon recul :</strong> la clé d'une démonstration client réussie est la préparation et l'empathie. Il ne faut jamais 
+					présumer que le client possède les mêmes connaissances techniques ou le même vocabulaire que nous. Mon conseil est de toujours 
+					traduire une contrainte ou une fonctionnalité technique en termes de bénéfices métiers (gain de temps, réduction d'erreurs, 
+					simplicité de saisie) pour conserver l'adhésion complète du client.
+				</Text>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="cyan" variant="light"><IconTrendingUp size={20} /></ThemeIcon>
+					<Title order={3} size="h4">4. Mon évolution et projet professionnel</Title>
+				</Group>
+				<Text ta="justify" mb="sm">
+					Mon objectif professionnel à moyen terme est de devenir un interlocuteur technique de confiance pour les clients d'envergure, 
+					capable non seulement de coder mais aussi de les conseiller de manière proactive sur leurs choix de solutions logicielles.
+				</Text>
+				<Text ta="justify">
+					<strong>Perspectives :</strong> je souhaite me former de manière approfondie sur le rôle de <strong>product owner</strong> dans la 
+					méthodologie Scrum, afin de maîtriser les processus de formalisation du carnet de produit (<em>product backlog</em>) et d'apprendre 
+					à animer des ateliers d'idéation et de recueil de besoins métiers complexes.
+				</Text>
+			</Paper>
+
+			<Paper shadow="xs" p="lg" radius="md" withBorder>
+				<Title order={4} mb="sm">5. Principales réalisations rattachées à cette compétence</Title>
+				<Stack gap="xs">
+					<Anchor onClick={() => navigate("/realisations/sharepoint-custom")} size="sm">• Développement sur SharePoint & Power Platform (SPFx)</Anchor>
 				</Stack>
 			</Paper>
 		</Stack>

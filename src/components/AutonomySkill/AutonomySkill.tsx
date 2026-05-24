@@ -1,95 +1,131 @@
-
 import {
-	Stack, Paper, Group,
-	ThemeIcon, Title, Accordion,
-	Blockquote, Anchor, Text
+	Group, Paper, Stack,
+	ThemeIcon, Title, Text,
+	Anchor, Blockquote
 } from "@mantine/core";
 import {
 	IconRocket,
-	IconTarget,
 	IconBulb,
-	IconTrendingUp
+	IconTrendingUp,
+	IconLink
 } from "@tabler/icons-react";
 import { useNavigate } from "react-router";
 
 const AutonomySkill: React.FC = () => {
-
 	const navigate = useNavigate();
 
 	return (
-		<Stack gap="xl">
+		<Stack gap="xl" mx="auto">
 			<Paper shadow="md" p="xl" radius="md" withBorder>
 				<Group align="center" mb="lg">
-					<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'orange', to: 'red' }}>
-						<IconRocket size={32} />
-					</ThemeIcon>
-					<Title order={2}>Compétence : autonomie & proactivité</Title>
+					<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'orange', to: 'red' }}><IconRocket size={32} /></ThemeIcon>
+					<Title order={2}>Compétence humaine : autonomie & proactivité</Title>
 				</Group>
-				<Text size="lg" ta="justify">
-					Dans le <b>contexte professionnel</b> du développement, l'autonomie est la capacité à s'approprier une tâche, de sa conception à sa livraison, en recherchant les solutions par soi-même. La proactivité est l'étape suivante : c'est anticiper les besoins et proposer des améliorations sans attendre qu'elles soient demandées.
+				<Text size="lg" ta="justify" c="dimmed">
+					Fiche d'évaluation de la capacité à s'approprier des problématiques complexes, à rechercher des solutions de manière indépendante 
+					et à être force de proposition.
 				</Text>
 			</Paper>
-			<Accordion variant="separated" defaultValue="proof">
-				<Accordion.Item value="proof">
-					<Accordion.Control icon={<IconTarget size={20} />}>
-						<Title order={4}>Mes éléments de preuve</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Stack>
-							<Blockquote cite="– Projet Phidias3 (refonte technique)">
-								Le projet consistait à refondre un site vieillissant. Le cahier des charges était fonctionnel, mais de nombreuses décisions techniques étaient à prendre.
-								<br /><br />
-								<b>La compétence a été mise en œuvre</b> lorsque j'ai dû gérer seul la migration complexe des données depuis des fichiers XML vers une base de données MySQL. J'ai recherché et mis en place les scripts PHP nécessaires, structuré la nouvelle base, et effectué le travail de A à Z. <b>Ma valeur ajoutée a été de prendre cette initiative technique complexe et de la mener à bien sans supervision constante,</b> résolvant ainsi le problème fondamental qui bloquait la refonte du site.
-							</Blockquote>
-							<Anchor onClick={() => navigate("/realisations/phidias")} fz="sm" ml="md">
-								Voir la réalisation Phidias3
-							</Anchor>
-							<Blockquote cite="– Projet ARMEL TMS (refonte de l'interface)">
-								Après la première version, il a été décidé de changer de technologie frontend. Je me suis retrouvé face au défi de devoir réécrire toutes les interfaces.
-								<br /><br />
-								<b>La compétence a été mise en œuvre</b> en prenant en charge l'intégralité de la migration de Materialize vers Framework7. J'ai dû apprendre le nouveau framework, adapter chaque composant et m'assurer que toutes les fonctionnalités restaient intactes. <b>Ma valeur ajoutée a été de gérer ce chantier technique de manière autonome et organisée,</b> garantissant la modernisation de l'application et démontrant ma capacité d'adaptation rapide.
-							</Blockquote>
-							<Anchor onClick={() => navigate("/realisations/armel-tms")} fz="sm" ml="md">
-								Voir la réalisation ARMEL TMS
-							</Anchor>
-						</Stack>
-					</Accordion.Panel>
-				</Accordion.Item>
-				<Accordion.Item value="autocritique">
-					<Accordion.Control icon={<IconBulb size={20} />}>
-						<Title order={4}>Mon autocritique</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Text>
-							<b>Niveau de maîtrise : intermédiaire.</b> Je suis très à l'aise pour prendre en charge des tâches complexes et les mener à bien. C'est une <b>compétence clé</b> de mon profil, car j'aime comprendre et maîtriser les sujets sur lesquels je travaille. Je suis moins expérimenté sur la proactivité stratégique à l'échelle d'une équipe entière, ce que je cherche à développer.
-						</Text>
-						<Text mt="sm">
-							Mon travail actuel en TMA (Tierce Maintenance Applicative) me demande moins de proactivité sur de nouvelles fonctionnalités, mais renforce mon autonomie dans la résolution de problèmes et l'analyse de code existant.
-						</Text>
-						<Text mt="sm">
-							<b>Mon conseil :</b> l'autonomie ne signifie pas ne jamais demander d'aide. Le plus important est de savoir quand demander : après avoir bien exploré le problème soi-même, en arrivant avec des pistes de solution et des questions précises.
-						</Text>
-					</Accordion.Panel>
-				</Accordion.Item>
-				<Accordion.Item value="evolution">
-					<Accordion.Control icon={<IconTrendingUp size={20} />}>
-						<Title order={4}>Mon évolution</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Text>
-							Mon objectif professionnel est de transformer mon autonomie technique en capacité de leadership. Je veux être capable non seulement de réaliser des tâches, mais aussi de participer à la conception technique et à l'orientation d'un projet.
-						</Text>
-						<Text mt="sm">
-							<b>Prochaines étapes :</b> je cherche activement à m'impliquer davantage dans les phases de conception en amont des projets. Je souhaite participer aux choix d'architecture et être force de proposition sur les solutions techniques à adopter, pour passer d'une autonomie d'exécution à une autonomie de décision.
-						</Text>
-					</Accordion.Panel>
-				</Accordion.Item>
-			</Accordion>
-			<Paper shadow="xs" p="lg" radius="md">
-				<Title order={4} mb="sm">Réalisations associées à cette compétence</Title>
-				<Stack>
-					<Anchor onClick={() => navigate("/realisations/phidias")}>Projet Phidias3</Anchor>
-					<Anchor onClick={() => navigate("/realisations/armel-tms")}>Application mobile ARMEL TMS</Anchor>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Title order={3} size="h4" mb="md">1. Ma définition de la compétence</Title>
+				<Text ta="justify" mb="sm">
+					Dans le domaine de l'ingénierie logicielle, l'<strong>autonomie</strong> n'est pas de l'isolement : c'est la capacité à s'approprier 
+					un besoin métier flou ou une tâche complexe, à planifier son exécution et à trouver des solutions fiables par soi-même en s'appuyant 
+					sur de la recherche documentaire et de la veille technologique. La <strong>proactivité</strong> en est le prolongement naturel : 
+					c'est anticiper les points de blocage futurs, concevoir des prototypes pour valider des hypothèses techniques et proposer des 
+					modernisations structurelles avant qu'elles ne soient demandées.
+				</Text>
+				<Text ta="justify">
+					<strong>Rapport à l'actualité :</strong> avec le développement du travail asynchrone et des équipes distribuées au sein des DSI 
+					modernes, l'autonomie technique et la capacité à s'auto-organiser sont devenues des compétences humaines de premier plan pour 
+					garantir le respect des jalons d'un projet sans nécessiter de micro-management.
+				</Text>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Title order={3} size="h4" mb="md">2. Mes éléments de preuve sur le terrain</Title>
+				
+				<Blockquote cite="– Développement autonome des scripts de migration de Phidias 3" py="xs" px="md" mb="md">
+					<Text ta="justify" mb="sm">
+						Le projet Phidias 3 exigeait d'extraire, nettoyer et injecter les anciennes données de cours structurées de manière 
+						désorganisée dans des dizaines de fichiers XML vers notre nouvelle base relationnelle MySQL.
+					</Text>
+					<Text ta="justify" mb="sm">
+						<strong>Mise en œuvre et valeur ajoutée :</strong> ne disposant pas de mode opératoire pré-établi pour cette tâche 
+						d'import complexe, j'ai pris l'initiative d'analyser l'arborescence des fichiers XML d'origine. 
+						J'ai conçu de manière autonome un script de parsing complet en Python. Ce script analysait les fichiers, 
+						nettoyait les données, résolvait les incohérences de liaisons d'images, puis automatisait la génération d'un 
+						fichier SQL textuel d'insertions massives parfaitement structuré. J'ai mené à bien ce processus complexe de 
+						A à Z sans supervision, sécurisant l'intégralité de la migration de données en une seule semaine et épargnant 
+						un temps précieux à l'équipe.
+					</Text>
+					<Anchor onClick={() => navigate("/realisations/phidias")} size="sm" fw={600} display="inline-flex" style={{ alignItems: 'center', gap: 4 }}>
+						<IconLink size={16} /> Consulter la réalisation associée (Phidias 3)
+					</Anchor>
+				</Blockquote>
+
+				<Blockquote cite="– Migration d'interface sur ARMEL TMS" py="xs" px="md">
+					<Text ta="justify" mb="sm">
+						Pour ARMEL TMS, l'interface originale s'avérait trop limitée pour offrir une expérience utilisateur fluide de 
+						type native sur mobile.
+					</Text>
+					<Text ta="justify" mb="sm">
+						<strong>Mise en œuvre et valeur ajoutée :</strong> j'ai entrepris seul des recherches de solutions alternatives 
+						et identifié Framework7 comme le choix d'intégration idéal. De ma propre initiative, j'ai étudié la bibliothèque, 
+						réalisé un démonstrateur d'évaluation technique fonctionnel, et l'ai présenté à mon chef de projet. 
+						Suite à sa validation, j'ai géré l'intégralité du chantier de migration technique de manière autonome et organisée, 
+						modernisant durablement l'utilisabilité de l'application mobile.
+					</Text>
+					<Anchor onClick={() => navigate("/realisations/armel-tms")} size="sm" fw={600} display="inline-flex" style={{ alignItems: 'center', gap: 4 }}>
+						<IconLink size={16} /> Consulter la réalisation associée (ARMEL TMS)
+					</Anchor>
+				</Blockquote>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="orange" variant="light"><IconBulb size={20} /></ThemeIcon>
+					<Title order={3} size="h4">3. Mon autocritique et recul</Title>
+				</Group>
+				<Text ta="justify" mb="sm">
+					<strong>Degré de maîtrise : intermédiaire.</strong> Je suis capable de prendre en main un sujet technique complexe de bout en 
+					bout et de mener les recherches nécessaires pour le résoudre de manière autonome. C'est une <strong>priorité absolue</strong> 
+					&nbsp;dans mon profil d'expert logiciel pour inspirer de la confiance à mes collaborateurs et mes clients.
+				</Text>
+				<Text ta="justify" mb="sm">
+					Ma <strong>vitesse d'acquisition</strong> s'est développée au fil de mon parcours, s'accélérant particulièrement lors de mon stage 
+					de BTS en autonomie complète sur le site de réservation d'ACM, puis s'ajustant au cadre exigeant d'une alternance en agence numérique.
+				</Text>
+				<Text ta="justify">
+					<strong>Mon recul :</strong> l'autonomie ne doit jamais se transformer en isolement ou en "orgueil technique". Mon conseil est 
+					de savoir s'imposer une limite temporelle lors d'un blocage : chercher par soi-même pendant une ou deux heures est formateur, 
+					mais il faut savoir s'arrêter pour poser une question structurée et documentée à l'équipe afin de ne pas ralentir le projet.
+				</Text>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="orange" variant="light"><IconTrendingUp size={20} /></ThemeIcon>
+					<Title order={3} size="h4">4. Mon évolution et projet professionnel</Title>
+				</Group>
+				<Text ta="justify" mb="sm">
+					Dans mon projet professionnel, mon but est de transformer mon autonomie technique individuelle en une capacité à encadrer ou à 
+					orienter de manière proactive les choix d'architecture globaux d'une équipe.
+				</Text>
+				<Text ta="justify">
+					<strong>Perspectives :</strong> je m'exerce à participer de manière plus proactive aux phases de conception amont et 
+					d'estimation fonctionnelle (chiffrages), afin de passer d'une autonomie de pure réalisation à une autonomie décisionnelle 
+					de conception logicielle.
+				</Text>
+			</Paper>
+
+			<Paper shadow="xs" p="lg" radius="md" withBorder>
+				<Title order={4} mb="sm">5. Principales réalisations rattachées à cette compétence</Title>
+				<Stack gap="xs">
+					<Anchor onClick={() => navigate("/realisations/phidias")} size="sm">• Projet Phidias 3 : plateforme pédagogique BTP</Anchor>
+					<Anchor onClick={() => navigate("/realisations/armel-tms")} size="sm">• Application mobile ARMEL TMS</Anchor>
+					<Anchor onClick={() => navigate("/realisations/site-reservation-acm")} size="sm">• Site de réservation pour un centre de loisirs</Anchor>
 				</Stack>
 			</Paper>
 		</Stack>

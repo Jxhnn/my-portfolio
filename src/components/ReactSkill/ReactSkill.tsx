@@ -15,7 +15,7 @@ const ReactSkill: React.FC = () => {
 	const navigate = useNavigate();
 
 	return (
-		<Stack gap="xl" maw={900} mx="auto">
+		<Stack gap="xl" mx="auto">
 			<Paper shadow="md" p="xl" radius="md" withBorder>
 				<Group align="center" mb="lg">
 					<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'cyan', to: 'blue' }}><IconBrandReact size={32} /></ThemeIcon>

@@ -1,98 +1,129 @@
-
-import { 
-	Stack, Paper, Group, 
-	ThemeIcon, Title, Accordion, 
-	Blockquote, Code, Anchor,
-	Text
+import {
+	Group, Paper, Stack,
+	ThemeIcon, Title, Text,
+	Anchor, Blockquote
 } from "@mantine/core";
-
-import { 
-	IconBrandHtml5, 
-	IconTarget, 
-	IconBulb, 
-	IconTrendingUp
+import {
+	IconBrandHtml5,
+	IconBulb,
+	IconTrendingUp,
+	IconLink
 } from "@tabler/icons-react";
-
-import type React from "react";
 import { useNavigate } from "react-router";
 
 const HTMLSkill: React.FC = () => {
-
 	const navigate = useNavigate();
 
 	return (
-		<Stack gap="xl">
+		<Stack gap="xl" mx="auto">
 			<Paper shadow="md" p="xl" radius="md" withBorder>
 				<Group align="center" mb="lg">
-					<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'orange', to: 'red' }}>
-						<IconBrandHtml5 size={32} />
-					</ThemeIcon>
+					<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'orange', to: 'red' }}><IconBrandHtml5 size={32} /></ThemeIcon>
 					<Title order={2}>Compétence : HTML</Title>
 				</Group>
-				<Text size="lg" ta="justify">
-					HTML (HyperText Markup Language) est le langage qui forme le squelette de chaque page web. Dans un <b>contexte professionnel</b>, une maîtrise de l'HTML ne se limite pas à connaître les balises, mais à savoir les utiliser de manière sémantique pour garantir l'accessibilité et un bon référencement (SEO). <b>Son actualité</b> est portée par la norme HTML5, qui a introduit des balises structurantes essentielles pour les applications web modernes.
+				<Text size="lg" ta="justify" c="dimmed">
+					Fiche d'évaluation détaillée de la compétence de structuration sémantique du web, de référencement (SEO) et 
+					d'accessibilité (WCAG).
 				</Text>
 			</Paper>
-			<Accordion variant="separated" defaultValue="proof">
-				<Accordion.Item value="proof">
-					<Accordion.Control icon={<IconTarget size={20} />}>
-						<Title order={4}>Mes éléments de preuve</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Stack>
-							<Blockquote cite="– Projet Phidias3 (Refonte d'un site de formation)">
-								Le défi était de migrer un contenu issu de fichiers XML vers une structure web propre et compréhensible par les navigateurs et les moteurs de recherche.
-								<br /><br />
-								<b>La compétence a été mise en œuvre</b> en utilisant des balises sémantiques HTML5 comme <Code>&lt;main&gt;</Code>, <Code>&lt;article&gt;</Code>, <Code>&lt;section&gt;</Code> et <Code>&lt;nav&gt;</Code> pour donner du sens au contenu pédagogique. <b>Ma valeur ajoutée a été de transformer des données brutes en une page web structurée, accessible et optimisée pour le SEO,</b> résolvant ainsi le problème d'un contenu désorganisé et peu visible.
-							</Blockquote>
-							<Anchor onClick={() => navigate('/realisations/phidias')} fz="sm" ml="md">
-								Voir la réalisation Phidias3
-							</Anchor>
 
-							<Blockquote cite="– Projet ARMEL TMS (Application mobile)">
-								Pour l'application mobile, il fallait structurer les différentes "vues" (écrans) de manière logique pour que le framework puisse appliquer son style "natif".
-								<br /><br />
-								<b>La compétence a été mise en œuvre</b> en utilisant l'HTML pour définir le squelette de chaque composant de l'interface : listes d'exercices, cartes de contenu... <b>Ma valeur ajoutée a été de garantir une base HTML propre, permettant à Framework7 de fonctionner correctement</b> et de créer une expérience utilisateur fluide et intuitive, comme une vraie application mobile.
-							</Blockquote>
-							<Anchor onClick={() => navigate('/realisations/armel-tms')} fz="sm" ml="md">
-								Voir la réalisation ARMEL TMS
-							</Anchor>
-						</Stack>
-					</Accordion.Panel>
-				</Accordion.Item>
-				<Accordion.Item value="autocritique">
-					<Accordion.Control icon={<IconBulb size={20} />}>
-						<Title order={4}>Mon autocritique</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Text>
-							<b>Niveau de maîtrise : avancé.</b> Je suis très à l'aise avec l'ensemble des balises HTML5, la structuration sémantique d'une page et les bases de l'accessibilité. C'est une <b>compétence fondamentale et non-négociable</b> de mon profil, car un bon HTML est le point de départ de tout projet web de qualité.
-						</Text>
-						<Text mt="sm">
-							<b>Mon recul sur la compétence :</b> Mon conseil est de ne jamais sous-estimer l'HTML en le considérant comme "facile". Une structure sémantique bien pensée dès le départ facilite énormément le travail en CSS et en JavaScript, tout en améliorant l'accessibilité et le SEO.
-						</Text>
-					</Accordion.Panel>
-				</Accordion.Item>
-				<Accordion.Item value="evolution">
-					<Accordion.Control icon={<IconTrendingUp size={20} />}>
-						<Title order={4}>Mon évolution</Title>
-					</Accordion.Control>
-					<Accordion.Panel>
-						<Text>
-							Mon projet professionnel n'est pas d'apprendre de nouvelles balises, mais de perfectionner leur utilisation. Je souhaite devenir un expert de l'intégration web où la qualité du code HTML est irréprochable.
-						</Text>
-						<Text mt="sm">
-							<b>Formations à venir :</b> je prévois de me former en profondeur sur les <b>standards d'accessibilité avancés (WCAG)</b> et les attributs <b>ARIA</b> pour être capable de construire des applications web entièrement accessibles aux personnes en situation de handicap.
-						</Text>
-					</Accordion.Panel>
-				</Accordion.Item>
-			</Accordion>
-			<Paper shadow="xs" p="lg" radius="md">
-				<Title order={4} mb="sm">Réalisations associées à cette compétence</Title>
-				<Stack>
-					<Anchor onClick={() => navigate('/realisations/phidias')}>Projet Phidias3</Anchor>
-					<Anchor onClick={() => navigate('/realisations/armel-tms')}>Application mobile ARMEL TMS</Anchor>
-					<Anchor onClick={() => navigate('/realisations/pact-hse')}>Projet PACT'HSE</Anchor>
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Title order={3} size="h4" mb="md">1. Ma définition de la compétence</Title>
+				<Text ta="justify" mb="sm">
+					Le langage <strong>HTML (HyperText Markup Language)</strong> est l'ossature essentielle de tout contenu web. 
+					
+					Loin d'un simple formatage visuel, maîtriser l'HTML en ingénierie logicielle consiste à utiliser la sémantique de la norme <strong>HTML 5</strong> pour donner du sens à la structure des documents (balises structurantes comme <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>) afin de maximiser le référencement naturel (SEO) et de garantir l'accessibilité universelle de l'interface pour les lecteurs d'écran.
+				</Text>
+				<Text ta="justify">
+					<strong>Rapport à l'actualité :</strong> l'évolution moderne de l'HTML vise à standardiser le balisage sémantique pour 
+					l'accessibilité (A11y). Cela se traduit par le déploiement natif d'éléments facilitant l'accès au contenu (comme 
+					l'optimisation des temps de chargement via l'attribut natif <code>loading="lazy"</code> pour le contenu multimédia) 
+					ou la structuration de balises facilitant la lecture automatique des documents.
+				</Text>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Title order={3} size="h4" mb="md">2. Mes éléments de preuve sur le terrain</Title>
+
+				<Blockquote cite="– Restructuration sémantique de la plateforme Phidias 3" py="xs" px="md" mb="md">
+					<Text ta="justify" mb="sm">
+						Lors de la refonte de la plateforme de cours Phidias 3, l'ancien site manquait cruellement d'accessibilité numérique, 
+						rendant la navigation très laborieuse pour les synthèses vocales.
+					</Text>
+					<Text ta="justify" mb="sm">
+						<strong>Mise en œuvre et valeur ajoutée :</strong> j'ai entièrement restructuré l'arborescence HTML des cours. 
+						J'ai nettoyé les structures d'affichage obsolètes pour y appliquer un balisage sémantique HTML 
+						(en délimitant la zone centrale par <code>&lt;main&gt;</code>, les chapitres d'apprentissage par des balises 
+						&nbsp;<code>&lt;article&gt;</code> et l'ensemble des menus de cours par des balises <code>&lt;nav&gt;</code>). 
+						Le résultat a été décisif : la conformité vis-à-vis des critères d'accessibilité (WCAG) a été rétablie, 
+						offrant ainsi une navigation claire et exploitable aux synthèses vocales utilisées par nos élèves malvoyants.
+					</Text>
+					<Anchor onClick={() => navigate("/realisations/phidias")} size="sm" fw={600} display="inline-flex" style={{ alignItems: 'center', gap: 4 }}>
+						<IconLink size={16} /> Consulter la réalisation associée (Phidias 3)
+					</Anchor>
+				</Blockquote>
+
+				<Blockquote cite="– Structuration structurelle des vues mobiles sur ARMEL TMS" py="xs" px="md">
+					<Text ta="justify" mb="sm">
+						Pour l'interface utilisateur mobile d'ARMEL TMS, il était primordial de structurer le squelette HTML de façon à ce que 
+						le framework frontend puisse injecter ses comportements tactiles de manière prévisible.
+					</Text>
+					<Text ta="justify" mb="sm">
+						<strong>Mise en œuvre et valeur ajoutée :</strong> j'ai rédigé l'arborescence HTML délimitant la structure de chaque 
+						composant de l'application mobile (sommaires d'exercices, cartes de rappel, formulaires). 
+						Cette organisation rigoureuse du document a fourni une structure HTML claire et sémantique, permettant à 
+						l'application hybride de s'afficher de manière parfaitement réactive et d'éviter les bugs de rendu ou de décalages tactiles.
+					</Text>
+					<Anchor onClick={() => navigate("/realisations/armel-tms")} size="sm" fw={600} display="inline-flex" style={{ alignItems: 'center', gap: 4 }}>
+						<IconLink size={16} /> Consulter la réalisation associée (ARMEL TMS)
+					</Anchor>
+				</Blockquote>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="orange" variant="light"><IconBulb size={20} /></ThemeIcon>
+					<Title order={3} size="h4">3. Mon autocritique et recul</Title>
+				</Group>
+				<Text ta="justify" mb="sm">
+					<strong>Degré de maîtrise : avancé.</strong> L'écriture d'un HTML sémantique et conforme est pour moi une 
+					&nbsp;<strong>priorité absolue et non négociable</strong>, car elle constitue le point de départ d'une expérience 
+					utilisateur de qualité et d'un code frontend propre et maintenable.
+				</Text>
+				<Text ta="justify" mb="sm">
+					Ma <strong>vitesse d'acquisition</strong> a été continue, renforcée par mes projets universitaires en 
+					Licence pro DAWIN qui mettaient un accent rigoureux sur les standards W3C d'accessibilité numérique.
+				</Text>
+				<Text ta="justify">
+					<strong>Mon recul :</strong> le plus grand "code smell" du développement moderne est l'abus de divs . 
+					Mon conseil est de toujours s'interroger sur l'existence d'une 
+					balise sémantique adaptée (comme un <code>&lt;button&gt;</code> à la place d'une <code>&lt;div onclick="..."&gt;</code>) 
+					pour bénéficier gratuitement de la gestion native du focus clavier, des indicateurs d'états et de l'interopérabilité des navigateurs.
+				</Text>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
+					<ThemeIcon color="orange" variant="light"><IconTrendingUp size={20} /></ThemeIcon>
+					<Title order={3} size="h4">4. Mon évolution et projet professionnel</Title>
+				</Group>
+				<Text ta="justify" mb="sm">
+					Mon but est de devenir un référent en intégration web et d'être capable d'auditer l'accessibilité de plateformes d'envergure.
+				</Text>
+				<Text ta="justify">
+					<strong>Formations et perspectives :</strong> je prévois de me former de manière approfondie sur le référentiel général 
+					d'amélioration de l'accessibilité (<strong>RGAA</strong>) et sur l'utilisation avancée des attributs 
+					&nbsp;<strong>ARIA</strong> (<em>Accessible Rich Internet Applications</em>), afin de rendre nos futures applications 
+					mobiles et web pleinement accessibles à 100% des utilisateurs en situation de handicap.
+				</Text>
+			</Paper>
+
+			<Paper shadow="xs" p="lg" radius="md" withBorder>
+				<Title order={4} mb="sm">5. Principales réalisations rattachées à cette compétence</Title>
+				<Stack gap="xs">
+					<Anchor onClick={() => navigate("/realisations/phidias")} size="sm">• Projet Phidias 3 - plateforme pédagogique BTP</Anchor>
+					<Anchor onClick={() => navigate("/realisations/armel-tms")} size="sm">• Application mobile ARMEL TMS</Anchor>
+					<Anchor onClick={() => navigate("/realisations/pact-hse")} size="sm">• PACT HSE - solution de gestion des risques</Anchor>
 				</Stack>
 			</Paper>
 		</Stack>

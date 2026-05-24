@@ -49,7 +49,6 @@ const Parcours = () => {
 					>
 						<Group gap="xs" mt={4}>
 							<Avatar src={item.company.logo} size={24} radius="xl" />
-							{/* On utilise un Text car on ne peut pas mettre une ancre dans une ancre */}
 							<Text component="span" inherit>
 								{item.company.name}
 							</Text>
@@ -75,7 +74,6 @@ const Parcours = () => {
 				{renderTimeline(formations)}
 			</Paper>
 
-			{/* La modale qui affiche le 2ème niveau de lecture */}
 			<Modal opened={opened} onClose={close} title={selectedItem?.title} size="xl" centered>
 				{selectedItem && (
 					<Stack>
