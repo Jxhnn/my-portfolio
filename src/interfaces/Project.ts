@@ -7,4 +7,5 @@ export default interface Project {
     year: number;
     picture: string;
     description: ReactNode;
+    shortDescription: string;
 };

@@ -1,9 +1,7 @@
-
 import type Skill from "../interfaces/Skill";
 import type SkillChartData from "../interfaces/SkillChartData";
 import ReactSkill from "../components/ReactSkill/ReactSkill";
 import JavascriptSkill from "../components/JavascriptSkill/JavascriptSkill";
-import PHPSkill from "../components/PHPSkill/PHPSkill";
 import HTMLSkill from "../components/HTMLSkill/HTMLSkill";
 import CSSSkill from "../components/CSSSkill/CSSSkill";
 import LaravelSkill from "../components/LaravelSkill/LaravelSkill";
@@ -29,27 +27,6 @@ export const technicalSkillsList: Skill[] = [
 		description: (<JavascriptSkill />)
 	},
 	{
-		id: 'php',
-		title: 'PHP',
-		picture: 'assets/php.svg',
-		level: 'Intermédiaire',
-		description: (<PHPSkill />)
-	},
-	{
-		id: 'html',
-		title: 'HTML',
-		picture: 'assets/html.svg',
-		level: 'Avancé',
-		description: (<HTMLSkill />)
-	},
-	{
-		id: 'css',
-		title: 'CSS',
-		picture: 'assets/css.svg',
-		level: 'Avancé',
-		description: (<CSSSkill />)
-	},
-	{
 		id: 'laravel',
 		title: 'Laravel',
 		level: 'Avancé',
@@ -63,16 +40,29 @@ export const technicalSkillsList: Skill[] = [
 		picture: 'assets/mysql.svg',
 		description: (<SQLSkill />)
 	},
+	{
+		id: 'css',
+		title: 'CSS',
+		picture: 'assets/css.svg',
+		level: 'Avancé',
+		description: (<CSSSkill />)
+	},
+	{
+		id: 'html',
+		title: 'HTML',
+		picture: 'assets/html.svg',
+		level: 'Avancé',
+		description: (<HTMLSkill />)
+	}
 ];
 
 export const technicalSkillsChartData: SkillChartData[] = [
 	{ skill: "React", level: 65 },
 	{ skill: "JavaScript", level: 85 },
-	{ skill: "PHP", level: 65 },
-	{ skill: "HTML", level: 85 },
-	{ skill: "CSS", level: 85 },
 	{ skill: "Laravel", level: 85 },
 	{ skill: "MySQL", level: 85 },
+	{ skill: "CSS", level: 85 },
+	{ skill: "HTML", level: 85 }
 ];
 
 export const humanSkillsList: Skill[] = [
