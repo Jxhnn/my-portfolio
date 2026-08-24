@@ -22,7 +22,7 @@ const JavascriptSkill: React.FC = () => {
 					<Title order={2}>Compétence : JavaScript</Title>
 				</Group>
 				<Text size="lg" ta="justify" c="dimmed">
-					Fiche d'évaluation détaillée de la maîtrise du langage JavaScript, de la logique asynchrone et de la manipulation dynamique du DOM.
+				Expertise du langage JavaScript, de la logique asynchrone complexe et de la manipulation dynamique du DOM.
 				</Text>
 			</Paper>
 

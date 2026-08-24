@@ -22,8 +22,8 @@ const HTMLSkill: React.FC = () => {
 					<Title order={2}>Compétence : HTML</Title>
 				</Group>
 				<Text size="lg" ta="justify" c="dimmed">
-					Fiche d'évaluation détaillée de la compétence de structuration sémantique du web, de référencement (SEO) et 
-					d'accessibilité (WCAG).
+					Structuration sémantique avancée, optimisation du référencement (SEO) et 
+					conformité aux normes d'accessibilité (WCAG).
 				</Text>
 			</Paper>
 

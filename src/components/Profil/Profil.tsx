@@ -1,54 +1,75 @@
-import { ActionIcon, Anchor, Group, Image, Space, Stack, Text, Title } from '@mantine/core';
+import { ActionIcon, Group, Image, SimpleGrid, Stack, Text, Title, Paper, ThemeIcon } from '@mantine/core';
 import classes from './Profil.module.css';
-import { IconBrandGithub, IconBrandInstagram, IconBrandLinkedin } from '@tabler/icons-react';
+import { 
+	IconBrandGithub, 
+	IconBrandLinkedin, 
+	IconBriefcase, 
+	IconApps, 
+	IconUsers, 
+	IconDatabase 
+} from '@tabler/icons-react';
 
 const Profil: React.FC = () => {
 	return (
 		<div className={classes.container}>
 			<div className={classes.content}>
-				<Title>Mon profil</Title>
-				<Space h="xl" />
+				<Title order={1} size="h1" c="blue.4">Ingénieur Logiciel & développeur full-stack</Title>
+				<Text size="xl" fw={500} mt="md" c="dimmed">
+					Conception d'architectures robustes, automatisation des déploiements et création de solutions métiers sur mesure.
+				</Text>
+
+				<SimpleGrid cols={{ base: 1, sm: 2 }} mt="xl" mb="xl">
+					<Paper withBorder p="md" radius="md" shadow="sm">
+						<Group>
+							<ThemeIcon size="lg" radius="md" variant="light" color="blue"><IconBriefcase size={20} /></ThemeIcon>
+							<Stack gap={0}>
+								<Text size="xl" fw={700}>4 ans</Text>
+								<Text size="sm" c="dimmed">d'expérience en entreprise</Text>
+							</Stack>
+						</Group>
+					</Paper>
+					<Paper withBorder p="md" radius="md" shadow="sm">
+						<Group>
+							<ThemeIcon size="lg" radius="md" variant="light" color="teal"><IconApps size={20} /></ThemeIcon>
+							<Stack gap={0}>
+								<Text size="xl" fw={700}>+ de 20</Text>
+								<Text size="sm" c="dimmed">projets & intranets déployés</Text>
+							</Stack>
+						</Group>
+					</Paper>
+					<Paper withBorder p="md" radius="md" shadow="sm">
+						<Group>
+							<ThemeIcon size="lg" radius="md" variant="light" color="orange"><IconUsers size={20} /></ThemeIcon>
+							<Stack gap={0}>
+								<Text size="xl" fw={700}>+ de 400</Text>
+								<Text size="sm" c="dimmed">utilisateurs quotidiens</Text>
+							</Stack>
+						</Group>
+					</Paper>
+					<Paper withBorder p="md" radius="md" shadow="sm">
+						<Group>
+							<ThemeIcon size="lg" radius="md" variant="light" color="grape"><IconDatabase size={20} /></ThemeIcon>
+							<Stack gap={0}>
+								<Text size="xl" fw={700}>+ de 3 Go</Text>
+								<Text size="sm" c="dimmed">de données migrées en sécurité</Text>
+							</Stack>
+						</Group>
+					</Paper>
+				</SimpleGrid>
+
 				<Stack gap="md" ta="justify">
-					<Text size="lg" fw={500} c="blue.4">
-						Futur ingénieur logiciel & développeur web en alternance
-					</Text>
-					
 					<Text>
-						Je m’appelle <strong>John THOMAS</strong>. Passionné par l'informatique depuis
-						mon entrée dans le domaine en 2018, j'ai d'abord forgé mes compétences 
-						système et réseau lors d'un 
-						<Anchor target="_blank" href="https://www.onisep.fr/ressources/univers-formation/formations/lycees/bac-pro-cybersecurite-informatique-et-reseaux-electronique">
-						 	Baccalauréat Professionnel S.N
-						</Anchor> 
-						&nbsp;(Systèmes Numériques, option RISC). Cette base technique m'a permis de comprendre le 
-						fonctionnement des infrastructures, mais c'est le désir de concevoir et de créer des outils 
-						sur mesure qui m'a naturellement orienté vers le développement applicatif.
+						Passionné par l'ingénierie logicielle, j'accompagne les entreprises dans la conception d'outils performants et hautement disponibles. Mon parcours, initialement ancré dans l'administration système et réseau, m'a doté d'une vision transverse des infrastructures (serveurs, sécurité, réseau). Cette maîtrise de bout en bout me permet aujourd'hui de concevoir des architectures applicatives qui ne se contentent pas de fonctionner localement, mais qui sont pensées pour la production.
 					</Text>
-
 					<Text>
-						J'ai alors poursuivi mon cursus avec un BTS SIO option S.L.A.M 
-						(Solutions Logicielles et Applications Métiers), suivi d'une 
-						<Anchor target="_blank" href="https://www.iut.u-bordeaux.fr/info/assets/ressources/20141030LPROIUTBXINFODAWINw.pdf">
-							Licence Professionnelle DAWIN
-						</Anchor>
-						&nbsp;à l'IUT de Bordeaux. Aujourd'hui, afin de consolider ma posture de concepteur logiciel, 
-						je prépare un 
-						<Anchor href="https://www.onisep.fr/ressources/univers-formation/formations/post-bac/expert-en-ingenierie-logicielle" target="_blank">
-							Mastère Expert en Ingénierie Logicielle
-						</Anchor>
-						&nbsp;au sein de l'ISCOD.
+						Depuis 2022, j'évolue en tant que développeur web au sein de l'agence numérique <strong>Exelys</strong>. Ce rôle me confronte quotidiennement à des défis d'ingénierie majeurs : conception d'APIs résilientes, modernisation d'infrastructures historiques, développement d'interfaces complexes (React, TypeScript, Laravel) et mise en place de pipelines CI/CD. J'y cultive une approche pragmatique axée sur la Clean Architecture et la satisfaction des besoins métiers.
 					</Text>
-
 					<Text>
-						Cette trajectoire académique s'accompagne d'un ancrage professionnel solide : 
-						depuis septembre 2022, j'évolue en tant que développeur web en alternance chez
-						&nbsp;<strong>Exelys</strong>. Ce quotidien me permet de concevoir des architectures 
-						robustes, de manipuler des technologies modernes (React, TypeScript, Laravel, SQL)
-						et d'appréhender des contraintes de production concrètes auprès de clients variés.
+						En parallèle de mes missions, je valide un Mastère Expert en Ingénierie Logicielle (ISCOD), consolidant ainsi mon expertise sur la sécurité logicielle, les pratiques DevOps et le pilotage technique de projets d'envergure.
 					</Text>
 				</Stack>
-				<Space h="xl" />
-				<Group>
+
+				<Group mt="xl">
 					<ActionIcon
 						component="a"
 						href="https://www.linkedin.com/in/john-thomas-919782202/"
@@ -72,18 +93,6 @@ const Profil: React.FC = () => {
 						aria-label="Mon profil GitHub"
 					>
 						<IconBrandGithub stroke={1.5} />
-					</ActionIcon>
-					<ActionIcon
-						component="a"
-						href="https://www.instagram.com/jxhnn03/"
-						target="_blank"
-						size="xl"
-						variant="gradient"
-						gradient={{ from: 'yellow', to: 'purple', deg: 45 }}
-						radius="xl"
-						aria-label="Mon profil Instagram"
-					>
-						<IconBrandInstagram stroke={1.5} />
 					</ActionIcon>
 				</Group>
 			</div>

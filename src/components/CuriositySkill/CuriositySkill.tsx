@@ -22,7 +22,8 @@ const CuriositySkill: React.FC = () => {
 					<Title order={2}>Compétence humaine : curiosité & apprentissage</Title>
 				</Group>
 				<Text size="lg" ta="justify" c="dimmed">
-					Fiche d'évaluation de la capacité de veille technologique active, de réactivité d'apprentissage et d'adaptation aux nouveaux frameworks.
+				Veille technologique continue, assimilation rapide de nouveaux paradigmes et adaptation 
+				aux écosystèmes émergents.
 				</Text>
 			</Paper>
 

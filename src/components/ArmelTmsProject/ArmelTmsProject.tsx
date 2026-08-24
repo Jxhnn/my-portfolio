@@ -11,13 +11,13 @@ import {
 	IconSettings,
 	IconUsers,
 	IconDeviceDesktop,
-	IconAlertTriangle
+	IconAlertTriangle,
+	IconCloudUpload
 } from "@tabler/icons-react";
 import { useNavigate } from "react-router";
 
 const ArmelTmsProject: React.FC = () => {
 	const navigate = useNavigate();
-
 	const pictures = [
 		'assets/projects/armel-tms/1.png',
 		'assets/projects/armel-tms/2.png',
@@ -25,7 +25,6 @@ const ArmelTmsProject: React.FC = () => {
 		'assets/projects/armel-tms/4.png',
 		'assets/projects/armel-tms/5.png',
 	];
-
 	const slides = pictures.map((url) => (
 		<Carousel.Slide key={url}>
 			<Image
@@ -182,8 +181,25 @@ const ArmelTmsProject: React.FC = () => {
 
 			<Paper withBorder p="xl" radius="md" shadow="sm">
 				<Group mb="md">
+					<ThemeIcon color="green" variant="light"><IconCloudUpload size={20} /></ThemeIcon>
+					<Title order={3}>4. Industrialisation et CI/CD (intégration et déploiement continus)</Title>
+				</Group>
+				<Text ta="justify" mb="sm">
+					L'un des défis majeurs d'une application multi-plateforme est la lourdeur de la génération des différents exécutables. 
+					Pour y remédier et sécuriser mes processus de livraison, j'ai mis en place un pipeline d'automatisation via <strong>GitHub Actions</strong>. 
+				</Text>
+				<Text ta="justify">
+					Dès qu'une nouvelle version ('release') est taguée sur le dépôt de code, le pipeline se déclenche automatiquement pour compiler 
+					et générer les exécutables de production finaux : l'APK pour Android, ainsi que les binaires Electron natifs pour Windows, macOS et Linux. 
+					L'environnement iOS est géré en parallèle via TestFlight pour les tests internes. Cette industrialisation m'a permis de garantir des 
+					livraisons fiables, de limiter au maximum les erreurs humaines lors des builds et de gagner un temps considérable à chaque mise à jour de l'application.
+				</Text>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
 					<ThemeIcon color="green" variant="light"><IconUsers size={20} /></ThemeIcon>
-					<Title order={3}>4. Collaboration, retours d'utilisateurs et livraison</Title>
+					<Title order={3}>5. Collaboration, retours d'utilisateurs et livraison</Title>
 				</Group>
 				<Text ta="justify" mb="sm">
 					Bien que j'aie mené seul le développement de l'application, 
@@ -206,7 +222,7 @@ const ArmelTmsProject: React.FC = () => {
 			<Paper withBorder p="xl" radius="md" shadow="sm">
 				<Group mb="md">
 					<ThemeIcon color="orange" variant="light"><IconAlertTriangle size={20} /></ThemeIcon>
-					<Title order={3} c="orange.5">5. Analyse critique et retour d'expérience</Title>
+					<Title order={3} c="orange.5">6. Analyse critique et retour d'expérience</Title>
 				</Group>
 				<Text ta="justify" mb="md">
 					L'analyse de cette réalisation met en lumière deux points cruciaux 

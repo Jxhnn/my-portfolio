@@ -22,8 +22,8 @@ const AutonomySkill: React.FC = () => {
 					<Title order={2}>Compétence humaine : autonomie & proactivité</Title>
 				</Group>
 				<Text size="lg" ta="justify" c="dimmed">
-					Fiche d'évaluation de la capacité à s'approprier des problématiques complexes, à rechercher des solutions de manière indépendante 
-					et à être force de proposition.
+					Capacité à s'approprier des problématiques complexes et à piloter des solutions 
+					techniques de bout en bout.
 				</Text>
 			</Paper>
 

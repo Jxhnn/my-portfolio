@@ -22,7 +22,8 @@ const LaravelSkill: React.FC = () => {
 					<Title order={2}>Compétence : Laravel</Title>
 				</Group>
 				<Text size="lg" ta="justify" c="dimmed">
-					Fiche d'évaluation détaillée de la compétence de conception d'architectures applicatives web et d'API RESTful.
+					Conception d'architectures backend robustes, développement d'APIs RESTful sécurisées et 
+					industrialisation du code.
 				</Text>
 			</Paper>
 

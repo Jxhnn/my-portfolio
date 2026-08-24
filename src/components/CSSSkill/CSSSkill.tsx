@@ -22,7 +22,8 @@ const CSSSkill: React.FC = () => {
 					<Title order={2}>Compétence : CSS</Title>
 				</Group>
 				<Text size="lg" ta="justify" c="dimmed">
-					Fiche d'évaluation détaillée de la compétence de mise en page web responsive, d'encapsulation de styles et d'intégration moderne.
+					Création d'interfaces responsives fluides, encapsulation modulaire 
+					des styles et intégration visuelle de haute précision.
 				</Text>
 			</Paper>
 

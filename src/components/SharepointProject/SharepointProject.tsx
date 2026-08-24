@@ -42,11 +42,14 @@ const SharepointProject: React.FC = () => {
 					étaient sous-utilisés. Les fonctionnalités d'origine (out-of-the-box) de Microsoft 365 s'avérant trop restrictives pour répondre 
 					à leurs besoins métiers spécifiques, l'objectif était de concevoir et de déployer des composants sur mesure hautement interactifs.
 				</Text>
-				<Text ta="justify">
+				<Text ta="justify" mb="md">
 					L'enjeu majeur de ces projets résidait dans l'adhésion des collaborateurs et l'intégration transparente. Il était indispensable de concevoir des outils qui 
 					s'intègrent parfaitement à la charte graphique de chaque entreprise, tout en respectant scrupuleusement les contraintes de sécurité et d'authentification imposées 
 					par l'environnement Microsoft de nos clients.
 				</Text>
+				<Blockquote color="blue" radius="md" py="xs" px="md">
+					<strong>Impact et échelle :</strong> À ce jour, j'ai eu l'opportunité de concevoir et déployer ces solutions sur <strong>plus de 7 portails de communication interne (intranets)</strong> distincts, touchant à chaque fois des centaines de collaborateurs et s'adaptant aux règles de gestion très spécifiques de chaque structure.
+				</Blockquote>
 			</Paper>
 
 			<Paper withBorder p="xl" radius="md" shadow="sm">
@@ -57,14 +60,14 @@ const SharepointProject: React.FC = () => {
 				<Text ta="justify" mb="sm">
 					Pour étendre l'expérience SharePoint sans dégrader les performances, j'ai développé des extensions de composants appelées 
 					&nbsp;<strong>WebParts</strong> en exploitant le <strong>SharePoint Framework (SPFx)</strong>. 
-					Ma démarche technique s'est structurée autour des bonnes pratiques de l'écosystème React :
+					Ma démarche technique s'est structurée autour des bonnes pratiques d'ingénierie logicielle :
 				</Text>
 				<Stack gap="sm" pl="md">
 					<Text ta="justify">
-						• <strong>Abstraction et custom hooks :</strong> afin de séparer la couche d'affichage de la logique de récupération des données, 
-						j'ai développé des <em>custom hooks React</em>. Ces hooks encapsulent l'appel aux sources de données, 
-						tout en orchestrant de manière centralisée les états de chargement (<code>loading</code>), de gestion des erreurs (<code>error</code>), 
-						et la mise à jour des états locaux.
+						• <strong>Design Pattern "Services" et Clean Architecture :</strong> afin de garantir une maintenabilité et une évolutivité maximales de nos WebParts, j'ai structuré mon code en séparant strictement la logique métier de la logique d'affichage. J'utilise un pattern de <em>Services</em> pour toute la couche de récupération et de mutation de données (appels API, Microsoft Graph). Les composants React restent ainsi purement dédiés au rendu visuel. Cette approche me permet de faire évoluer le requêtage de données sans jamais risquer de casser l'interface utilisateur.
+					</Text>
+					<Text ta="justify">
+						• <strong>Abstraction et custom hooks :</strong> en complément des services, j'ai développé des <em>custom hooks React</em>. Ces hooks connectent la couche de service aux composants visuels et orchestrent de manière centralisée les états asynchrones de chargement (<code>loading</code>) et de gestion des erreurs (<code>error</code>).
 					</Text>
 					<Text ta="justify">
 						• <strong>Consommation des APIs Microsoft 365 :</strong> pour interroger les listes SharePoint et les données 
@@ -74,7 +77,7 @@ const SharepointProject: React.FC = () => {
 					</Text>
 					<Text ta="justify">
 						• <strong>Encapsulation des styles (SCSS modules) :</strong> pour éviter les conflits d'affichage entre mes composants 
-						sur mesure et les styles globaux de la page SharePoint, j'ai encapsulé la mise en forme de chaque Web Part à l'aide 
+						sur mesure et les styles globaux de la page SharePoint, j'ai encapsulé la mise en forme de chaque WebPart à l'aide 
 						des <em>CSS modules</em> en SCSS.
 					</Text>
 				</Stack>
@@ -134,7 +137,7 @@ const SharepointProject: React.FC = () => {
 				<Text ta="justify" mb="sm">
 					La modernisation d'intranets est un exercice qui requiert d'excellentes compétences en communication. J'ai participé activement aux points de suivi 
 					hebdomadaires avec les clients. Mon rôle consistait à présenter les avancées visuelles et fonctionnelles de l'application, mais surtout à vulgariser 
-					nos contraintes techniques auprès d'interlocuteurs non-informaticiens (directions des ressources humaines ou de la communication).
+					nos contraintes techniques d'architecture auprès d'interlocuteurs non-informaticiens (directions des ressources humaines ou de la communication).
 				</Text>
 				<Text ta="justify">
 					Cette posture d'écoute m'a permis de créer une véritable boucle de feedback : chaque démonstration était l'occasion de confronter notre travail aux 
@@ -161,17 +164,17 @@ const SharepointProject: React.FC = () => {
 				</Blockquote>
 				<Text ta="justify" mt="md">
 					Cette "gymnastique technique" est essentielle en entreprise : elle permet de livrer des solutions fonctionnelles et dynamiques tout 
-					en respectant scrupuleusement le cadre de sécurité existant du client.
+					en respectant scrupuleusement le cadre de sécurité existant du client, prouvant ainsi une vraie maturité d'ingénierie de production.
 				</Text>
 			</Paper>
 
 			<Paper shadow="xs" p="lg" radius="md" withBorder>
 				<Title order={4} mb="sm">Compétences techniques & humaines mises en œuvre</Title>
 				<Group gap="xs">
-					<Anchor onClick={() => navigate("/competences/react")} size="sm" fw={500}>React (SPFx)</Anchor> •
+					<Anchor onClick={() => navigate("/competences/react")} size="sm" fw={500}>React (SPFx) / TypeScript</Anchor> •
 					<Anchor onClick={() => navigate("/competences/css")} size="sm" fw={500}>CSS (SCSS Modules)</Anchor> •
 					<Anchor onClick={() => navigate("/competences/relation-client")} size="sm" fw={500}>Relation Client</Anchor> •
-					<Anchor onClick={() => navigate("/competences/rigueur")} size="sm" fw={500}>Rigueur & Organisation</Anchor>
+					<Anchor onClick={() => navigate("/competences/rigueur")} size="sm" fw={500}>Rigueur & Organisation (Clean Architecture)</Anchor>
 				</Group>
 			</Paper>
 		</Stack>

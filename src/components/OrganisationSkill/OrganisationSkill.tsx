@@ -22,8 +22,8 @@ const OrganisationSkill: React.FC = () => {
 					<Title order={2}>Compétence humaine : rigueur & organisation</Title>
 				</Group>
 				<Text size="lg" ta="justify" c="dimmed">
-					Fiche d'évaluation de l'application de méthodologies de travail rigoureuses, de la maîtrise des outils de versionnage et 
-					d'organisation de projet en équipe.
+					Pilotage rigoureux des workflows de développement, maîtrise du versionnage (Git) et intégration 
+					de pratiques CI/CD.
 				</Text>
 			</Paper>
 

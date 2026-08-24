@@ -22,7 +22,8 @@ const ReactSkill: React.FC = () => {
 					<Title order={2}>Compétence : React</Title>
 				</Group>
 				<Text size="lg" ta="justify" c="dimmed">
-					Fiche d'évaluation détaillée de la compétence de développement d'interfaces web réactives et modulaires.
+					Maîtrise de la conception d'interfaces web réactives, modulaires et 
+					d'architectures front-end scalables.
 				</Text>
 			</Paper>
 

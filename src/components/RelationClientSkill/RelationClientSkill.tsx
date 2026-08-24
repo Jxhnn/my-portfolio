@@ -22,7 +22,8 @@ const RelationClientSkill: React.FC = () => {
 					<Title order={2}>Compétence humaine : relation client</Title>
 				</Group>
 				<Text size="lg" ta="justify" c="dimmed">
-					Fiche d'évaluation de la posture professionnelle, de la capacité d'écoute active, d'empathie utilisateur et de vulgarisation technique.
+					Traduction de besoins métiers en spécifications techniques, vulgarisation logicielle et 
+					accompagnement des utilisateurs.
 				</Text>
 			</Paper>
 

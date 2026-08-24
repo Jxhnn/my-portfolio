@@ -22,8 +22,8 @@ const SQLSkill: React.FC = () => {
 					<Title order={2}>Compétence : MySQL / MariaDB</Title>
 				</Group>
 				<Text size="lg" ta="justify" c="dimmed">
-					Fiche d'évaluation détaillée de la compétence de modélisation relationnelle de données, de requêtage avancé et d'optimisation 
-					de bases de données.
+					Modélisation relationnelle de données, optimisation des performances de requêtage 
+					et sécurisation des bases de données.
 				</Text>
 			</Paper>
 

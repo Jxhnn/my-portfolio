@@ -1,5 +1,4 @@
-
-import { Title, Text, Stack, Paper, ThemeIcon, List, Group } from '@mantine/core';
+import { Title, Text, Stack, Paper, ThemeIcon, Group } from '@mantine/core';
 import { IconHeartHandshake, IconRocket, IconPuzzle, IconTrekking } from '@tabler/icons-react';
 
 function About() {
@@ -7,67 +6,72 @@ function About() {
 		<Stack gap="xl">
 			<Title order={1}>Ma vision et mon parcours</Title>
 			<Text size="lg" c="dimmed">
-				Au-delà du rôle de développeur, je suis passionné par la création de solutions en tout genre.
+				Au-delà de l'écriture de code, je conçois des architectures logicielles 
+				pérennes et des solutions adaptées aux véritables besoins métiers.
 			</Text>
+
 			<Paper withBorder shadow="md" p="xl" radius="md">
 				<Stack>
 					<Group>
 						<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'teal', to: 'lime' }}>
 							<IconHeartHandshake size={32} />
 						</ThemeIcon>
-						<Title order={3}>Ma philosophie : le code au service de l'humain</Title>
+						<Title order={3}>Ma philosophie : l'ingénierie au service de l'humain</Title>
 					</Group>
-					<Text>
-						Pour moi, coder n'est pas juste une question de technique. C'est avant tout créer des outils pour et par des gens. Mon approche du développement repose sur quelques idées simples :
-					</Text>
-					<List spacing="xs" size="sm" withPadding>
-						<List.Item>
-							<b>Penser à l'utilisateur avant tout :</b> je m'efforce de créer des interfaces simples et logiques. Si une application n'est pas agréable à utiliser, elle a manqué son but principal.
-						</List.Item>
-						<List.Item>
-							<b>Écrire du code de qualité :</b> un code propre et bien pensé est plus facile à faire évoluer et à maintenir. C'est un gage de respect pour les futurs développeurs (et pour mon moi du futur !).
-						</List.Item>
-						<List.Item>
-							<b>Être un coéquipier fiable :</b> je crois beaucoup à l'entraide et à la communication. Un projet réussi est toujours le fruit d'un bon travail d'équipe.
-						</List.Item>
-					</List>
-				</Stack>
-			</Paper>
-			<Paper withBorder shadow="md" p="xl" radius="md">
-				<Stack>
-					<Group>
-						<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'blue', to: 'cyan' }}>
-							<IconRocket size={32} />
-						</ThemeIcon>
-						<Title order={3}>Mes ambitions</Title>
-					</Group>
-					<Text>
-						Mon but est de continuer à apprendre et à me challenger.
-					</Text>
-					<Text>
-						Professionnellement, je veux vraiment maîtriser l'écosystème JavaScript moderne (<b>React</b>, <b>TypeScript</b>, <b>Node.js</b>). Mon objectif est de participer à des projets de plus en plus ambitieux et, pourquoi pas, d'aider d'autres développeurs à progresser.
-					</Text>
-					<Text>
-						Côté perso, j'aimerais garder du temps pour des projets qui me tiennent à cœur, comme contribuer à l'open-source ou simplement expérimenter avec de nouvelles technologies.
+					<Text ta="justify">
+						Pour moi, l'ingénierie logicielle dépasse la simple exécution 
+						technique : c'est la conception d'outils performants pour et par 
+						des humains. Mon approche repose sur l'équilibre entre une interface 
+						utilisateur (UX/UI) intuitive et une architecture backend robuste. 
+						Je mets un point d'honneur à livrer un code propre, structuré 
+						(Clean Architecture) et documenté. 
+						La maintenabilité est à mes yeux le premier gage de respect envers 
+						les équipes techniques futures et la garantie de longévité d'un projet. 
+						Le développement étant avant tout un sport d'équipe, je privilégie la 
+						transparence, l'entraide et la communication pour mener à bien des 
+						missions ambitieuses.
 					</Text>
 				</Stack>
 			</Paper>
+
 			<Paper withBorder shadow="md" p="xl" radius="md">
 				<Stack>
 					<Group>
 						<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'grape', to: 'pink' }}>
 							<IconPuzzle size={32} />
 						</ThemeIcon>
-						<Title order={3}>Mes atouts</Title>
+						<Title order={3}>Ma posture professionnelle</Title>
 					</Group>
-					<List spacing="sm" size="sm" withPadding>
-						<List.Item><b>Curieux :</b> j'adore démonter les choses pour comprendre comment elles marchent. C'est ce qui me pousse à faire de la veille technologique en permanence.</List.Item>
-						<List.Item><b>Organisé :</b> j'aime quand les choses sont bien faites. Un code propre et une bonne gestion des tâches, c'est important pour moi.</List.Item>
-						<List.Item><b>Collaboratif :</b> je suis convaincu qu'on va plus loin à plusieurs. J'aime beaucoup échanger et construire des solutions en équipe.</List.Item>
-						<List.Item><b>Autonome :</b> quand je suis sur un projet, je n'attends pas qu'on me donne toutes les réponses, j'aime chercher et proposer des solutions par moi-même.</List.Item>
-					</List>
+					<Text ta="justify">
+						Face à des problématiques techniques complexes, j'adopte une démarche 
+						analytique. Je n'hésite pas à décortiquer les systèmes existants 
+						pour en comprendre les rouages, ce qui me permet d'être une véritable 
+						force de proposition au sein de mon entreprise. Mon autonomie 
+						s'accompagne d'une grande rigueur méthodologique : de la modélisation 
+						de la base de données jusqu'à l'intégration de pipelines 
+						CI/CD (GitHub Actions), j'aime structurer mon environnement pour 
+						garantir des livraisons fiables. Enfin, convaincu que l'innovation 
+						naît de l'intelligence collective, je m'intègre naturellement dans 
+						des dynamiques collaboratives pour co-construire les meilleures 
+						solutions possibles.
+					</Text>
 				</Stack>
 			</Paper>
+
+			<Paper withBorder shadow="md" p="xl" radius="md">
+				<Stack>
+					<Group>
+						<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'blue', to: 'cyan' }}>
+							<IconRocket size={32} />
+						</ThemeIcon>
+						<Title order={3}>Mes ambitions d'ingénieur</Title>
+					</Group>
+					<Text ta="justify">
+						Mon objectif à moyen et long terme est de consolider mon expertise sur l'écosystème JavaScript/TypeScript (React, Node.js) et PHP (Laravel) pour concevoir des applications scalables et hautement disponibles. Je souhaite m'impliquer toujours plus dans les décisions d'architecture globale, la sécurité des systèmes et l'industrialisation des déploiements. À terme, j'aspire à encadrer techniquement des projets complexes, à auditer des plateformes, et à accompagner ou mentorer d'autres développeurs pour tirer l'équipe vers le haut.
+					</Text>
+				</Stack>
+			</Paper>
+
 			<Paper withBorder shadow="md" p="xl" radius="md">
 				<Stack>
 					<Group>
@@ -76,20 +80,9 @@ function About() {
 						</ThemeIcon>
 						<Title order={3}>Et en dehors du code ?</Title>
 					</Group>
-					<Text>
-						Pour rester créatif et équilibré, j'ai quelques passions qui me permettent de voir les choses différemment.
+					<Text ta="justify">
+						Pour conserver un équilibre et nourrir ma créativité, je cultive des centres d'intérêt variés. Passionné par l'écosystème de l'esport et de la compétition, j'y retrouve les valeurs de stratégie, d'analyse sous pression et d'esprit d'équipe qui me sont chères dans le monde professionnel. La musique électronique m'accompagne également au quotidien, particulièrement pour favoriser ma concentration (Deep Work). Enfin, ma curiosité me pousse à maintenir une veille technologique constante, explorant de mon côté des domaines liés à l'infrastructure réseau (conteneurs, Proxmox) et aux évolutions de l'intelligence artificielle pour anticiper les défis techniques de demain.
 					</Text>
-					<List spacing="sm" size="sm" withPadding>
-						<List.Item>
-							<b>L'esport :</b> passionné par la compétition, je suis de près plusieurs scènes de jeu. Plus qu'un simple loisir, c'est une excellente école pour l'esprit d'équipe, la communication sous pression et la stratégie.
-						</List.Item>
-						<List.Item>
-							<b>La musique :</b> elle m'accompagne au quotidien. J'ai des playlists pour tout, avec une préférence pour l'électro. C'est aussi un super moyen de découvrir de nouvelles ambiances et de rester créatif.
-						</List.Item>
-						<List.Item>
-							<b>La veille technologique :</b> c'est plus qu'un devoir, c'est une vraie passion. J'adore suivre ce qui se fait de nouveau, que ce soit dans le web, le hardware ou l'IA, pour nourrir ma curiosité et inspirer mes futurs projets.
-						</List.Item>
-					</List>
 				</Stack>
 			</Paper>
 		</Stack>

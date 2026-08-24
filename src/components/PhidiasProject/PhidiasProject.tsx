@@ -12,13 +12,13 @@ import {
 	IconUsers,
 	IconRotate,
 	IconAlertTriangle,
-	IconClock
+	IconClock,
+	IconServer
 } from "@tabler/icons-react";
 import { useNavigate } from "react-router";
 
 const PhidiasProject: React.FC = () => {
 	const navigate = useNavigate();
-
 	const pictures = [
 		'assets/projects/phidias/1.png',
 		'assets/projects/phidias/2.png',
@@ -28,7 +28,6 @@ const PhidiasProject: React.FC = () => {
 		'assets/projects/phidias/6.png',
 		'assets/projects/phidias/7.png',
 	];
-
 	const slides = pictures.map((url) => (
 		<Carousel.Slide key={url}>
 			<Image
@@ -87,9 +86,9 @@ const PhidiasProject: React.FC = () => {
 				</Group>
 				<Text ta="justify" mb="md">
 					Pour mener à bien cette migration délicate sans ressaisie manuelle, j'ai découpé mon 
-					intervention en plusieurs phases :
+					intervention en plusieurs phases structurées :
 				</Text>
-				<Stack gap="md" pl="md">
+				<Stack gap="md" pl="md" mb="md">
 					<Text ta="justify">
 						• <strong>Conception préalable et modélisation du schéma MySQL :</strong>
 						&nbsp;avant d'initier la moindre migration de données, j'ai procédé à la
@@ -106,19 +105,19 @@ const PhidiasProject: React.FC = () => {
 						ont analysé les fichiers XML d'origine pour en extraire le contenu et le formater.
 						Ils généraient ensuite des fichiers texte regroupant l'ensemble des requêtes SQL
 						d'insertion brute (<code>INSERT INTO</code>) nécessaires, construites par
-						concaténation et formatage de chaînes de caractères pour correspondre exactement
-						aux clés de notre nouvelle base MySQL.
+						concaténation et formatage de chaînes de caractères.
 					</Text>
 					<Text ta="justify">
 						• <strong>Nettoyage et résolution des incohérences relationnelles :</strong>
-						&nbsp;cette méthode de travail m'a permis de confronter de manière sécurisée les
-						faiblesses de l'ancien format XML aux exigences strictes de notre nouveau schéma
-						relationnel. J'ai dû traiter de nombreuses données manquantes, des balises de cours
+						&nbsp;j'ai dû traiter de nombreuses données manquantes, des balises de cours
 						orphelines, ainsi que des liaisons cassées vers des images qui n'existaient qu'à
 						moitié dans l'ancien système de fichiers. Le script Python a permis de nettoyer et
 						d'adapter ces données avant leur insertion finale.
 					</Text>
 				</Stack>
+				<Blockquote color="orange" radius="md" py="xs" px="md">
+					<strong>Impact métier :</strong> l'opération s'est soldée par la migration de <strong>plus de 3 Go de données brutes sans aucune perte</strong>, permettant d'onboarder avec succès plus d'une centaine d'utilisateurs actifs. Les scripts Python se sont révélés extrêmement performants pour traiter ce volume, et l'indexation de la base de données en amont a garanti des requêtes SQL ultra-rapides dès la mise en production.
+				</Blockquote>
 			</Paper>
 
 			<Paper withBorder p="xl" radius="md" shadow="sm">
@@ -144,8 +143,22 @@ const PhidiasProject: React.FC = () => {
 
 			<Paper withBorder p="xl" radius="md" shadow="sm">
 				<Group mb="md">
+					<ThemeIcon color="orange" variant="light"><IconServer size={20} /></ThemeIcon>
+					<Title order={3}>4. Déploiement et infrastructure</Title>
+				</Group>
+				<Text ta="justify">
+					Au-delà du développement logiciel, j'ai pris en charge le déploiement de la plateforme sur nos serveurs. 
+					L'application est hébergée de manière isolée sur des <strong>conteneurs Proxmox</strong> propulsés par 
+					un serveur web Apache2. J'y ai configuré l'environnement d'exécution de Laravel (PHP, droits d'accès, variables d'environnement) 
+					et géré la mise en production de manière manuelle, ce qui m'a permis d'acquérir une excellente maîtrise et un contrôle total 
+					sur la configuration système et la sécurité des environnements.
+				</Text>
+			</Paper>
+
+			<Paper withBorder p="xl" radius="md" shadow="sm">
+				<Group mb="md">
 					<ThemeIcon color="orange" variant="light"><IconUsers size={20} /></ThemeIcon>
-					<Title order={3}>4. Travail collaboratif et boucle de validation</Title>
+					<Title order={3}>5. Travail collaboratif et boucle de validation</Title>
 				</Group>
 				<Text ta="justify" mb="sm">
 					La réussite de cette refonte reposait sur une collaboration étroite entre plusieurs pôles 
@@ -164,7 +177,7 @@ const PhidiasProject: React.FC = () => {
 			<Paper withBorder p="xl" radius="md" shadow="sm">
 				<Group mb="md">
 					<ThemeIcon color="orange" variant="light"><IconClock size={20} /></ThemeIcon>
-					<Title order={3}>5. Les lendemains du projet : maintenance et R&D IA</Title>
+					<Title order={3}>6. Les lendemains du projet : maintenance et R&D IA</Title>
 				</Group>
 				<Text ta="justify" mb="sm">
 					La livraison de Phidias 3 n'a pas signé la fin de mon implication sur ce projet. 
@@ -188,7 +201,7 @@ const PhidiasProject: React.FC = () => {
 			<Paper withBorder p="xl" radius="md" shadow="sm">
 				<Group mb="md">
 					<ThemeIcon color="orange" variant="light"><IconAlertTriangle size={20} /></ThemeIcon>
-					<Title order={3} c="orange.5">6. Regard critique et apprentissages</Title>
+					<Title order={3} c="orange.5">7. Regard critique et apprentissages</Title>
 				</Group>
 				<Text ta="justify" mb="md">
 					Ce projet, qui a été ma première grande immersion professionnelle dans 
@@ -211,7 +224,7 @@ const PhidiasProject: React.FC = () => {
 					L'absence de tests automatisés lors de la migration des données pédagogiques 
 					a également représenté un facteur de stress technique, car chaque 
 					modification du code exigeait une validation manuelle. L'écriture de 
-					tests de validation d'intégrité de schéma SQL aurait été un atout précieux.
+					tests de validation d'intégrité de schéma SQL (via PHPUnit par exemple) aurait été un atout précieux.
 				</Text>
 			</Paper>
 
@@ -219,10 +232,10 @@ const PhidiasProject: React.FC = () => {
 				<Title order={4} mb="sm">Compétences techniques & humaines mises en œuvre</Title>
 				<Group gap="xs">
 					<Anchor onClick={() => navigate("/competences/laravel")} size="sm" fw={500}>Laravel</Anchor> •
-					<Anchor onClick={() => navigate("/competences/mysql")} size="sm" fw={500}>MySQL</Anchor> •
+					<Anchor onClick={() => navigate("/competences/mysql")} size="sm" fw={500}>MySQL / Bases de données</Anchor> •
 					<Anchor onClick={() => navigate("/competences/javascript")} size="sm" fw={500}>JavaScript (AJAX)</Anchor> •
-					<Anchor onClick={() => navigate("/competences/html")} size="sm" fw={500}>HTML</Anchor> •
-					<Anchor onClick={() => navigate("/competences/css")} size="sm" fw={500}>CSS</Anchor> •
+					<Anchor onClick={() => navigate("/competences/html")} size="sm" fw={500}>HTML / CSS</Anchor> •
+					<Anchor onClick={() => navigate("/competences/python")} size="sm" fw={500}>Python (Scripts Data)</Anchor> •
 					<Anchor onClick={() => navigate("/competences/autonomie")} size="sm" fw={500}>Autonomie & proactivité</Anchor>
 				</Group>
 			</Paper>
