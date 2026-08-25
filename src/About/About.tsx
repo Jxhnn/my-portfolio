@@ -1,5 +1,5 @@
 import { Title, Text, Stack, Paper, ThemeIcon, Group } from '@mantine/core';
-import { IconHeartHandshake, IconRocket, IconPuzzle, IconTrekking } from '@tabler/icons-react';
+import { IconHeartHandshake, IconRocket, IconPuzzle, IconTrekking, IconBriefcase } from '@tabler/icons-react';
 
 function About() {
 	return (
@@ -16,20 +16,24 @@ function About() {
 						<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'teal', to: 'lime' }}>
 							<IconHeartHandshake size={32} />
 						</ThemeIcon>
-						<Title order={3}>Ma philosophie : l'ingénierie au service de l'humain</Title>
+						<Title order={3}>Ma philosophie : qualité, sécurité et performance</Title>
 					</Group>
 					<Text ta="justify">
-						Pour moi, l'ingénierie logicielle dépasse la simple exécution 
-						technique : c'est la conception d'outils performants pour et par 
-						des humains. Mon approche repose sur l'équilibre entre une interface 
-						utilisateur (UX/UI) intuitive et une architecture backend robuste. 
-						Je mets un point d'honneur à livrer un code propre, structuré 
-						(Clean Architecture) et documenté. 
-						La maintenabilité est à mes yeux le premier gage de respect envers 
-						les équipes techniques futures et la garantie de longévité d'un projet. 
-						Le développement étant avant tout un sport d'équipe, je privilégie la 
-						transparence, l'entraide et la communication pour mener à bien des 
-						missions ambitieuses.
+						Pour moi, l'ingénierie logicielle dépasse la simple exécution technique. Je privilégie systématiquement la qualité, la fiabilité et une <strong>sécurité sans faille</strong> à la simple quantité de fonctionnalités livrées. Sur le plan frontend, j'affectionne la création d'interfaces dynamiques et expressives. Je cherche toujours le point d'équilibre parfait entre des animations fluides, une expérience utilisateur (UX/UI) intuitive et des performances de rendu irréprochables. Enfin, je mets un point d'honneur à livrer un code structuré (Clean Architecture) et documenté, car la maintenabilité est la garantie de longévité d'un projet.
+					</Text>
+				</Stack>
+			</Paper>
+
+			<Paper withBorder shadow="md" p="xl" radius="md">
+				<Stack>
+					<Group>
+						<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'blue', to: 'cyan' }}>
+							<IconBriefcase size={32} />
+						</ThemeIcon>
+						<Title order={3}>Contexte métier et typologie de clients</Title>
+					</Group>
+					<Text ta="justify">
+						Au sein d'Exelys, je conçois des solutions logicielles exclusivement orientées <strong>B2B pour des acteurs institutionnels et de grands comptes</strong> (TotalEnergies, Vinci Construction, le réseau CCCA-BTP). Les enjeux de ces clients gravitent autour de la gestion documentaire critique, de la communication interne à très grande échelle et de la digitalisation des processus métiers. Évoluer dans ce contexte de haute exigence m'oblige à concevoir des architectures scalables, où la haute disponibilité, la confidentialité des données et l'adoption de l'outil par des milliers de collaborateurs sont des priorités non négociables.
 					</Text>
 				</Stack>
 			</Paper>
@@ -40,20 +44,13 @@ function About() {
 						<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'grape', to: 'pink' }}>
 							<IconPuzzle size={32} />
 						</ThemeIcon>
-						<Title order={3}>Ma posture professionnelle</Title>
+						<Title order={3}>Ma posture professionnelle et méthodologie</Title>
 					</Group>
 					<Text ta="justify">
-						Face à des problématiques techniques complexes, j'adopte une démarche 
-						analytique. Je n'hésite pas à décortiquer les systèmes existants 
-						pour en comprendre les rouages, ce qui me permet d'être une véritable 
-						force de proposition au sein de mon entreprise. Mon autonomie 
-						s'accompagne d'une grande rigueur méthodologique : de la modélisation 
-						de la base de données jusqu'à l'intégration de pipelines 
-						CI/CD (GitHub Actions), j'aime structurer mon environnement pour 
-						garantir des livraisons fiables. Enfin, convaincu que l'innovation 
-						naît de l'intelligence collective, je m'intègre naturellement dans 
-						des dynamiques collaboratives pour co-construire les meilleures 
-						solutions possibles.
+						Je m'intègre dans une véritable dynamique d'ingénierie collaborative. Ma semaine s'articule autour de rituels de synchronisation précis : une réunion de pilotage avec l'équipe IT pour estimer et planifier nos charges de développement, suivie d'une coordination transverse avec le pôle Multimédia pour aligner l'intégration de leurs maquettes (Figma) avec nos contraintes techniques. Pour orchestrer cela, nous utilisons d'ailleurs un gestionnaire de tâches sur mesure que nous développons nous-mêmes sur SharePoint (SPFx).
+					</Text>
+					<Text ta="justify">
+						Au sein de l'équipe technique, mon autonomie me permet d'être force de proposition et je suis régulièrement amené à participer aux <strong>prises de décisions architecturales</strong> (choix de frameworks ou de bibliothèques). J'assume également un rôle de mentorat informel : j'accompagne un autre développeur en alternance dans sa montée en compétences, et je guide régulièrement mes collaborateurs sur les bonnes pratiques de versionnage (stratégies de branches Git).
 					</Text>
 				</Stack>
 			</Paper>
@@ -61,13 +58,13 @@ function About() {
 			<Paper withBorder shadow="md" p="xl" radius="md">
 				<Stack>
 					<Group>
-						<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'blue', to: 'cyan' }}>
+						<ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'cyan', to: 'blue' }}>
 							<IconRocket size={32} />
 						</ThemeIcon>
 						<Title order={3}>Mes ambitions d'ingénieur</Title>
 					</Group>
 					<Text ta="justify">
-						Mon objectif à moyen et long terme est de consolider mon expertise sur l'écosystème JavaScript/TypeScript (React, Node.js) et PHP (Laravel) pour concevoir des applications scalables et hautement disponibles. Je souhaite m'impliquer toujours plus dans les décisions d'architecture globale, la sécurité des systèmes et l'industrialisation des déploiements. À terme, j'aspire à encadrer techniquement des projets complexes, à auditer des plateformes, et à accompagner ou mentorer d'autres développeurs pour tirer l'équipe vers le haut.
+						Mon objectif à moyen terme est de consolider mon expertise sur l'écosystème JavaScript/TypeScript (React, Node.js) et PHP (Laravel) pour concevoir des applications toujours plus performantes. Je m'intéresse de plus en plus à la culture DevOps et à l'infrastructure logicielle : j'ai par exemple commencé à intégrer des solutions de conteneurisation comme <strong>Docker</strong> pour nos serveurs de développement. À terme, j'aspire à encadrer techniquement des projets complexes, à auditer des plateformes, et à continuer d'accompagner d'autres développeurs pour tirer mon équipe vers le haut.
 					</Text>
 				</Stack>
 			</Paper>

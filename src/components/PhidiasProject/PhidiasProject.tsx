@@ -82,41 +82,29 @@ const PhidiasProject: React.FC = () => {
 			<Paper withBorder p="xl" radius="md" shadow="sm">
 				<Group mb="md">
 					<ThemeIcon color="orange" variant="light"><IconDatabase size={20} /></ThemeIcon>
-					<Title order={3}>2. Gestion de la migration et refonte du schéma de données</Title>
+					<Title order={3}>2. Ingénierie de la donnée : migration et refonte du schéma</Title>
 				</Group>
 				<Text ta="justify" mb="md">
-					Pour mener à bien cette migration délicate sans ressaisie manuelle, j'ai découpé mon 
-					intervention en plusieurs phases structurées :
+					Pour mener à bien cette migration délicate sans aucune ressaisie manuelle, j'ai orchestré 
+					l'opération en plusieurs phases structurées. Avant d'écrire la moindre ligne de code, 
+					j'ai procédé à la modélisation complète du nouveau schéma relationnel sous MySQL. 
+					J'y ai redéfini rigoureusement les clés primaires et les contraintes d'intégrité 
+					référentielle, tout en planifiant les index nécessaires à l'optimisation des futures requêtes.
 				</Text>
-				<Stack gap="md" pl="md" mb="md">
-					<Text ta="justify">
-						• <strong>Conception préalable et modélisation du schéma MySQL :</strong>
-						&nbsp;avant d'initier la moindre migration de données, j'ai procédé à la
-						modélisation complète du nouveau schéma relationnel sous MySQL. J'ai conçu
-						la structure de l'ensemble des tables (cours, chapitres, lexique, utilisateurs),
-						défini rigoureusement les clés primaires, configuré les clés étrangères pour
-						garantir l'intégrité référentielle de la plateforme, et planifié les index
-						nécessaires pour optimiser les performances des futures requêtes applicatives.
-					</Text>
-					<Text ta="justify">
-						• <strong>Scripts d'extraction et de génération SQL (Python) :</strong>
-						&nbsp;ce n'est qu'une fois la base de données cible figée et fonctionnelle
-						que j'ai écrit mes scripts d'automatisation en Python. Ces outils parseurs
-						ont analysé les fichiers XML d'origine pour en extraire le contenu et le formater.
-						Ils généraient ensuite des fichiers texte regroupant l'ensemble des requêtes SQL
-						d'insertion brute (<code>INSERT INTO</code>) nécessaires, construites par
-						concaténation et formatage de chaînes de caractères.
-					</Text>
-					<Text ta="justify">
-						• <strong>Nettoyage et résolution des incohérences relationnelles :</strong>
-						&nbsp;j'ai dû traiter de nombreuses données manquantes, des balises de cours
-						orphelines, ainsi que des liaisons cassées vers des images qui n'existaient qu'à
-						moitié dans l'ancien système de fichiers. Le script Python a permis de nettoyer et
-						d'adapter ces données avant leur insertion finale.
-					</Text>
-				</Stack>
+				<Text ta="justify" mb="md">
+					Une fois la base cible verrouillée, j'ai développé des scripts d'automatisation 
+					en Python. Ces algorithmes de parsing ont analysé l'intégralité des vieux fichiers 
+					XML pour en extraire et nettoyer le contenu. Face aux incohérences 
+					héritées (données manquantes, balises orphelines, liaisons d'images brisées), mes 
+					scripts ont opéré une normalisation à la volée avant de générer les requêtes SQL 
+					d'insertion massive.
+				</Text>
 				<Blockquote color="orange" radius="md" py="xs" px="md">
-					<strong>Impact métier :</strong> l'opération s'est soldée par la migration de <strong>plus de 3 Go de données brutes sans aucune perte</strong>, permettant d'onboarder avec succès plus d'une centaine d'utilisateurs actifs. Les scripts Python se sont révélés extrêmement performants pour traiter ce volume, et l'indexation de la base de données en amont a garanti des requêtes SQL ultra-rapides dès la mise en production.
+					<strong>Impact métier :</strong> l'opération s'est soldée par la migration 
+					de <strong>plus de 3 Go de données brutes sans aucune perte</strong>, permettant 
+					d'onboarder avec succès plus d'une centaine d'utilisateurs actifs. L'approche 
+					d'automatisation par Python s'est révélée redoutablement performante face à ce volume 
+					de données, garantissant un environnement de production propre et prêt à l'emploi.
 				</Blockquote>
 			</Paper>
 

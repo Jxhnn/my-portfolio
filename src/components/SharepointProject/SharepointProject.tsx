@@ -58,29 +58,26 @@ const SharepointProject: React.FC = () => {
 					<Title order={3}>2. Architecture technique frontend : SPFx, React et TypeScript</Title>
 				</Group>
 				<Text ta="justify" mb="sm">
-					Pour étendre l'expérience SharePoint sans dégrader les performances, j'ai développé des extensions de composants appelées 
-					&nbsp;<strong>WebParts</strong> en exploitant le <strong>SharePoint Framework (SPFx)</strong>. 
-					Ma démarche technique s'est structurée autour des bonnes pratiques d'ingénierie logicielle :
+					Pour étendre l'expérience SharePoint sans dégrader les performances du portail, j'ai 
+					développé des extensions de composants (WebParts) en exploitant 
+					le <strong>SharePoint Framework (SPFx)</strong>. Ma démarche technique a 
+					été entièrement dictée par les principes de la Clean Architecture. Afin de 
+					garantir une maintenabilité et une évolutivité maximales, j'ai strictement 
+					isolé la logique métier de la logique d'affichage en implémentant un pattern 
+					de <em>Services</em>, gérant toutes les opérations de lecture et d'écriture 
+					de données.
 				</Text>
-				<Stack gap="sm" pl="md">
-					<Text ta="justify">
-						• <strong>Design Pattern "Services" et Clean Architecture :</strong> afin de garantir une maintenabilité et une évolutivité maximales de nos WebParts, j'ai structuré mon code en séparant strictement la logique métier de la logique d'affichage. J'utilise un pattern de <em>Services</em> pour toute la couche de récupération et de mutation de données (appels API, Microsoft Graph). Les composants React restent ainsi purement dédiés au rendu visuel. Cette approche me permet de faire évoluer le requêtage de données sans jamais risquer de casser l'interface utilisateur.
-					</Text>
-					<Text ta="justify">
-						• <strong>Abstraction et custom hooks :</strong> en complément des services, j'ai développé des <em>custom hooks React</em>. Ces hooks connectent la couche de service aux composants visuels et orchestrent de manière centralisée les états asynchrones de chargement (<code>loading</code>) et de gestion des erreurs (<code>error</code>).
-					</Text>
-					<Text ta="justify">
-						• <strong>Consommation des APIs Microsoft 365 :</strong> pour interroger les listes SharePoint et les données 
-						d'annuaire, j'ai exploité de manière intensive la bibliothèque <code>@pnp/sp</code>. Dès que le besoin exigeait 
-						d'interagir avec les services Office (comme Outlook ou Teams), j'ai configuré des connexions sécurisées vers l'API 
-						Microsoft Graph en utilisant <code>@pnp/graph</code> ou l'objet natif d'SPFx <code>MSGraphClientFactory</code>.
-					</Text>
-					<Text ta="justify">
-						• <strong>Encapsulation des styles (SCSS modules) :</strong> pour éviter les conflits d'affichage entre mes composants 
-						sur mesure et les styles globaux de la page SharePoint, j'ai encapsulé la mise en forme de chaque WebPart à l'aide 
-						des <em>CSS modules</em> en SCSS.
-					</Text>
-				</Stack>
+				<Text ta="justify">
+					Pour faire le lien avec l'interface, j'ai conçu des <em>custom hooks React</em> personnalisés 
+					qui orchestrent les états de chargement et d'erreur de manière centralisée. 
+					Concernant le flux de données, j'ai exploité intensivement <code>@pnp/sp</code> pour 
+					requêter les listes SharePoint, et <code>@pnp/graph</code> pour établir des 
+					connexions sécurisées vers les API Microsoft 365 (annuaires, Teams, Outlook). Enfin, 
+					pour prévenir le moindre conflit visuel avec les feuilles de styles natives de 
+					Microsoft, j'ai encapsulé la mise en forme de chaque composant via l'utilisation 
+					stricte de modules SCSS (CSS modules), garantissant ainsi un rendu visuel toujours 
+					étanche.
+				</Text>
 			</Paper>
 
 			<Paper withBorder p="xl" radius="md" shadow="sm">

@@ -82,57 +82,26 @@ const ArmelTmsProject: React.FC = () => {
 			<Paper withBorder p="xl" radius="md" shadow="sm">
 				<Group mb="md">
 					<ThemeIcon color="green" variant="light"><IconSettings size={20} /></ThemeIcon>
-					<Title order={3}>2. Architecture technique et sécurité</Title>
+					<Title order={3}>2. Architecture technique et ingénierie de la sécurité</Title>
 				</Group>
-				<Text ta="justify" mb="md">
-					Pour répondre aux contraintes multi-plateformes, j'ai opté pour une 
-					architecture découplée, séparant de manière étanche le backend et 
-					le frontend applicatif :
+				<Text ta="justify" mb="sm">
+					Pour répondre aux contraintes d'un déploiement multi-plateformes, j'ai opté pour une architecture 
+					strictement découplée. Le backend a été développé sous la forme d'une API RESTful en PHP 
+					avec le framework Laravel. Ce serveur centralise la gestion du modèle de 
+					données (entreprises, comptes, statistiques) et garantit l'intégrité des flux grâce 
+					à des classes de validation personnalisées qui filtrent chaque requête entrante.
 				</Text>
-				<Stack gap="sm" pl="md">
-					<Text>
-						• <strong>Un backend d'API RESTful (Laravel) :</strong> développé 
-						en PHP, ce serveur gère l'ensemble du modèle de données 
-						(entreprises clientes, comptes utilisateurs, programmations d'exercices et statistiques). 
-						Pour garantir l'intégrité des données reçues, l'ensemble des 
-						requêtes d'écriture est filtré par des classes de validation 
-						personnalisées.
-					</Text>
-					<Text>
-						• <strong>Une sécurité renforcée par l'authentification JWT :</strong> 
-						&nbsp;la communication entre le serveur et les différents terminaux 
-						s'effectue de manière asynchrone (stateless). 
-						Afin de sécuriser ces échanges, j'ai implémenté le protocole 
-						&nbsp;<strong>JSON Web Token (JWT)</strong> via le package 
-						&nbsp;<code>tymon/jwt-auth</code> côté API.
-					</Text>
-					<Text>
-						• <strong>Sécurisation et stockage natif du jeton (mobile & desktop) :</strong> 
-						&nbsp;afin de prémunir l'application contre le vol de session, 
-						j'ai banni le stockage en clair (comme le <code>localStorage</code> 
-						&nbsp;classique ou des fichiers de configuration non sécurisés) :
-						<Stack gap="xs" pl="md" mt="xs">
-							<Text size="sm">
-								- Sur <strong>mobile</strong>, la persistance du jeton 
-								s'effectue au sein du stockage chiffré matériel natif 
-								de l'appareil (Keystore sur Android et Keychain sur iOS) 
-								via le plugin <code>capacitor-secure-storage</code>.
-							</Text>
-							<Text size="sm">
-								- Sur <strong>desktop (Electron)</strong>, j'ai intégré la 
-								bibliothèque <code>node-keytar</code>. 
-								Ce choix technique permet à l'application de communiquer 
-								directement avec les gestionnaires de mots de passe 
-								natifs du système d'exploitation hôte (le Trousseau 
-								d'accès sur macOS, le gestionnaire d'identification sur 
-								Windows, et libsecret/Secret Service API sur Linux). 
-								Le jeton de l'utilisateur n'est donc jamais écrit en 
-								clair sur le disque dur, mais est entièrement délégué 
-								à la sécurité de l'OS.
-							</Text>
-						</Stack>
-					</Text>
-				</Stack>
+				<Text ta="justify">
+					La communication entre ce serveur et les terminaux clients s'effectue de 
+					manière asynchrone (stateless). Pour sécuriser ces échanges, j'ai implémenté 
+					le protocole <strong>JSON Web Token (JWT)</strong>. Le défi majeur résidait 
+					dans la persistance sécurisée de ce jeton côté client pour éviter le vol de 
+					session. J'ai catégoriquement banni les stockages en clair comme le localStorage. 
+					À la place, j'ai programmé des interactions directes avec le hardware : sur 
+					mobile, le jeton est chiffré dans le Keystore Android ou le Keychain iOS via 
+					Capacitor ; sur ordinateur (Electron), j'ai intégré la bibliothèque <code>node-keytar</code> pour 
+					déléguer la sauvegarde au Trousseau d'accès natif du système d'exploitation (macOS, Windows, Linux).
+				</Text>
 			</Paper>
 
 			<Paper withBorder p="xl" radius="md" shadow="sm">
